@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" application="StiReport" type="Flex">
+  <Dictionary type="Dictionary" isKey="true" Ref="1">
+    <BusinessObjects count="0" isList="true"/>
+    <Databases count="1" isList="true">
+      <Connection1 type="Stimulsoft.Report.Dictionary.StiMySqlDatabase" isKey="true" Ref="2">
+        <Alias>Connection1</Alias>
+        <ConnectionStringEncrypted>49T1a2II+4HLG6mE5QT2Y4sM9cLkW/rN4UehzE10pBfgVvcJYV3z6WlHhMzqXGUv0mppK1VVAYXh
+SdWYTUlid8R0</ConnectionStringEncrypted>
+        <Name>Connection1</Name>
+      </Connection1>
+    </Databases>
+    <DataSources count="2" isList="true">
+      <cheque type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="3">
+        <Alias>cheque</Alias>
+        <Columns count="4" isList="true">
+          <value>ap_code,System.String</value>
+          <value>ap_vender,System.String</value>
+          <value>sumnet,System.Decimal</value>
+          <value>ap_refdate,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>cheque</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT ap_code,ap_vender,sum(api_netamt) as sumnet,ap_refdate FROM ap_cheque_header JOIN ap_cheque_detail ON ap_cheque_header.ap_code = ap_cheque_detail.api_code where ap_code = "{code}"</SqlCommand>
+      </cheque>
+      <vender type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="4">
+        <Alias>vender</Alias>
+        <Columns count="24" isList="true">
+          <value>vender_id,System.Int32</value>
+          <value>vender_code,System.String</value>
+          <value>vender_name,System.String</value>
+          <value>vender_address,System.String</value>
+          <value>vender_tel,System.String</value>
+          <value>vender_fax,System.String</value>
+          <value>vender_tax,System.String</value>
+          <value>vender_taxtype,System.String</value>
+          <value>vender_credit,System.String</value>
+          <value>vender_sale,System.String</value>
+          <value>vender_worktype,System.String</value>
+          <value>vender_status,System.String</value>
+          <value>vender_type,System.String</value>
+          <value>vender_size,System.String</value>
+          <value>accno,System.String</value>
+          <value>accname,System.String</value>
+          <value>compcode,System.String</value>
+          <value>useradd,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>useredit,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>userdel,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>vat,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>vender</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT * FROM vender</SqlCommand>
+      </vender>
+    </DataSources>
+    <Relations count="1" isList="true">
+      <Relation1 type="DataRelation" isKey="true" Ref="5">
+        <Alias>Relation1</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>ap_vender</value>
+        </ChildColumns>
+        <ChildSource isRef="3"/>
+        <Dictionary isRef="1"/>
+        <Name>Relation1</Name>
+        <NameInSource>Relation1</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>vender_code</value>
+        </ParentColumns>
+        <ParentSource isRef="4"/>
+      </Relation1>
+    </Relations>
+    <Report isRef="0"/>
+    <Variables count="0" isList="true"/>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings count="0" isList="true"/>
+  <MetaTags count="0" isList="true"/>
+  <Pages count="1" isList="true">
+    <Page1 type="Page" isKey="true" Ref="6">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components count="1" isList="true">
+        <PageHeaderBand1 type="PageHeaderBand" isKey="true" Ref="7">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,12.4</ClientRectangle>
+          <Components count="11" isList="true">
+            <Text1 type="Text" isKey="true" Ref="8">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,2.4,8.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{cheque.Relation1.vender_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text2 type="Text" isKey="true" Ref="9">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0,0.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{Substring(cheque.ap_refdate,8,1)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text4 type="Text" isKey="true" Ref="10">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.6,0,0.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>c5580c4beb3c5743b1cb3c3ee0a880b5</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{Substring(cheque.ap_refdate,0,1)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+            <Text5 type="Text" isKey="true" Ref="11">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.4,0,0.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>ba757671deb065ca20f53c3ee9772084</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{Substring(cheque.ap_refdate,5,1)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text6 type="Text" isKey="true" Ref="12">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.8,0,0.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>cfd4bf7c8a7963cf865c3c3ff518126a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{Substring(cheque.ap_refdate,9,1)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text7 type="Text" isKey="true" Ref="13">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13,0,0.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>15563c4506a827920eb13c40a3f564b1</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{Substring(cheque.ap_refdate,6,1)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <Text8 type="Text" isKey="true" Ref="14">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.2,0,0.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>24677bd5c72ca95c45833c4114a5348f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{Substring(cheque.ap_refdate,1,1)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text9 type="Text" isKey="true" Ref="15">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.8,0,0.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>da82b8ed94c29ab0772b3c413648b848</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{Substring(cheque.ap_refdate,2,1)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+            <Text10 type="Text" isKey="true" Ref="16">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.4,0,0.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>ccd31c3e473bf38e72453c413bef78bb</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{Substring(cheque.ap_refdate,3,1)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text11 type="Text" isKey="true" Ref="17">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,3.4,8.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>f79499deec22134168583c41c35aaf4c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>({ToCurrencyWordsThai(cheque.sumnet)})</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text3 type="Text" isKey="true" Ref="18">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,2.4,4.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{cheque.sumnet}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="19">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="6"/>
+          <Parent isRef="6"/>
+        </PageHeaderBand1>
+      </Components>
+      <Conditions count="0" isList="true"/>
+      <Guid>e138e1306693d9f344943895467b9e6e</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>14.8</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A5</PaperSize>
+      <Report isRef="0"/>
+      <Watermark type="Stimulsoft.Report.Components.StiWatermark" isKey="true" Ref="20">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" Ref="21"/>
+  <ReferencedAssemblies count="8" isList="true">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>08/16/2018 01:38:42 PM</ReportChanged>
+  <ReportCreated>04/04/2017 05:49:18 PM</ReportCreated>
+  <ReportFile>C:\xampp\htdocs\masterbase\stimulsoft\Flex\reports\ap_approve_report.mrt</ReportFile>
+  <ReportGuid>6445616853c1a38acee7417520c5c6bd</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2016.3</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles count="0" isList="true"/>
+</StiSerializer>

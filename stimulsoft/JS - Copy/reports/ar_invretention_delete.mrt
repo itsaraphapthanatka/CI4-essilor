@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" application="StiReport" type="Flex">
+  <Dictionary type="Dictionary" isKey="true" Ref="1">
+    <BusinessObjects count="0" isList="true"/>
+    <Databases count="1" isList="true">
+      <Connection1 type="Stimulsoft.Report.Dictionary.StiMySqlDatabase" isKey="true" Ref="2">
+        <Alias>Connection1</Alias>
+        <ConnectionStringEncrypted>49T1a2II+4HLG6mE5QT2Y4sM9cLkW/rN4UehzE10pBfgVvcJYV3z6WlHhMzqXGUv0mppK1VVAYXh
+SdWYTUlid8R0</ConnectionStringEncrypted>
+        <Name>Connection1</Name>
+      </Connection1>
+    </Databases>
+    <DataSources count="2" isList="true">
+      <down type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="3">
+        <Alias>down</Alias>
+        <Columns count="29" isList="true">
+          <value>inv_id,System.Int32</value>
+          <value>inv_no,System.String</value>
+          <value>inv_date,System.DateTime</value>
+          <value>inv_dateref,System.DateTime</value>
+          <value>inv_duedate,System.DateTime</value>
+          <value>inv_type,System.String</value>
+          <value>inv_project,System.String</value>
+          <value>inv_owner,System.String</value>
+          <value>inv_receipt,System.String</value>
+          <value>inv_receiptamt,System.Decimal</value>
+          <value>inv_contact,System.String</value>
+          <value>inv_contactamount,System.Decimal</value>
+          <value>inv_period,System.Int32</value>
+          <value>inv_credit,System.String</value>
+          <value>inv_lessadv,System.String</value>
+          <value>inv_lessref,System.String</value>
+          <value>inv_vat,System.String</value>
+          <value>inv_tax,System.String</value>
+          <value>inv_wt,System.String</value>
+          <value>inv_status,System.String</value>
+          <value>useradd,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>useredit,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>userdel,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>compcode,System.String</value>
+          <value>inv_remark,System.String</value>
+          <value>inv_comment,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>down</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT * FROM ar_invretention_header WHERE inv_status = "D"</SqlCommand>
+      </down>
+      <company type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="4">
+        <Alias>company</Alias>
+        <Columns count="43" isList="true">
+          <value>company_id,System.Int32</value>
+          <value>company_code,System.String</value>
+          <value>company_taxnum,System.String</value>
+          <value>company_name,System.String</value>
+          <value>company_address,System.String</value>
+          <value>company_tel,System.String</value>
+          <value>company_fax,System.String</value>
+          <value>company_email,System.String</value>
+          <value>company_contact,System.String</value>
+          <value>comp_img,System.String</value>
+          <value>compcode,System.String</value>
+          <value>ic_type,System.String</value>
+          <value>start_accost,System.String</value>
+          <value>end_accost,System.String</value>
+          <value>startrev,System.String</value>
+          <value>endrev,System.String</value>
+          <value>glrap,System.String</value>
+          <value>startexp,System.String</value>
+          <value>endexp,System.String</value>
+          <value>acdate,System.DateTime</value>
+          <value>chkvat,System.String</value>
+          <value>glrar,System.String</value>
+          <value>dptandproj,System.String</value>
+          <value>useradd,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>useredit,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>userdel,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>updatetime,System.DateTime</value>
+          <value>company_nameth,System.String</value>
+          <value>company_add_en,System.String</value>
+          <value>company_address2,System.String</value>
+          <value>company_address3,System.String</value>
+          <value>company_add_en2,System.String</value>
+          <value>company_add_en3,System.String</value>
+          <value>company_telen,System.String</value>
+          <value>company_faxen,System.String</value>
+          <value>company_emailen,System.String</value>
+          <value>company_contacten,System.String</value>
+          <value>compcodeen,System.String</value>
+          <value>company_taxnumen,System.String</value>
+          <value>site_url,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>company</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>select * from company</SqlCommand>
+      </company>
+    </DataSources>
+    <Relations count="1" isList="true">
+      <Relation1 type="DataRelation" isKey="true" Ref="5">
+        <Alias>Relation1</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>compcode</value>
+        </ChildColumns>
+        <ChildSource isRef="3"/>
+        <Dictionary isRef="1"/>
+        <Name>Relation1</Name>
+        <NameInSource>Relation1</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>compcode</value>
+        </ParentColumns>
+        <ParentSource isRef="4"/>
+      </Relation1>
+    </Relations>
+    <Report isRef="0"/>
+    <Variables count="2" isList="true">
+      <value>,deleteby,Delete_x0020_By,,System.String,,False,False,True,False,_x003C__x003F_xml_x0020_version_x003D__x0022_1_x002E_0_x0022__x0020_encoding_x003D__x0022_utf_x002D_8_x0022__x0020_standalone_x003D__x0022_yes_x0022__x003F__x003E__x003C_StiSerializer_x0020_version_x003D__x0022_1_x002E_02_x0022__x0020_application_x003D__x0022_State_x0022__x0020_type_x003D__x0022_Flex_x0022__x003E__x003C_ItemsInitializationType_x003E_Columns_x003C__x002F_ItemsInitializationType_x003E__x003C_Keys_x0020_count_x003D__x0022_0_x0022__x0020_isList_x003D__x0022_true_x0022__x002F__x003E__x003C_KeysColumn_x003E_down_x002E_userdel_x003C__x002F_KeysColumn_x003E__x003C_Values_x0020_count_x003D__x0022_0_x0022__x0020_isList_x003D__x0022_true_x0022__x002F__x003E__x003C__x002F_StiSerializer_x003E_</value>
+      <value>,tax,Tax_x0020_No,,System.String,,False,False,True,False,_x003C__x003F_xml_x0020_version_x003D__x0022_1_x002E_0_x0022__x0020_encoding_x003D__x0022_utf_x002D_8_x0022__x0020_standalone_x003D__x0022_yes_x0022__x003F__x003E__x003C_StiSerializer_x0020_version_x003D__x0022_1_x002E_02_x0022__x0020_application_x003D__x0022_State_x0022__x0020_type_x003D__x0022_Flex_x0022__x003E__x003C_ItemsInitializationType_x003E_Columns_x003C__x002F_ItemsInitializationType_x003E__x003C_Keys_x0020_count_x003D__x0022_0_x0022__x0020_isList_x003D__x0022_true_x0022__x002F__x003E__x003C_KeysColumn_x003E_down_x002E_inv_no_x003C__x002F_KeysColumn_x003E__x003C_Values_x0020_count_x003D__x0022_0_x0022__x0020_isList_x003D__x0022_true_x0022__x002F__x003E__x003C__x002F_StiSerializer_x003E_</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings count="0" isList="true"/>
+  <MetaTags count="0" isList="true"/>
+  <Pages count="1" isList="true">
+    <Page1 type="Page" isKey="true" Ref="6">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components count="3" isList="true">
+        <PageHeaderBand1 type="PageHeaderBand" isKey="true" Ref="7">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,3</ClientRectangle>
+          <Components count="10" isList="true">
+            <Text1 type="Text" isKey="true" Ref="8">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{down.Relation1.company_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text3 type="Text" isKey="true" Ref="9">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,19,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10,Bold</Font>
+              <Guid>ac896df647bb0135d1a955ca0bcd5955</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>Delete Invoice Retention Reprot</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text5 type="Text" isKey="true" Ref="10">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.6,2.4,2.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>1bb9b8a8dd891f1e088655cc0482ed46</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>Date</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text6 type="Text" isKey="true" Ref="11">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.4,3.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>7041478f903d8d50146055cc0a758af8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>Tax No</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text7 type="Text" isKey="true" Ref="12">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,2.4,3.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>5621600efd1bcf46bf7355cc17cd5bd8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>Ty By</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <Text8 type="Text" isKey="true" Ref="13">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,2.4,2.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>acbe6f15c6406e53ffb055cc22fc9d9f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>Date Delete</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text9 type="Text" isKey="true" Ref="14">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.4,2.4,6.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>6a42bcb8ad16ba205bdb55cc2bf9fb1c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>Desciption</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+            <Text10 type="Text" isKey="true" Ref="15">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3,0,2.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>Date : {Today}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text16 type="Text" isKey="true" Ref="16">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,0,3,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Text>{PageNofMThrough}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>SystemVariables</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text16>
+            <Image1 type="Image" isKey="true" Ref="17">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2.6,2.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <DataColumn isNull="true"/>
+              <Image/>
+              <ImageURL>{company.site_url}comp/{company.comp_img}</ImageURL>
+              <Name>Image1</Name>
+              <Page isRef="6"/>
+              <Parent isRef="7"/>
+              <Stretch>True</Stretch>
+              <VertAlignment>Center</VertAlignment>
+            </Image1>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="6"/>
+          <Parent isRef="6"/>
+        </PageHeaderBand1>
+        <DataBand1 type="DataBand" isKey="true" Ref="18">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true"/>
+          <ClientRectangle>0,4.2,19,0.6</ClientRectangle>
+          <Components count="5" isList="true">
+            <Text4 type="Text" isKey="true" Ref="19">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,3.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="6"/>
+              <Parent isRef="18"/>
+              <Text>{down.inv_no}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+            <Text11 type="Text" isKey="true" Ref="20">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.6,0,2.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>3d2e9425c8bb8a015ffa55cf8df84c67</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="6"/>
+              <Parent isRef="18"/>
+              <Text>{down.inv_date}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="DateFormat" isKey="true" Ref="21">
+                <StringFormat>dd/MM/yyyy</StringFormat>
+              </TextFormat>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text13 type="Text" isKey="true" Ref="22">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,3.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>4a9290ae5b3a02aedcbe55cfaa92bb29</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="6"/>
+              <Parent isRef="18"/>
+              <Text>{down.userdel}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text14 type="Text" isKey="true" Ref="23">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,2.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>8554af6e34ec3623fcea55cfb0fd041a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="6"/>
+              <Parent isRef="18"/>
+              <Text>{down.deldate}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="DateFormat" isKey="true" Ref="24">
+                <StringFormat>dd/MM/yyyy</StringFormat>
+              </TextFormat>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+            <Text15 type="Text" isKey="true" Ref="25">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.4,0,6.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>9332962cdf0d2fde8dde55cfb6864911</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="6"/>
+              <Parent isRef="18"/>
+              <Text>{down.inv_comment}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <DataSourceName>down</DataSourceName>
+          <Filters count="2" isList="true">
+            <value>_x007B_deleteby_x0020__x003D__x003D__x0020_down_x002E_userdel_x0020__x007C__x007C__x0020_deleteby_x0020__x003D__x003D_0_x007D_</value>
+            <value>_x007B_tax_x0020__x003D__x003D__x0020_down_x002E_inv_no_x0020__x007C__x007C__x0020_tax_x0020__x003D__x003D_0_x007D_</value>
+          </Filters>
+          <Name>DataBand1</Name>
+          <Page isRef="6"/>
+          <Parent isRef="6"/>
+          <Sort count="0" isList="true"/>
+        </DataBand1>
+        <FooterBand1 type="FooterBand" isKey="true" Ref="26">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5.6,19,0.6</ClientRectangle>
+          <Components count="1" isList="true">
+            <Text17 type="Text" isKey="true" Ref="27">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,19,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="6"/>
+              <Parent isRef="26"/>
+              <Text>End of Report</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text17>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Name>FooterBand1</Name>
+          <Page isRef="6"/>
+          <Parent isRef="6"/>
+        </FooterBand1>
+      </Components>
+      <Conditions count="0" isList="true"/>
+      <Guid>9870d41adb236c7dd3ca55ac7c064c88</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0"/>
+      <Watermark type="Stimulsoft.Report.Components.StiWatermark" isKey="true" Ref="28">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" Ref="29"/>
+  <ReferencedAssemblies count="8" isList="true">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>08/16/2018 02:22:44 PM</ReportChanged>
+  <ReportCreated>04/10/2017 09:23:39 AM</ReportCreated>
+  <ReportFile>C:\xampp\htdocs\masterbase\stimulsoft\Flex\reports\ar_invretention_delete.mrt</ReportFile>
+  <ReportGuid>1fc320344f27f8b4ba3e419d7b55d48c</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2016.3</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles count="0" isList="true"/>
+</StiSerializer>

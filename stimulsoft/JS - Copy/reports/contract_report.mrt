@@ -1,0 +1,4288 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" application="StiReport" type="Flex">
+  <Dictionary type="Dictionary" isKey="true" Ref="1">
+    <BusinessObjects count="0" isList="true"/>
+    <Databases count="1" isList="true">
+      <Connection1 type="Stimulsoft.Report.Dictionary.StiMySqlDatabase" isKey="true" Ref="2">
+        <Alias>Connection1</Alias>
+        <ConnectionStringEncrypted>49T1a2II+4HLG6mE5QT2Y4sM9cLkW/rN4UehzE10pBfgVvcJYV3z6WlHhMzqXGUv0mppK1VVAYXh
+SdWYTUlid8R0</ConnectionStringEncrypted>
+        <Name>Connection1</Name>
+      </Connection1>
+    </Databases>
+    <DataSources count="5" isList="true">
+      <vender type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="3">
+        <Alias>vender</Alias>
+        <Columns count="24" isList="true">
+          <value>vender_id,System.Int32</value>
+          <value>vender_code,System.String</value>
+          <value>vender_name,System.String</value>
+          <value>vender_address,System.String</value>
+          <value>vender_tel,System.String</value>
+          <value>vender_fax,System.String</value>
+          <value>vender_tax,System.String</value>
+          <value>vender_taxtype,System.String</value>
+          <value>vender_credit,System.String</value>
+          <value>vender_sale,System.String</value>
+          <value>vender_worktype,System.String</value>
+          <value>vender_status,System.String</value>
+          <value>vender_size,System.String</value>
+          <value>accno,System.String</value>
+          <value>accname,System.String</value>
+          <value>compcode,System.String</value>
+          <value>useradd,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>useredit,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>userdel,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>vender_type,System.String</value>
+          <value>vat,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>vender</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT * FROM vender
+	WHERE vender_id	 = '{subcontact}'</SqlCommand>
+      </vender>
+      <system type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="4">
+        <Alias>system</Alias>
+        <Columns count="4" isList="true">
+          <value>systemid,System.Int32</value>
+          <value>systemcode,System.String</value>
+          <value>systemname,System.String</value>
+          <value>compcode,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>system</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>select * from system</SqlCommand>
+      </system>
+      <lo_detail type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="5">
+        <Alias>lo_detail</Alias>
+        <Columns count="28" isList="true">
+          <value>lo_idd,System.Int32</value>
+          <value>lo_ref,System.String</value>
+          <value>lo_matcode,System.String</value>
+          <value>lo_matname,System.String</value>
+          <value>lo_costcode,System.String</value>
+          <value>lo_costname,System.String</value>
+          <value>lo_qty,System.Decimal</value>
+          <value>lo_unit,System.String</value>
+          <value>lo_priceunit,System.Decimal</value>
+          <value>lo_disper,System.Int32</value>
+          <value>lo_disper2,System.Int32</value>
+          <value>lo_disamt,System.Decimal</value>
+          <value>lo_vat,System.Int32</value>
+          <value>lo_vatamt,System.Decimal</value>
+          <value>period,System.String</value>
+          <value>ap_billsucamout,System.Int32</value>
+          <value>previousqty,System.Decimal</value>
+          <value>previousamount,System.Int32</value>
+          <value>creatuser,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>edituser,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>deluser,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>compcode,System.String</value>
+          <value>lo_asset,System.String</value>
+          <value>lo_assetid,System.String</value>
+          <value>lo_assetname,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>lo_detail</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>select * from lo_detail where lo_ref = '{lono}'</SqlCommand>
+      </lo_detail>
+      <lo type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="6">
+        <Alias>lo</Alias>
+        <Columns count="195" isList="true">
+          <value>lo_id,System.Int32</value>
+          <value>lo_lono,System.String</value>
+          <value>prno,System.String</value>
+          <value>lodate,System.DateTime</value>
+          <value>refquono,System.String</value>
+          <value>quodate,System.DateTime</value>
+          <value>projectcode,System.String</value>
+          <value>projownername,System.String</value>
+          <value>department,System.String</value>
+          <value>contact,System.String</value>
+          <value>contactor,System.String</value>
+          <value>subcontact,System.Int32</value>
+          <value>addresssub,System.String</value>
+          <value>cosubcontact,System.String</value>
+          <value>tel_subcontact,System.String</value>
+          <value>fax_subcontact,System.String</value>
+          <value>attach,System.String</value>
+          <value>checkdoc1,System.String</value>
+          <value>checkdoc2,System.String</value>
+          <value>contacttype,System.String</value>
+          <value>system,System.String</value>
+          <value>jobtype,System.String</value>
+          <value>contactdesc,System.String</value>
+          <value>contactamount,System.Int32</value>
+          <value>disamount,System.String</value>
+          <value>amtbal,System.String</value>
+          <value>discount,System.String</value>
+          <value>netamount,System.String</value>
+          <value>vatper,System.String</value>
+          <value>tax,System.String</value>
+          <value>amountre,System.String</value>
+          <value>paypermonth,System.String</value>
+          <value>paycon,System.String</value>
+          <value>after,System.String</value>
+          <value>advance,System.String</value>
+          <value>advcheck,System.String</value>
+          <value>advpercent,System.String</value>
+          <value>adv_count,System.String</value>
+          <value>other_advance,System.String</value>
+          <value>other_advance1,System.String</value>
+          <value>contractperiod,System.String</value>
+          <value>annuity_contracts,System.String</value>
+          <value>pay_progess,System.String</value>
+          <value>empsub,System.String</value>
+          <value>less_ret,System.String</value>
+          <value>less_adv_pay,System.String</value>
+          <value>less_other,System.String</value>
+          <value>start_contact,System.DateTime</value>
+          <value>stop_contact,System.DateTime</value>
+          <value>per_fines,System.String</value>
+          <value>amount,System.String</value>
+          <value>perday_other,System.String</value>
+          <value>retention,System.String</value>
+          <value>retentionbank,System.String</value>
+          <value>after_sale,System.String</value>
+          <value>manual,System.String</value>
+          <value>deliverydate,System.DateTime</value>
+          <value>location,System.String</value>
+          <value>put,System.String</value>
+          <value>accord_contact,System.String</value>
+          <value>accord_type,System.String</value>
+          <value>agreement,System.String</value>
+          <value>other,System.String</value>
+          <value>other_2,System.String</value>
+          <value>other_3,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>updatedate,System.DateTime</value>
+          <value>status,System.String</value>
+          <value>user,System.String</value>
+          <value>period,System.Int32</value>
+          <value>period_amt,System.Decimal</value>
+          <value>retentionp,System.String</value>
+          <value>compcode,System.String</value>
+          <value>advancee,System.String</value>
+          <value>retentionper,System.Decimal</value>
+          <value>retentionmethod,System.String</value>
+          <value>vat,System.Decimal</value>
+          <value>advance1,System.String</value>
+          <value>advancee1,System.String</value>
+          <value>otherpr1,System.String</value>
+          <value>otherpr2,System.String</value>
+          <value>otherpr3,System.String</value>
+          <value>otherpr4,System.String</value>
+          <value>putput,System.String</value>
+          <value>unit,System.String</value>
+          <value>unit1,System.String</value>
+          <value>project_id,System.Int32</value>
+          <value>project_code,System.String</value>
+          <value>project_pono,System.String</value>
+          <value>project_name,System.String</value>
+          <value>project_worktype,System.String</value>
+          <value>project_type,System.String</value>
+          <value>project_address,System.String</value>
+          <value>project_cname,System.String</value>
+          <value>project_tel,System.String</value>
+          <value>project_fax,System.String</value>
+          <value>project_email,System.String</value>
+          <value>project_biztype,System.String</value>
+          <value>project_mcode,System.String</value>
+          <value>project_mnameth,System.String</value>
+          <value>project_mnameen,System.String</value>
+          <value>project_maddress,System.String</value>
+          <value>project_onertel,System.String</value>
+          <value>project_owneremail,System.String</value>
+          <value>project_mfax,System.String</value>
+          <value>project_bnameth,System.String</value>
+          <value>project_bnameen,System.String</value>
+          <value>project_wt,System.Int32</value>
+          <value>project_vat,System.Int32</value>
+          <value>project_budget,System.Int32</value>
+          <value>project_boq,System.String</value>
+          <value>project_advance_1,System.Int32</value>
+          <value>project_advance_2,System.Int32</value>
+          <value>project_lessadvance,System.Int32</value>
+          <value>project_lessadvance_2,System.Int32</value>
+          <value>project_lessretention,System.Int32</value>
+          <value>project_lessretention_2,System.Int32</value>
+          <value>project_lessretentionmethod,System.String</value>
+          <value>project_baddress,System.String</value>
+          <value>project_btel,System.String</value>
+          <value>project_bfax,System.String</value>
+          <value>project_detail,System.String</value>
+          <value>project_value,System.Decimal</value>
+          <value>project_contract,System.String</value>
+          <value>project_start,System.DateTime</value>
+          <value>project_stop,System.DateTime</value>
+          <value>project_engineer,System.String</value>
+          <value>project_create,System.DateTime</value>
+          <value>project_update,System.DateTime</value>
+          <value>project_status,System.String</value>
+          <value>project_user,System.String</value>
+          <value>bd_tenid,System.String</value>
+          <value>bd_tenname,System.String</value>
+          <value>chkconbqq,System.Int32</value>
+          <value>controlbg,System.Int32</value>
+          <value>project_mtel,System.String</value>
+          <value>project_img,System.String</value>
+          <value>edituser,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>forcast_useredit,System.String</value>
+          <value>revise,System.String</value>
+          <value>revise_user,System.String</value>
+          <value>approve_bg,System.String</value>
+          <value>approve_user,System.String</value>
+          <value>project_sub,System.String</value>
+          <value>project_substatus,System.String</value>
+          <value>c_pr,System.Int32</value>
+          <value>c_po,System.Int32</value>
+          <value>c_wo,System.Int32</value>
+          <value>c_pt,System.Int32</value>
+          <value>a_pr,System.Int32</value>
+          <value>a_po,System.Int32</value>
+          <value>a_wo,System.Int32</value>
+          <value>a_pt,System.Int32</value>
+          <value>project_approvecontrol,System.Int32</value>
+          <value>acc_primary,System.String</value>
+          <value>acc_secondary,System.String</value>
+          <value>department_id,System.Int32</value>
+          <value>department_code,System.String</value>
+          <value>department_title,System.String</value>
+          <value>vender_id,System.Int32</value>
+          <value>vender_code,System.String</value>
+          <value>vender_name,System.String</value>
+          <value>vender_address,System.String</value>
+          <value>vender_tel,System.String</value>
+          <value>vender_fax,System.String</value>
+          <value>vender_tax,System.String</value>
+          <value>vender_taxtype,System.String</value>
+          <value>vender_credit,System.String</value>
+          <value>vender_sale,System.String</value>
+          <value>vender_worktype,System.String</value>
+          <value>vender_status,System.String</value>
+          <value>vender_size,System.String</value>
+          <value>accno,System.String</value>
+          <value>accname,System.String</value>
+          <value>useradd,System.String</value>
+          <value>useredit,System.String</value>
+          <value>userdel,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>vender_type,System.String</value>
+          <value>deluser,System.DateTime</value>
+          <value>reject_remark,System.String</value>
+          <value>reject_user,System.String</value>
+          <value>dis_remark,System.String</value>
+          <value>dis_user,System.String</value>
+          <value>other4,System.String</value>
+          <value>other5,System.String</value>
+          <value>other6,System.String</value>
+          <value>other7,System.String</value>
+          <value>other8,System.String</value>
+          <value>other9,System.String</value>
+          <value>other10,System.String</value>
+          <value>control_bqq,System.String</value>
+          <value>control_bg,System.String</value>
+          <value>tender_no,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>lo</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>select * from lo 
+left JOIN project ON project.project_id = lo.projectcode
+left JOIN department ON department.department_id = lo.department
+left JOIN vender ON vender.vender_id = lo.subcontact
+WHERE lo_lono ='{lono}'</SqlCommand>
+      </lo>
+      <company type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="7">
+        <Alias>company</Alias>
+        <Columns count="43" isList="true">
+          <value>company_id,System.Int32</value>
+          <value>company_code,System.String</value>
+          <value>company_taxnum,System.String</value>
+          <value>company_name,System.String</value>
+          <value>company_address,System.String</value>
+          <value>company_tel,System.String</value>
+          <value>company_fax,System.String</value>
+          <value>company_email,System.String</value>
+          <value>company_contact,System.String</value>
+          <value>comp_img,System.String</value>
+          <value>compcode,System.String</value>
+          <value>ic_type,System.String</value>
+          <value>start_accost,System.String</value>
+          <value>end_accost,System.String</value>
+          <value>startrev,System.String</value>
+          <value>endrev,System.String</value>
+          <value>glrap,System.String</value>
+          <value>startexp,System.String</value>
+          <value>endexp,System.String</value>
+          <value>acdate,System.DateTime</value>
+          <value>chkvat,System.String</value>
+          <value>glrar,System.String</value>
+          <value>dptandproj,System.String</value>
+          <value>useradd,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>useredit,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>userdel,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>updatetime,System.DateTime</value>
+          <value>company_nameth,System.String</value>
+          <value>company_add_en,System.String</value>
+          <value>company_address2,System.String</value>
+          <value>company_address3,System.String</value>
+          <value>company_add_en2,System.String</value>
+          <value>company_add_en3,System.String</value>
+          <value>company_telen,System.String</value>
+          <value>company_faxen,System.String</value>
+          <value>company_emailen,System.String</value>
+          <value>company_contacten,System.String</value>
+          <value>compcodeen,System.String</value>
+          <value>company_taxnumen,System.String</value>
+          <value>site_url,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>company</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>select * from company</SqlCommand>
+      </company>
+    </DataSources>
+    <Relations count="2" isList="true">
+      <Name type="DataRelation" isKey="true" Ref="8">
+        <Alias>Name</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>subcontact</value>
+        </ChildColumns>
+        <ChildSource isRef="6"/>
+        <Dictionary isRef="1"/>
+        <Name>Name</Name>
+        <NameInSource>Relation</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>vender_id</value>
+        </ParentColumns>
+        <ParentSource isRef="3"/>
+      </Name>
+      <system type="DataRelation" isKey="true" Ref="9">
+        <Alias>system</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>system</value>
+        </ChildColumns>
+        <ChildSource isRef="6"/>
+        <Dictionary isRef="1"/>
+        <Name>system</Name>
+        <NameInSource>Relation2</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>systemcode</value>
+        </ParentColumns>
+        <ParentSource isRef="4"/>
+      </system>
+    </Relations>
+    <Report isRef="0"/>
+    <Variables count="0" isList="true"/>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings count="0" isList="true"/>
+  <MetaTags count="0" isList="true"/>
+  <Pages count="2" isList="true">
+    <Page1 type="Page" isKey="true" Ref="10">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components count="20" isList="true">
+        <PageHeaderBand2 type="PageHeaderBand" isKey="true" Ref="11">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,3</ClientRectangle>
+          <Components count="9" isList="true">
+            <Text29 type="Text" isKey="true" Ref="12">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,1.2,12.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,14,Bold</Font>
+              <Guid>5c1d931fe866440f9294a634a1d251a0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="10"/>
+              <Parent isRef="11"/>
+              <Text>{company.company_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text29>
+            <Text167 type="Text" isKey="true" Ref="13">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,2,12.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,9</Font>
+              <Guid>ed844b21d785469d937d2217876d82ea</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text167</Name>
+              <Page isRef="10"/>
+              <Parent isRef="11"/>
+              <Text>{company.company_address}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>DataColumn</Type>
+            </Text167>
+            <Text168 type="Text" isKey="true" Ref="14">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,2.4,0.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>1f15b53e87d1458f976aa1f14109c410</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text168</Name>
+              <Page isRef="10"/>
+              <Parent isRef="11"/>
+              <Text>Tel :</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text168>
+            <Text169 type="Text" isKey="true" Ref="15">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.4,2.4,4.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,7</Font>
+              <Guid>05071021e7ac4c3aa91ec7ec8d56a61d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text169</Name>
+              <Page isRef="10"/>
+              <Parent isRef="11"/>
+              <Text>{company.company_tel}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text169>
+            <Text170 type="Text" isKey="true" Ref="16">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,2.4,2.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,7</Font>
+              <Guid>10c4e2dcc747416bb7ca160f197818df</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text170</Name>
+              <Page isRef="10"/>
+              <Parent isRef="11"/>
+              <Text>{company.company_taxnum}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text170>
+            <Text171 type="Text" isKey="true" Ref="17">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,2.4,2.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>0cf812e0caff44988e165723755b047e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text171</Name>
+              <Page isRef="10"/>
+              <Parent isRef="11"/>
+              <Text>Tax ID Number :</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text171>
+            <Text172 type="Text" isKey="true" Ref="18">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,2.4,2.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,7</Font>
+              <Guid>0f2de68f5aff41068b520fa5ed522d2c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text172</Name>
+              <Page isRef="10"/>
+              <Parent isRef="11"/>
+              <Text>{company.company_fax}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text172>
+            <Text173 type="Text" isKey="true" Ref="19">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.8,2.4,0.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>c9a4c569281848e28c579afc0cb8837a</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text173</Name>
+              <Page isRef="10"/>
+              <Parent isRef="11"/>
+              <Text>Fax :</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text173>
+            <Image1 type="Image" isKey="true" Ref="20">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,0.2,3.45,1.02</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <DataColumn isNull="true"/>
+              <Guid>c3e6a876d98f47db8b7f39eec1585f96</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Image/>
+              <ImageURL>{company.site_url}comp/{company.comp_img}</ImageURL>
+              <Name>Image1</Name>
+              <Page isRef="10"/>
+              <Parent isRef="11"/>
+              <Stretch>True</Stretch>
+              <VertAlignment>Center</VertAlignment>
+            </Image1>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Guid>15dd6a37d1584a66b0200d082cf1917c</Guid>
+          <Name>PageHeaderBand2</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </PageHeaderBand2>
+        <PageHeaderBand1 type="PageHeaderBand" isKey="true" Ref="21">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4.2,19,23.8</ClientRectangle>
+          <Components count="154" isList="true">
+            <Text1 type="Text" isKey="true" Ref="22">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,0.6,11.6,0.8</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,15,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>แบบฟอร์มกรอกข้อมูลเพื่อทำหนังสือสั่งจ้าง/สัญญา</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text1>
+            <Text53 type="Text" isKey="true" Ref="23">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.4,2,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>ce9ebff750eb485ba90f7b24831f56e1</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text53</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ต้องการ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text53>
+            <Text54 type="Text" isKey="true" Ref="24">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.4,2,1.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>06b6dbfa69784435b88e383ec240d6c4</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text54</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ไม่ต้องการ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text54>
+            <Text4 type="Text" isKey="true" Ref="25">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,1.8,5,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,9</Font>
+              <Guid>c28a46dd82724e18af4d967027c0354a</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ต้องการทำสัญญาคลุมเพิ่มเติมหรือไม่</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text4>
+            <Text5 type="Text" isKey="true" Ref="26">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,2.4,4.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>5358c927539e4eafa5baa7fc7fd1496b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>1. ข้อมูลโครงการ :</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text6 type="Text" isKey="true" Ref="27">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,2.86,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>fbfc6de26ed342a7b5cb949cb5859f09</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>• ชื่อโครงการ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text41 type="Text" isKey="true" Ref="28">
+              <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,2.84,11,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>e68e723a250e4f54b537e4ee4af34c57</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text41</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.projownername}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text41>
+            <Text55 type="Text" isKey="true" Ref="29">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,3.2,5.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>5c6ee038ef18478b9315282db6816871</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text55</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>• ชื่อเจ้าของโครงการ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text55>
+            <Text56 type="Text" isKey="true" Ref="30">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,3.85,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>9890632ee00f48cf8717bf4e99074bab</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text56</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>• ชื่อผู้รับเหมาหลัก</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text56>
+            <Text42 type="Text" isKey="true" Ref="31">
+              <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,3.2,11,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>aed9cd3231f447c3a2b7f7b8aebb51b8</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text42</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.project_mnameth}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text42>
+            <Text57 type="Text" isKey="true" Ref="32">
+              <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,3.85,11,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>c55359313f5e49abb34f82cb44ffe2a3</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text57</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.contactor}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text57>
+            <Text58 type="Text" isKey="true" Ref="33">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,4.8,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>a2034a6441f14bd58af0492c89fa1e44</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text58</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>• ชื่อผู้รับจ้างช่วง</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text58>
+            <Text59 type="Text" isKey="true" Ref="34">
+              <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,4.76,11,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>3a72f66d0e5543f29902b527c24c0056</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text59</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.Name.vender_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text59>
+            <Text60 type="Text" isKey="true" Ref="35">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,5.2,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>b40b860d79f54f6db80f4b5bf7fc4ff0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text60</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>• ชื่อผู้ลงนามของผู้รับจ้าง/ ผู้ประสานงาน</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text60>
+            <Text61 type="Text" isKey="true" Ref="36">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,5.6,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>860b8969a305451ca5c6d50e525a40a0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text61</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>• โทรศัพท์ติดต่อได้ที่</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text61>
+            <Text62 type="Text" isKey="true" Ref="37">
+              <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,5.2,11,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>5389257aeb954867a4823a0dcc21841d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text62</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.cosubcontact}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text62>
+            <Text63 type="Text" isKey="true" Ref="38">
+              <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.2,5.64,2.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>016ff1e8be874ef0a8573ef24abe6be5</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text63</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text63>
+            <Text64 type="Text" isKey="true" Ref="39">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,6,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>209f01299e07457fbc52bd243d1491a4</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text64</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>• เอกสารประกอบที่แนบมาด้วย</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text64>
+            <Text66 type="Text" isKey="true" Ref="40">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,5.64,0.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>423461660706423ba1388b4840238a65</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text66</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>Tel.:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text66>
+            <Text67 type="Text" isKey="true" Ref="41">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.2,5.64,2.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>6fad96f138894aacaa399562db8b9efa</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text67</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.tel_subcontact}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text67>
+            <Text68 type="Text" isKey="true" Ref="42">
+              <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.2,5.64,2.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>08befe1c10d349c9bb922bd7d181392a</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text68</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text68>
+            <Text69 type="Text" isKey="true" Ref="43">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.6,5.64,0.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>2eb18e01561e4e4b8c20e054742c4880</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text69</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>Fax.:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text69>
+            <Text70 type="Text" isKey="true" Ref="44">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.2,5.64,2.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>906bd5e1db4e4fed9302221235681d3d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text70</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.fax_subcontact}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text70>
+            <Text65 type="Text" isKey="true" Ref="45">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8,6.08,4.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>1b30d042d22a4d63935977b42c5e576e</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text65</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>รายการแบบและ spec ที่อ้างอิง</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text65>
+            <Text71 type="Text" isKey="true" Ref="46">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13,6.08,1.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>8707772d132d40b3a50c87a6d85274a3</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text71</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ใบเสนอราคา</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text71>
+            <Text72 type="Text" isKey="true" Ref="47">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8,6.6,7.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>fc06024f963a4a899df71a66d1c8ad84</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text72</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>อื่นๆ ...........................................................................</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text72>
+            <Text7 type="Text" isKey="true" Ref="48">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,7.4,4.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>fc852e67637b43328ea62c285c9cf8db</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>2. ลักษณะสัญญา :</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <Text8 type="Text" isKey="true" Ref="49">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,8,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>b792b5f78f5e4607a5057c2e65fd89be</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>• งานระบบ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text9 type="Text" isKey="true" Ref="50">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.2,7.4,1,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>22bbc25867414784bbb31de4e17eaab3</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ค่าแรง</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+            <Text10 type="Text" isKey="true" Ref="51">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10.2,7.4,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>35e8d7a83c56488f88daf67ea24089ca</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ค่าของ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text11 type="Text" isKey="true" Ref="52">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.2,7.4,2.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>9b9cf84a5b134bff91d09cc6284f5647</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ทั้งค่าแรงและค่าของ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text12 type="Text" isKey="true" Ref="53">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.6,7.4,1,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>3060b31e928842ba844447c07d2b2684</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ค่าเช่า</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text73 type="Text" isKey="true" Ref="54">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,16.2,0.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>2d1ec8dbd36744cb9e3df84d8dda61d1</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text73</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>4.3</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text73>
+            <Text74 type="Text" isKey="true" Ref="55">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.4,16.2,0.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold|Underline</Font>
+              <Guid>8674f432b83c403d8f09631b9591030c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text74</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>หัก</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text74>
+            <Text75 type="Text" isKey="true" Ref="56">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9,16.2,9.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>b45fe3c93d514f7ea9f0f0efc3935d30</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text75</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>คืนเงินจ่ายล่วงหน้า .......% ของทุกงวดการจ่ายเงิน จนกว่าจะครบตามข้อ 4.1</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text75>
+            <Text20 type="Text" isKey="true" Ref="57">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,10.8,4.8,0.8</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>1d48da80e33c4bee81a52f4cf810c81e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>3. มูลค่าสัญญา :
+   (ไม่รวม VAT)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+            <Text27 type="Text" isKey="true" Ref="58">
+              <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,11,3.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>aeaa207de5f2471f8cea1816190c909a</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.contactamount}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="59">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text27>
+            <Text21 type="Text" isKey="true" Ref="60">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,11,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>d616ec5dfa28472192be93bc6f047f81</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>บาท</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text21>
+            <Text25 type="Text" isKey="true" Ref="61">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.4,11.6,4.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>10068b2190d34d508fab1751645bd834</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>อื่นๆ ..................................................................................</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text25>
+            <Text26 type="Text" isKey="true" Ref="62">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,11.6,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>04885fcc3dba429b830d3b333cc3211f</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ราคารวม</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text26>
+            <Text28 type="Text" isKey="true" Ref="63">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,12.6,4.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>fb3e33024c9a4b509a8f2f6e93efd01a</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>4. เงื่อนไขการจ่ายเงิน :</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text28>
+            <Text37 type="Text" isKey="true" Ref="64">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,12.6,10.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>1da8617996f24e4e9bd5eae32272bc61</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text37</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>4.1 เงินล่วงหน้า (Adv.).......% ใน 15 วัน เมื่อลงนามในสัญญาโดยจะใช้ .........................ค้ำ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text37>
+            <Text38 type="Text" isKey="true" Ref="65">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,13.8,10.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>4945f77654a44958bfeefa23273f0908</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text38</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>4.2 เงินงวดสัญญา</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text38>
+            <Text39 type="Text" isKey="true" Ref="66">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.2,14.4,0.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>b7e1bbf2e5a3457aa4a3e446f8a22458</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text39</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>4.2.1</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text39>
+            <Text40 type="Text" isKey="true" Ref="67">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.2,15,0.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>fede06192019452fbb75a3cf14e3f87c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text40</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>4.2.2</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text40>
+            <Text43 type="Text" isKey="true" Ref="68">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.2,15.6,0.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>bd3f732038eb4ef08b4c133c20cbbb2d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text43</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>4.2.3</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text43>
+            <Text44 type="Text" isKey="true" Ref="69">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.2,14.4,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>c144fad081024bfc86ab67c320756a0b</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text44</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>100 %</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text44>
+            <Text45 type="Text" isKey="true" Ref="70">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.2,15,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>c2eff754abf2420eb30e02d262890716</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text45</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>100 %</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text45>
+            <Text46 type="Text" isKey="true" Ref="71">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.2,15.6,5,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>f9608b99bdf940eb9e785f38bbe5e513</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text46</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>อื่นๆ ...........................................................................</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text46>
+            <Text47 type="Text" isKey="true" Ref="72">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10.6,15,2.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>7f49162d3b7541dfbedfc746552b95e1</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text47</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>จ่ายเมื่อติดตั้งแล้วเสร็จ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text47>
+            <Text48 type="Text" isKey="true" Ref="73">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10.6,14.4,4.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>b05b64e22cc74b16a6a146759d9965dc</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text48</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>จ่ายตามความก้าวหน้าของงาน เดือนละ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text48>
+            <Text49 type="Text" isKey="true" Ref="74">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,14.4,1,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>ca80c502ba674b2ca75901b051ad19f9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text49</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>1 ครั้ง</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text49>
+            <Text50 type="Text" isKey="true" Ref="75">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.8,14.4,0.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>bf1f48014eac40a4bbd3b32a68ec3436</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text50</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>2 ครั้ง</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text50>
+            <Text95 type="Text" isKey="true" Ref="76">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,17.2,4.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>eeae80d3eeaa419f9020f52844b1300b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text95</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>5. การประกันผลงาน :</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text95>
+            <Text99 type="Text" isKey="true" Ref="77">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,17.4,0.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold|Underline</Font>
+              <Guid>457d98015c1148a2952be6920408b9d1</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text99</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>หัก</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text99>
+            <Text114 type="Text" isKey="true" Ref="78">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.2,17.4,9.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>4b151a0329984c08a9761fd797798636</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text114</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>เงินประกันผลงาน (Retention) .........% ของทุกงวดการจ่ายเงิน</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text114>
+            <Text76 type="Text" isKey="true" Ref="79">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,18,10.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>0b4c04af091741abb570e7d19ab35c6f</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text76</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ประกันผลงาน ............. เดือน นับตั้งแต่วันส่งมอบงานต่อเจ้าของโครงการ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text76>
+            <Text77 type="Text" isKey="true" Ref="80">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,18,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>2c9bca7564864c36b3daff7d216c3e73</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text77</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>5.1 ระยะเวลาประกันผลงาน</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text77>
+            <Text14 type="Text" isKey="true" Ref="81">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,9.8,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>3cd8bba27ab6451e96c464e9b6601ea1</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>• ลักษณะงานที่จ้าง (ระบุ)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+            <Text19 type="Text" isKey="true" Ref="82">
+              <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,9.8,10.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>7916ddc4288944c2b89bdb724313f923</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.contactdesc}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text19>
+            <Text91 type="Text" isKey="true" Ref="83">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,23,10.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>af839129591d49bdbc8f44bd36a125e1</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text91</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>อื่นๆ ...........................................................................</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text91>
+            <Text96 type="Text" isKey="true" Ref="84">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.4,18.6,1,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>5d616d48889940bf89f44ca7a3c10331</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text96</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>BG</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text96>
+            <Text97 type="Text" isKey="true" Ref="85">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.6,18.6,2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>3508d38d78d04dceb2623f4723a03242</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text97</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>เช็คไม่ลงวันที่</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text97>
+            <Text98 type="Text" isKey="true" Ref="86">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,18.6,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>b67956f635e448caaad859d8913c4a77</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text98</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>โดยใช้</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text98>
+            <Text78 type="Text" isKey="true" Ref="87">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,19.2,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>55c6873d0b3a47c69e92dd39c402d9ef</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text78</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>5.2 การบริการหลังการขาย</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text78>
+            <Text79 type="Text" isKey="true" Ref="88">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,19.6,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>2aba471fffa547878b183655d812435a</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text79</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>5.3 คู่มือการดูแลรักษา</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text79>
+            <Text80 type="Text" isKey="true" Ref="89">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,19.2,4.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>ffd98e1ddfb24f8ba6a21be153fde696</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text80</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ทุก ................. เดือน/ปี (ถ้ามี)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text80>
+            <Text81 type="Text" isKey="true" Ref="90">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,19.6,4.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>0771b9020afe46218477e0ee83b83b00</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text81</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>จำนวน ............... ชุด (ถ้ามี)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text81>
+            <Text82 type="Text" isKey="true" Ref="91">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,20.6,6.4,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>b6cbee4ee8f14cfb95f9c9d38e3a4807</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text82</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>6. ระยะเวลาของการจ้าง :</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text82>
+            <Text84 type="Text" isKey="true" Ref="92">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,20.6,1.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>faff7b592bc34ac2acb78e31f40bbb4b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text84</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>เริ่มตั้งแต่</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text84>
+            <Text85 type="Text" isKey="true" Ref="93">
+              <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9,20.6,1.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>7662668ed47e4d9eb86fd077a29d61db</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text85</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.start_contact}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="CustomFormat" isKey="true" Ref="94">
+                <StringFormat>dd/MM/yyyy</StringFormat>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text85>
+            <Text86 type="Text" isKey="true" Ref="95">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10.4,20.6,0.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>79e75418a5be46f59cb602f3b18e501f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text86</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ถึง</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text86>
+            <Text87 type="Text" isKey="true" Ref="96">
+              <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11,20.6,1.6,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>3e523f71bff94b43bd6c8590e820f633</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text87</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.stop_contact}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="CustomFormat" isKey="true" Ref="97">
+                <StringFormat>dd/MM/yyyy</StringFormat>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text87>
+            <Text83 type="Text" isKey="true" Ref="98">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,22,6.4,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>88394646a28d4ab5abd1442293b501ca</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text83</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>7. ค่าปรับ :</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text83>
+            <Text88 type="Text" isKey="true" Ref="99">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,22,4.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>dc0ab1ece8214696a2fb7fd9b38c80c2</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text88</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>7.1 หากผู้ขาย/ผู้รับจ้างทำงานล่าช้า</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text88>
+            <Text89 type="Text" isKey="true" Ref="100">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12,22,5.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>b2a1ebc9ab934219b5a7b8a7523856e3</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text89</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>คิดค่าปรับ                 ของมูลค่าสัญญาต่อวัน</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text89>
+            <Text90 type="Text" isKey="true" Ref="101">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,22.4,10.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>877a19305dc44977b6f8f13746dc8826</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text90</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>รวมทั้งต้องจ่ายเงินค่าปรับต่อเจ้าของโครงการตามสัญญาหลักด้วย</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text90>
+            <Text51 type="Text" isKey="true" Ref="102">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7,2,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>be71be32fc824e9c863eb59969d78f39</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text51</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.put == "Y" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text51>
+            <Text52 type="Text" isKey="true" Ref="103">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.8,2,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>3db71f5d304741d6847a5694ee9331f8</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text52</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.put == "N" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text52>
+            <Text112 type="Text" isKey="true" Ref="104">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,6,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>cd21eed87c484aea890569fb2272a04d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text112</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.checkdoc1 == "1" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text112>
+            <Text113 type="Text" isKey="true" Ref="105">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,6.6,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>ffe0811f9e504a39aa2862721e5eb264</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text113</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.attach != "" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text113>
+            <Text115 type="Text" isKey="true" Ref="106">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.6,6,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>990ea5e3a4254486bafc3d457a507a24</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text115</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.checkdoc2 == "1" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text115>
+            <Text116 type="Text" isKey="true" Ref="107">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,7.4,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>832cbad8c4f8415a8b0a218b82d4db23</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text116</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.contacttype == "1" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text116>
+            <Text117 type="Text" isKey="true" Ref="108">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,7.4,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>bb29920ee90a465ebab404a9255cfa77</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text117</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.contacttype == "2" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text117>
+            <Text118 type="Text" isKey="true" Ref="109">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.6,7.4,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>621432668d1d49ab9fb07775f5310a8d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text118</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.contacttype == "3" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text118>
+            <Text119 type="Text" isKey="true" Ref="110">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15,7.4,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>f8bfbfa07f5c448ba6eba688b56f5fc4</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text119</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.contacttype == "4" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text119>
+            <Text126 type="Text" isKey="true" Ref="111">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.8,11.6,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>374d312002aa490581c02f07774564fc</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text126</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.tax != "1,2,3,4,5,6,7,8" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text126>
+            <Text130 type="Text" isKey="true" Ref="112">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,14.4,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>6ed98168f2fa4aa2a64467447451146d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text130</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.advpercent == "1" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text130>
+            <Text131 type="Text" isKey="true" Ref="113">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,15,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>7a1e3333fb9d494ea09feb65bf04240d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text131</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.advpercent == "2" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text131>
+            <Text132 type="Text" isKey="true" Ref="114">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,15.6,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>78b38f7ad1ea45d9b5bf457e7d73d1c2</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text132</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.other_advance1 != "" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text132>
+            <Text133 type="Text" isKey="true" Ref="115">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.6,14.4,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>4dd857dc0eb7407b8c9163c47a47098b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text133</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.adv_count == "1" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text133>
+            <Text134 type="Text" isKey="true" Ref="116">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.2,14.4,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>e04c4a6f4d7141358c4e4019f94968e1</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text134</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.adv_count == "2" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text134>
+            <Text135 type="Text" isKey="true" Ref="117">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9,18.6,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>e3e643ee358c40f5af9e80897a0284e0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text135</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.retentionbank == "B" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text135>
+            <Text136 type="Text" isKey="true" Ref="118">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11,18.6,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>42cc4d1715ac406d8ec78ffcf19d6f0f</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text136</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.retentionbank == "C" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text136>
+            <Text2 type="Text" isKey="true" Ref="119">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.4,17.8,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.retentionper} %</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text2>
+            <Text34 type="Text" isKey="true" Ref="120">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.4,6.4,7,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.attach != "" ? lo.attach :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text34>
+            <Text146 type="Text" isKey="true" Ref="121">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.6,7.4,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>602993b70af247309b87752e9955f14a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text146</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>ค่าบริการ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text146>
+            <Text147 type="Text" isKey="true" Ref="122">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17,7.4,0.4,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>79dd21f7dd8942d1b458e01f3213bad3</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text147</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.contacttype == "5" ? "✓" :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text147>
+            <Text148 type="Text" isKey="true" Ref="123">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10.2,11.4,5.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text148</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>หัก ณ ที่จ่าย{
+IIF(lo.tax=="1","ไม่มีหัก",
+IIF(lo.tax=="2","ค่าขนส่ง1%",
+IIF(lo.tax=="3","ค่าเช่า5%",
+IIF(lo.tax=="4","ค่าโฆษณา2%",
+IIF(lo.tax=="5","ดอกเบี้ยจ่าย15%",
+IIF(lo.tax=="6","ค่าจ้างเหมา3%",
+IIF(lo.tax=="7","เงินชดเชย3%",
+IIF(lo.tax=="8","ค่าจ้างแรงงาน3%"
+))))))))}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text148>
+            <Text149 type="Text" isKey="true" Ref="124">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10,12.6,0.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>ef66341292614672843e15fcc5d9ce71</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text149</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.advance}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text149>
+            <Text150 type="Text" isKey="true" Ref="125">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.4,19.6,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>8427e426d84a4204a57cf5fd733456f2</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text150</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.manual}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text150>
+            <Text151 type="Text" isKey="true" Ref="126">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.2,19.2,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>9dfdb07f716f4342a567e90d6b431e3a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text151</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.after_sale}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text151>
+            <Text152 type="Text" isKey="true" Ref="127">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13,22,1.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>77d36c561ae5420bbb283515194adeec</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text152</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.per_fines} %</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text152>
+            <Text153 type="Text" isKey="true" Ref="128">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.2,22.8,10.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>b395a6bcfe6e4849ba70539626685fd9</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text153</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.perday_other}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text153>
+            <Text154 type="Text" isKey="true" Ref="129">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,12.6,1.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>f3a1cf965af84e0d9405b18de3ca46a7</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text154</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.other_advance != "" ? lo.other_advance :""  }</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text154>
+            <Text155 type="Text" isKey="true" Ref="130">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.8,15.6,8.8,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>6077bea44d6645ab946ee178accc0073</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text155</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.other_advance1}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text155>
+            <Text157 type="Text" isKey="true" Ref="131">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11,16,0.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>83ea8f9c84b146a9a67715c63e127fe7</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text157</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.advance1}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text157>
+            <Text22 type="Text" isKey="true" Ref="132">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.8,17.2,0.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>3dd1cf50965244b6af350146654d7e30</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.retentionper}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text22>
+            <Text13 type="Text" isKey="true" Ref="133">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,8,9.2,0.4</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{lo.system.systemname}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text15 type="Text" isKey="true" Ref="134">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,12.6,1.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <Text>{IIF(lo.advcheck=="B","BG",IIF(lo.advcheck=="C","เช็คไม่ลงวันที่",""))}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <StartPointPrimitive2 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="135">
+              <ClientRectangle>8.8,2,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive2</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>d8504a8296c2470ebe0a931da7f3cda1</ReferenceToGuid>
+            </StartPointPrimitive2>
+            <EndPointPrimitive2 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="136">
+              <ClientRectangle>9.2,2.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive2</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>d8504a8296c2470ebe0a931da7f3cda1</ReferenceToGuid>
+            </EndPointPrimitive2>
+            <HorizontalLinePrimitive1 type="HorizontalLinePrimitive" isKey="true" Ref="137">
+              <ClientRectangle>0.4,4.6,18.4,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <Conditions count="0" isList="true"/>
+              <EndCap type="Cap" isKey="true" Ref="138">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive1</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <StartCap type="Cap" isKey="true" Ref="139">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive1>
+            <StartPointPrimitive6 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="140">
+              <ClientRectangle>7.6,6,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive6</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>4c553a8c50b94a6cb5d7e64646bc034d</ReferenceToGuid>
+            </StartPointPrimitive6>
+            <EndPointPrimitive6 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="141">
+              <ClientRectangle>8,6.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive6</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>4c553a8c50b94a6cb5d7e64646bc034d</ReferenceToGuid>
+            </EndPointPrimitive6>
+            <StartPointPrimitive7 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="142">
+              <ClientRectangle>12.6,6,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive7</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>892e5bb0386944aba9b5dcb46bcc07d4</ReferenceToGuid>
+            </StartPointPrimitive7>
+            <EndPointPrimitive7 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="143">
+              <ClientRectangle>13,6.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive7</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>892e5bb0386944aba9b5dcb46bcc07d4</ReferenceToGuid>
+            </EndPointPrimitive7>
+            <StartPointPrimitive8 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="144">
+              <ClientRectangle>7.6,6.6,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive8</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>1aa935322797426f89e1b8b91e14452b</ReferenceToGuid>
+            </StartPointPrimitive8>
+            <EndPointPrimitive8 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="145">
+              <ClientRectangle>8,7,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive8</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>1aa935322797426f89e1b8b91e14452b</ReferenceToGuid>
+            </EndPointPrimitive8>
+            <HorizontalLinePrimitive3 type="HorizontalLinePrimitive" isKey="true" Ref="146">
+              <ClientRectangle>0.4,7.2,18.4,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <Conditions count="0" isList="true"/>
+              <EndCap type="Cap" isKey="true" Ref="147">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>3982200be66b47e3baeef37de244c115</Guid>
+              <Name>HorizontalLinePrimitive3</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <StartCap type="Cap" isKey="true" Ref="148">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive3>
+            <StartPointPrimitive9 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="149">
+              <ClientRectangle>7.6,7.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive9</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>46b8b8c9edfe41cdb9ab727d6210316c</ReferenceToGuid>
+            </StartPointPrimitive9>
+            <EndPointPrimitive9 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="150">
+              <ClientRectangle>8,7.8,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive9</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>46b8b8c9edfe41cdb9ab727d6210316c</ReferenceToGuid>
+            </EndPointPrimitive9>
+            <StartPointPrimitive10 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="151">
+              <ClientRectangle>9.6,7.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive10</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>a290ecacde624c08aafd486e93459eb3</ReferenceToGuid>
+            </StartPointPrimitive10>
+            <EndPointPrimitive10 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="152">
+              <ClientRectangle>10,7.8,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive10</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>a290ecacde624c08aafd486e93459eb3</ReferenceToGuid>
+            </EndPointPrimitive10>
+            <StartPointPrimitive11 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="153">
+              <ClientRectangle>11.6,7.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive11</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>8fba61879c8f4581a31c92c48c490223</ReferenceToGuid>
+            </StartPointPrimitive11>
+            <EndPointPrimitive11 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="154">
+              <ClientRectangle>12,7.8,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive11</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>8fba61879c8f4581a31c92c48c490223</ReferenceToGuid>
+            </EndPointPrimitive11>
+            <StartPointPrimitive12 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="155">
+              <ClientRectangle>15,7.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive12</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>393f1bd8b2f3473d8c9c0e4fd2b59782</ReferenceToGuid>
+            </StartPointPrimitive12>
+            <EndPointPrimitive12 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="156">
+              <ClientRectangle>15.4,7.8,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive12</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>393f1bd8b2f3473d8c9c0e4fd2b59782</ReferenceToGuid>
+            </EndPointPrimitive12>
+            <HorizontalLinePrimitive6 type="HorizontalLinePrimitive" isKey="true" Ref="157">
+              <ClientRectangle>0.4,10.6,18.4,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <Conditions count="0" isList="true"/>
+              <EndCap type="Cap" isKey="true" Ref="158">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>035e73bfbaf94bfcb1c72587e1cea87d</Guid>
+              <Name>HorizontalLinePrimitive6</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <StartCap type="Cap" isKey="true" Ref="159">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive6>
+            <HorizontalLinePrimitive7 type="HorizontalLinePrimitive" isKey="true" Ref="160">
+              <ClientRectangle>0.4,12.2,18.4,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <Conditions count="0" isList="true"/>
+              <EndCap type="Cap" isKey="true" Ref="161">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>849c33120afc440ea6c8800fad82f210</Guid>
+              <Name>HorizontalLinePrimitive7</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <StartCap type="Cap" isKey="true" Ref="162">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive7>
+            <StartPointPrimitive19 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="163">
+              <ClientRectangle>8.8,11.6,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive19</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>1977cea32e0144e0a9ae110e2e9e5a31</ReferenceToGuid>
+            </StartPointPrimitive19>
+            <EndPointPrimitive19 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="164">
+              <ClientRectangle>9.2,12,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive19</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>1977cea32e0144e0a9ae110e2e9e5a31</ReferenceToGuid>
+            </EndPointPrimitive19>
+            <StartPointPrimitive23 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="165">
+              <ClientRectangle>7.6,14.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive23</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>d77452dda7d7419f898177896f51529c</ReferenceToGuid>
+            </StartPointPrimitive23>
+            <EndPointPrimitive23 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="166">
+              <ClientRectangle>8,14.8,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive23</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>d77452dda7d7419f898177896f51529c</ReferenceToGuid>
+            </EndPointPrimitive23>
+            <StartPointPrimitive24 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="167">
+              <ClientRectangle>7.6,15,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive24</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>c46b5ee9f85a40408450111cd6fdf6b1</ReferenceToGuid>
+            </StartPointPrimitive24>
+            <EndPointPrimitive24 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="168">
+              <ClientRectangle>8,15.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive24</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>c46b5ee9f85a40408450111cd6fdf6b1</ReferenceToGuid>
+            </EndPointPrimitive24>
+            <StartPointPrimitive25 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="169">
+              <ClientRectangle>7.6,15.6,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive25</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>322d0e060d70484d8f7e3f6811811dbc</ReferenceToGuid>
+            </StartPointPrimitive25>
+            <EndPointPrimitive25 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="170">
+              <ClientRectangle>8,16,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive25</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>322d0e060d70484d8f7e3f6811811dbc</ReferenceToGuid>
+            </EndPointPrimitive25>
+            <StartPointPrimitive26 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="171">
+              <ClientRectangle>15.6,14.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive26</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>06e37212756f4e6eba9407f02c8351b1</ReferenceToGuid>
+            </StartPointPrimitive26>
+            <EndPointPrimitive26 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="172">
+              <ClientRectangle>16,14.8,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive26</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>06e37212756f4e6eba9407f02c8351b1</ReferenceToGuid>
+            </EndPointPrimitive26>
+            <StartPointPrimitive27 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="173">
+              <ClientRectangle>17.2,14.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive27</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>6782fceb4c27461ab8c1a81382b2f40b</ReferenceToGuid>
+            </StartPointPrimitive27>
+            <EndPointPrimitive27 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="174">
+              <ClientRectangle>17.6,14.8,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive27</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>6782fceb4c27461ab8c1a81382b2f40b</ReferenceToGuid>
+            </EndPointPrimitive27>
+            <HorizontalLinePrimitive9 type="HorizontalLinePrimitive" isKey="true" Ref="175">
+              <ClientRectangle>0.4,17,18.4,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <Conditions count="0" isList="true"/>
+              <EndCap type="Cap" isKey="true" Ref="176">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>7cec6e86f1ad41a1b6bb204ed66834c4</Guid>
+              <Name>HorizontalLinePrimitive9</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <StartCap type="Cap" isKey="true" Ref="177">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive9>
+            <HorizontalLinePrimitive5 type="HorizontalLinePrimitive" isKey="true" Ref="178">
+              <ClientRectangle>0.4,9.4,18.4,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <Conditions count="0" isList="true"/>
+              <EndCap type="Cap" isKey="true" Ref="179">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>de098d0291f048a58bd9998fcc0a543a</Guid>
+              <Name>HorizontalLinePrimitive5</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <StartCap type="Cap" isKey="true" Ref="180">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive5>
+            <HorizontalLinePrimitive11 type="HorizontalLinePrimitive" isKey="true" Ref="181">
+              <ClientRectangle>0.4,23.6,18.4,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <Conditions count="0" isList="true"/>
+              <EndCap type="Cap" isKey="true" Ref="182">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>82cae58b189c44aa9545eb9ca235e4b2</Guid>
+              <Name>HorizontalLinePrimitive11</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <StartCap type="Cap" isKey="true" Ref="183">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive11>
+            <StartPointPrimitive36 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="184">
+              <ClientRectangle>9,18.6,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive36</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>1ba12403d60247c0ac7c016782c7653b</ReferenceToGuid>
+            </StartPointPrimitive36>
+            <EndPointPrimitive36 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="185">
+              <ClientRectangle>9.4,19,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive36</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>1ba12403d60247c0ac7c016782c7653b</ReferenceToGuid>
+            </EndPointPrimitive36>
+            <StartPointPrimitive37 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="186">
+              <ClientRectangle>11,18.6,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive37</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>ae8c937331ff4204a64648ae6daeebc7</ReferenceToGuid>
+            </StartPointPrimitive37>
+            <EndPointPrimitive37 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="187">
+              <ClientRectangle>11.4,19,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive37</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>ae8c937331ff4204a64648ae6daeebc7</ReferenceToGuid>
+            </EndPointPrimitive37>
+            <HorizontalLinePrimitive8 type="HorizontalLinePrimitive" isKey="true" Ref="188">
+              <ClientRectangle>0.4,20.2,18.4,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <Conditions count="0" isList="true"/>
+              <EndCap type="Cap" isKey="true" Ref="189">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>5c9dd9e39c2446888b7b9a53b93bc959</Guid>
+              <Name>HorizontalLinePrimitive8</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <StartCap type="Cap" isKey="true" Ref="190">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive8>
+            <HorizontalLinePrimitive10 type="HorizontalLinePrimitive" isKey="true" Ref="191">
+              <ClientRectangle>0.4,21.6,18.4,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <Conditions count="0" isList="true"/>
+              <EndCap type="Cap" isKey="true" Ref="192">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>e47577676d4944b6925a888afb4ea3ca</Guid>
+              <Name>HorizontalLinePrimitive10</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <StartCap type="Cap" isKey="true" Ref="193">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive10>
+            <HorizontalLinePrimitive17 type="HorizontalLinePrimitive" isKey="true" Ref="194">
+              <ClientRectangle>12,22.4,4.8,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <Conditions count="0" isList="true"/>
+              <EndCap type="Cap" isKey="true" Ref="195">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>9fab480ce38f4f5dad6637dc9f076470</Guid>
+              <Name>HorizontalLinePrimitive17</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <StartCap type="Cap" isKey="true" Ref="196">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive17>
+            <StartPointPrimitive29 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="197">
+              <ClientRectangle>17,7.4,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>StartPointPrimitive29</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>b589da796fdf420eb317ea244cf79778</ReferenceToGuid>
+            </StartPointPrimitive29>
+            <EndPointPrimitive29 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="198">
+              <ClientRectangle>17.4,7.8,0,0</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Name>EndPointPrimitive29</Name>
+              <Page isRef="10"/>
+              <Parent isRef="21"/>
+              <ReferenceToGuid>b589da796fdf420eb317ea244cf79778</ReferenceToGuid>
+            </EndPointPrimitive29>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </PageHeaderBand1>
+        <PageFooterBand1 type="PageFooterBand" isKey="true" Ref="199">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,26.9,19,0.8</ClientRectangle>
+          <Components count="0" isList="true"/>
+          <Conditions count="0" isList="true"/>
+          <Name>PageFooterBand1</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </PageFooterBand1>
+        <RectanglePrimitive4 type="RectanglePrimitive" isKey="true" Ref="200">
+          <ClientRectangle>7.6,10.2,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>4c553a8c50b94a6cb5d7e64646bc034d</Guid>
+          <Name>RectanglePrimitive4</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive4>
+        <RectanglePrimitive7 type="RectanglePrimitive" isKey="true" Ref="201">
+          <ClientRectangle>12.6,10.2,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>892e5bb0386944aba9b5dcb46bcc07d4</Guid>
+          <Name>RectanglePrimitive7</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive7>
+        <RectanglePrimitive8 type="RectanglePrimitive" isKey="true" Ref="202">
+          <ClientRectangle>7.6,10.8,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>1aa935322797426f89e1b8b91e14452b</Guid>
+          <Name>RectanglePrimitive8</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive8>
+        <RectanglePrimitive9 type="RectanglePrimitive" isKey="true" Ref="203">
+          <ClientRectangle>7.6,11.6,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>46b8b8c9edfe41cdb9ab727d6210316c</Guid>
+          <Name>RectanglePrimitive9</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive9>
+        <RectanglePrimitive10 type="RectanglePrimitive" isKey="true" Ref="204">
+          <ClientRectangle>9.6,11.6,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>a290ecacde624c08aafd486e93459eb3</Guid>
+          <Name>RectanglePrimitive10</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive10>
+        <RectanglePrimitive11 type="RectanglePrimitive" isKey="true" Ref="205">
+          <ClientRectangle>11.6,11.6,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>8fba61879c8f4581a31c92c48c490223</Guid>
+          <Name>RectanglePrimitive11</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive11>
+        <RectanglePrimitive12 type="RectanglePrimitive" isKey="true" Ref="206">
+          <ClientRectangle>15,11.6,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>393f1bd8b2f3473d8c9c0e4fd2b59782</Guid>
+          <Name>RectanglePrimitive12</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive12>
+        <RectanglePrimitive19 type="RectanglePrimitive" isKey="true" Ref="207">
+          <ClientRectangle>8.8,15.8,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>1977cea32e0144e0a9ae110e2e9e5a31</Guid>
+          <Name>RectanglePrimitive19</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive19>
+        <RectanglePrimitive23 type="RectanglePrimitive" isKey="true" Ref="208">
+          <ClientRectangle>7.6,18.6,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>d77452dda7d7419f898177896f51529c</Guid>
+          <Name>RectanglePrimitive23</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive23>
+        <RectanglePrimitive24 type="RectanglePrimitive" isKey="true" Ref="209">
+          <ClientRectangle>7.6,19.2,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>c46b5ee9f85a40408450111cd6fdf6b1</Guid>
+          <Name>RectanglePrimitive24</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive24>
+        <RectanglePrimitive25 type="RectanglePrimitive" isKey="true" Ref="210">
+          <ClientRectangle>7.6,19.8,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>322d0e060d70484d8f7e3f6811811dbc</Guid>
+          <Name>RectanglePrimitive25</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive25>
+        <RectanglePrimitive26 type="RectanglePrimitive" isKey="true" Ref="211">
+          <ClientRectangle>15.6,18.6,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>06e37212756f4e6eba9407f02c8351b1</Guid>
+          <Name>RectanglePrimitive26</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive26>
+        <RectanglePrimitive27 type="RectanglePrimitive" isKey="true" Ref="212">
+          <ClientRectangle>17.2,18.6,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>6782fceb4c27461ab8c1a81382b2f40b</Guid>
+          <Name>RectanglePrimitive27</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive27>
+        <RectanglePrimitive36 type="RectanglePrimitive" isKey="true" Ref="213">
+          <ClientRectangle>9,22.8,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>1ba12403d60247c0ac7c016782c7653b</Guid>
+          <Name>RectanglePrimitive36</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive36>
+        <RectanglePrimitive37 type="RectanglePrimitive" isKey="true" Ref="214">
+          <ClientRectangle>11,22.8,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>ae8c937331ff4204a64648ae6daeebc7</Guid>
+          <Name>RectanglePrimitive37</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive37>
+        <RectanglePrimitive2 type="RectanglePrimitive" isKey="true" Ref="215">
+          <ClientRectangle>8.8,6.2,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>d8504a8296c2470ebe0a931da7f3cda1</Guid>
+          <Name>RectanglePrimitive2</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive2>
+        <RectanglePrimitive1 type="RectanglePrimitive" isKey="true" Ref="216">
+          <ClientRectangle>17,11.6,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>b589da796fdf420eb317ea244cf79778</Guid>
+          <Name>RectanglePrimitive1</Name>
+          <Page isRef="10"/>
+          <Parent isRef="10"/>
+        </RectanglePrimitive1>
+      </Components>
+      <Conditions count="0" isList="true"/>
+      <Guid>55896ed5f86623c13596c4b4c7f90eb7</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0"/>
+      <Watermark type="Stimulsoft.Report.Components.StiWatermark" isKey="true" Ref="217">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+    <Page2 type="Page" isKey="true" Ref="218">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components count="98" isList="true">
+        <Text16 type="Text" isKey="true" Ref="219">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.4,0.6,6.4,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8,Bold</Font>
+          <Guid>4be82ee9b2b025993e4ea3a3994dd718</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text16</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>8. การเพิ่มลดของมูลค่าสัญญา :</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text16>
+        <Text18 type="Text" isKey="true" Ref="220">
+          <Border>None;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.6,0.6,10.8,0.4</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>1c94dc177af2b72ef76fa3a3994d06a1</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text18</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>ผู้รับจ้างยอมรับว่าปริมาณงานที่อาจเพิ่มหรือลดลงจากการสั่งจ้างครั้งนี้</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text18>
+        <Text32 type="Text" isKey="true" Ref="221">
+          <Border>None;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.6,1,10.8,0.4</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>2c5e310571a7d2fee8d2a3a3994dcf61</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text32</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>สามารถยึดถือราคาเดิมได้ตลอดโครงการ</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text32>
+        <Text33 type="Text" isKey="true" Ref="222">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.6,1.6,1.2,0.4</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>ebd4918076f26267f495a3a3994dadb7</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text33</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>ยอมรับ</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text33>
+        <Text35 type="Text" isKey="true" Ref="223">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>11,1.6,1.6,0.4</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>89e3b5c8f614f17a13a1a3a3994da3c1</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text35</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>ไม่ยอมรับ</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text35>
+        <Text36 type="Text" isKey="true" Ref="224">
+          <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,3.6,10.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>a1aff792db1c08627353a3a3994d1e27</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text36</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.other}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text36>
+        <Text92 type="Text" isKey="true" Ref="225">
+          <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,4.2,10.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>51c1e8ee2bdf18629abba3a3994ed7fe</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text92</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.other_2}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text92>
+        <Text93 type="Text" isKey="true" Ref="226">
+          <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,4.8,10.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>064ff8d7cfaec182ef98a3a3994e8b90</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text93</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.other_3}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text93>
+        <Text94 type="Text" isKey="true" Ref="227">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.4,3.6,7.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8,Bold</Font>
+          <Guid>48412254a8904bb132c8a3a3994e2cc3</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text94</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>9. ข้อมูลอื่นๆ ที่แจ้งให้ทราบและต้องการให้ระบุในสัญญา :</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text94>
+        <Text100 type="Text" isKey="true" Ref="228">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.4,10.4,2.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,10,Bold</Font>
+          <Guid>ecc604cb51b270ef1da3a3a3994e9aa4</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text100</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>ข้อมูลเพิ่มเติม</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text100>
+        <Text101 type="Text" isKey="true" Ref="229">
+          <Border>None;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.6,11.2,18,0.4</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>f3f8749c32b7bf286d4ca3a3994e9dea</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text101</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>• กรณีมีเงินจ่ายล่วงหน้าผู้จัดการโครงการต้องแจ้งให้ผู้รับจ้างช่วง/ผู้ขายต้องมอบหลักประกันการรับเงินจ่ายล่วงหน้าก่อนในวันลงนามในสัญญา</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text101>
+        <Text102 type="Text" isKey="true" Ref="230">
+          <Border>None;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.6,11.6,18,0.4</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>3b15d7b91cdd721ba393a3a3994e6be9</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text102</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>• กรณีวงเงินที่จะจัดจ้างเกินกว่า 1ล้านบาท ต้องทำหลักประกันการค้ำประกันสัญญา ในมูลค่า 5% ของวงเงินที่จัดจ้าง</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text102>
+        <Text103 type="Text" isKey="true" Ref="231">
+          <Border>None;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.6,12,8.4,0.4</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>aa3d2ad2b6b27671943da3a3994ea725</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text103</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>• หากเป็นสัญญาจ้างเหมาช่วง (ค่าแรงอย่างเดียวหรือทั้งค่าแรงและค่าของ)</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text103>
+        <Text104 type="Text" isKey="true" Ref="232">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>9,12,9.6,0.4</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>63319e8af23cdde6ececa3a3994febab</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text104</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>ผู้รับจ้างช่วงต้องเตรียมอากรแสตมป์มูลค่า ร้อยละ 0.1% ของมูลค่าสัญญาไม่รวมVAT</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text104>
+        <Text105 type="Text" isKey="true" Ref="233">
+          <Border>None;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.6,12.4,18,0.4</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>d268f56968df3b335a02a3a3994f6bdc</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text105</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>นำไปในวันลงนามสัญญาหรืออย่างช้าในวันรับเงินจ่ายล่วงหน้า</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text105>
+        <Text106 type="Text" isKey="true" Ref="234">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>10.4,1.6,0.4,0.4</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,10</Font>
+          <Guid>6f0af2c5ac9dae360530a3a3994f463a</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text106</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.agreement == "N" ? "✓" :""  }</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text106>
+        <Text107 type="Text" isKey="true" Ref="235">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8,1.6,0.4,0.4</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,10</Font>
+          <Guid>803ee42d1efead8f9326a3a3994f4e51</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text107</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.agreement == "Y" ? "✓" :""  }</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+        </Text107>
+        <Text108 type="Text" isKey="true" Ref="236">
+          <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,5.4,10.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>aa70a8cf7059b36a74f9a3a39950a173</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text108</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.other4}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text108>
+        <Text109 type="Text" isKey="true" Ref="237">
+          <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,6,10.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>0b69a88fa52147cb16e3a3a3995098d7</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text109</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.other5}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text109>
+        <Text110 type="Text" isKey="true" Ref="238">
+          <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,6.6,10.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>1e55e20606e1cb926e56a3a39950f7c3</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text110</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.other6}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text110>
+        <Text111 type="Text" isKey="true" Ref="239">
+          <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,7.2,10.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>6034a2b74e803a74cee1a3a39950507f</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text111</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.other7}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text111>
+        <Text120 type="Text" isKey="true" Ref="240">
+          <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,7.8,10.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>698cec04bacd34c51295a3a39950de2f</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text120</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.other8}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text120>
+        <Text121 type="Text" isKey="true" Ref="241">
+          <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,8.4,10.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>c53b1b8fb28d054cf4caa3a39950da3b</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text121</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.other9}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text121>
+        <Text31 type="Text" isKey="true" Ref="242">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.4,18,4.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11</Font>
+          <Guid>8e985bd55c7e6ac45bb7a3a39951cd39</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text31</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>ผู้จัดทำ</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text31>
+        <Text3 type="Text" isKey="true" Ref="243">
+          <Border>Bottom;Black;1;Dot;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.8,9,10.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,8</Font>
+          <Guid>390b106a278074154b1ca3a399516d73</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text3</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>{lo.other10}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text3>
+        <Text23 type="Text" isKey="true" Ref="244">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>5.4,16,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11,Bold</Font>
+          <Guid>47feab41a26d5fdef6e0a3a399512bd1</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text23</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>(</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text23>
+        <Text124 type="Text" isKey="true" Ref="245">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8.8,16,0,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11,Bold</Font>
+          <Guid>201be2f1935a813e8333a3a39952152f</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text124</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>)</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text124>
+        <Text125 type="Text" isKey="true" Ref="246">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>5.4,16.6,0.8,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,10</Font>
+          <Guid>2c4042965d2b008a4213a3a399523413</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text125</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>วันที่ :</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text125>
+        <Text127 type="Text" isKey="true" Ref="247">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7.2,16.8,0,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>d1f11583ab158b0c3c0ca3a399521f9a</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text127</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text127>
+        <Text128 type="Text" isKey="true" Ref="248">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>8,16.8,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>3b7bfbfab2238f3598d9a3a399529990</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text128</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text128>
+        <Text137 type="Text" isKey="true" Ref="249">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.8,16,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11,Bold</Font>
+          <Guid>75aca77109a31aa1563ba3a3995227b8</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text137</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>(</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text137>
+        <Text138 type="Text" isKey="true" Ref="250">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>4.4,16,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11,Bold</Font>
+          <Guid>a684eda823a855bcde3fa3a3995274f8</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text138</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>)</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text138>
+        <Text139 type="Text" isKey="true" Ref="251">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.8,16.6,1,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,10</Font>
+          <Guid>e122c3f6126adf080bfba3a399527009</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text139</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>วันที่ :</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text139>
+        <Text140 type="Text" isKey="true" Ref="252">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>2.4,16.8,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>4163e08eae229c7a2f94a3a39953e9c6</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text140</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text140>
+        <Text141 type="Text" isKey="true" Ref="253">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>3.4,16.8,0,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>3dd6fd67ea84e7c3736fa3a3995342e2</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text141</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text141>
+        <Text174 type="Text" isKey="true" Ref="254">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>9,16,0,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11,Bold</Font>
+          <Guid>5901ac6b367b8e9a005ca3b9ef5eae0b</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text174</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>)</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text174>
+        <Text185 type="Text" isKey="true" Ref="255">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>9.6,18,4.6,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11</Font>
+          <Guid>c60525fc09314d31fef4a3c241f08c7a</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text185</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>ผู้จัดการโครงการ</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text185>
+        <Text122 type="Text" isKey="true" Ref="256">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>14.6,16,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11,Bold</Font>
+          <Guid>c5b2b9fd4861d292963aa3c241f0951a</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text122</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>(</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text122>
+        <Text123 type="Text" isKey="true" Ref="257">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>17.8,16,0,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11,Bold</Font>
+          <Guid>6af1feac6a8223ea549ca3c241f08e7d</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text123</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>)</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text123>
+        <Text129 type="Text" isKey="true" Ref="258">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>14.6,16.6,0.8,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,10</Font>
+          <Guid>35254b4c4e46db6a43c4a3c241f0f245</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text129</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>วันที่ :</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text129>
+        <Text176 type="Text" isKey="true" Ref="259">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>16.2,16.8,0,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>f81cb99e952d2108e042a3c241f0a0d0</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text176</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text176>
+        <Text178 type="Text" isKey="true" Ref="260">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>10,16,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11,Bold</Font>
+          <Guid>c7efde76fbece9a1687fa3c241f1a3a1</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text178</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>(</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text178>
+        <Text179 type="Text" isKey="true" Ref="261">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>13.6,16,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11,Bold</Font>
+          <Guid>825893c8cf72d1727beda3c241f1ef53</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text179</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>)</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text179>
+        <Text180 type="Text" isKey="true" Ref="262">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>10,16.6,1,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,10</Font>
+          <Guid>fbe6ad287b67d16db6a9a3c241f11933</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text180</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>วันที่ :</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text180>
+        <Text181 type="Text" isKey="true" Ref="263">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>11.6,16.8,0,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>b5a8915d84e3b86d6dcba3c241f14f37</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text181</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text181>
+        <Text183 type="Text" isKey="true" Ref="264">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>18,16,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11,Bold</Font>
+          <Guid>baca143fc29d5ce88c0ba3c241f253b4</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text183</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>)</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text183>
+        <Text186 type="Text" isKey="true" Ref="265">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>7,16.8,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>b9fff784832b954035d1a3c527a763f1</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text186</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text186>
+        <Text187 type="Text" isKey="true" Ref="266">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>3.4,16.8,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>be4e739e0f19f97202eba3c6a6932d01</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text187</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text187>
+        <Text188 type="Text" isKey="true" Ref="267">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>9,16,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11,Bold</Font>
+          <Guid>e0184b9e18855637eb8fa3c956672b22</Guid>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text188</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>)</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text188>
+        <Text189 type="Text" isKey="true" Ref="268">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>12.8,16.8,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>b16c29a3e0301092e069a3cc311cc2f6</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text189</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text189>
+        <Text182 type="Text" isKey="true" Ref="269">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>11.8,16.8,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>cb52ba81bd3751b17992a3cc311c15c2</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text182</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text182>
+        <Text190 type="Text" isKey="true" Ref="270">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>5.2,18,4.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11</Font>
+          <Guid>78991e77418656ec91aba3ccbf111d4f</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text190</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>ผู้รับจ้าง</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text190>
+        <Text191 type="Text" isKey="true" Ref="271">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>17.2,16.8,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>1d22a215e0679ecb423ca3ce69d02ea3</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text191</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text191>
+        <Text177 type="Text" isKey="true" Ref="272">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>16.2,16.8,0.2,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,13</Font>
+          <Guid>ec76e91aaf9a06912244a3ce69d038e7</Guid>
+          <HorAlignment>Right</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text177</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>/</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Bottom</VertAlignment>
+        </Text177>
+        <Text184 type="Text" isKey="true" Ref="273">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>14.2,18,4.4,0.6</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Font>Arial,11</Font>
+          <Guid>5c8800ded1f94dac85b0a78ea8c8d282</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text184</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <Text>ผู้ว่าจ้าง / ตัวแทน</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text184>
+        <HorizontalLinePrimitive21 type="HorizontalLinePrimitive" isKey="true" Ref="274">
+          <ClientRectangle>0.4,2.4,18.4,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="275">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>74089fe9dfb9409e8cafa3a3995329af</Guid>
+          <Name>HorizontalLinePrimitive21</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="276">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive21>
+        <HorizontalLinePrimitive12 type="HorizontalLinePrimitive" isKey="true" Ref="277">
+          <ClientRectangle>0.4,11,18.6,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="278">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>3e90486f04e8eb443736a3a3995395c6</Guid>
+          <Name>HorizontalLinePrimitive12</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="279">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive12>
+        <HorizontalLinePrimitive13 type="HorizontalLinePrimitive" isKey="true" Ref="280">
+          <ClientRectangle>9,12.4,9.4,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="281">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>f5e7bef133a3a417d75fa3a399537138</Guid>
+          <Name>HorizontalLinePrimitive13</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="282">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive13>
+        <HorizontalLinePrimitive4 type="HorizontalLinePrimitive" isKey="true" Ref="283">
+          <ClientRectangle>6.2,17.2,0.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="284">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>866cbe100cdd94343310a3a399545f4a</Guid>
+          <Name>HorizontalLinePrimitive4</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="285">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive4>
+        <HorizontalLinePrimitive22 type="HorizontalLinePrimitive" isKey="true" Ref="286">
+          <ClientRectangle>7.2,17.2,0.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="287">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>fbc52fbe3e22d9201e70a3a399542fd2</Guid>
+          <Name>HorizontalLinePrimitive22</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="288">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive22>
+        <HorizontalLinePrimitive14 type="HorizontalLinePrimitive" isKey="true" Ref="289">
+          <ClientRectangle>8.2,17.2,0.6,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="290">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>4b4bb9458eb393e3dab9a3a399545011</Guid>
+          <Name>HorizontalLinePrimitive14</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="291">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive14>
+        <HorizontalLinePrimitive15 type="HorizontalLinePrimitive" isKey="true" Ref="292">
+          <ClientRectangle>1.8,17.2,0.6,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="293">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>da37c62a75bf1ba1f862a3a399540fa5</Guid>
+          <Name>HorizontalLinePrimitive15</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="294">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive15>
+        <HorizontalLinePrimitive18 type="HorizontalLinePrimitive" isKey="true" Ref="295">
+          <ClientRectangle>2.6,17.2,0.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="296">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>8d3a0d998850a9cd3c42a3a39954cacc</Guid>
+          <Name>HorizontalLinePrimitive18</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="297">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive18>
+        <HorizontalLinePrimitive19 type="HorizontalLinePrimitive" isKey="true" Ref="298">
+          <ClientRectangle>3.6,17.2,0.6,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="299">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>b1e96533a73acb355a1ea3a39954f2b7</Guid>
+          <Name>HorizontalLinePrimitive19</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="300">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive19>
+        <RectanglePrimitive13 type="RectanglePrimitive" isKey="true" Ref="301">
+          <ClientRectangle>8,1.6,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>b09ee2c1e0e624756e0ca3a399547287</Guid>
+          <Name>RectanglePrimitive13</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+        </RectanglePrimitive13>
+        <RectanglePrimitive14 type="RectanglePrimitive" isKey="true" Ref="302">
+          <ClientRectangle>10.4,1.6,0.4,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>0f5e97c21d59d7b1817ca3a3995550ee</Guid>
+          <Name>RectanglePrimitive14</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+        </RectanglePrimitive14>
+        <RectanglePrimitive15 type="RectanglePrimitive" isKey="true" Ref="303">
+          <ClientRectangle>0.4,14.4,9.2,4.6</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>a8325a99da6d7cc50329a3a39955859e</Guid>
+          <Name>RectanglePrimitive15</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+        </RectanglePrimitive15>
+        <RectanglePrimitive3 type="RectanglePrimitive" isKey="true" Ref="304">
+          <ClientRectangle>5,14.4,4.6,4.6</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>2690c7d04395886ccd62a3a39955b748</Guid>
+          <Name>RectanglePrimitive3</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+        </RectanglePrimitive3>
+        <RectanglePrimitive5 type="RectanglePrimitive" isKey="true" Ref="305">
+          <ClientRectangle>0.4,17.6,9.2,1.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>f5c9076dcf13ccdca5fca3a399551c3c</Guid>
+          <Name>RectanglePrimitive5</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+        </RectanglePrimitive5>
+        <StartPointPrimitive1 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="306">
+          <ClientRectangle>8,1.6,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>StartPointPrimitive1</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>b09ee2c1e0e624756e0ca3a399547287</ReferenceToGuid>
+        </StartPointPrimitive1>
+        <EndPointPrimitive1 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="307">
+          <ClientRectangle>8.4,2,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>EndPointPrimitive1</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>b09ee2c1e0e624756e0ca3a399547287</ReferenceToGuid>
+        </EndPointPrimitive1>
+        <StartPointPrimitive3 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="308">
+          <ClientRectangle>10.4,1.6,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>StartPointPrimitive3</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>0f5e97c21d59d7b1817ca3a3995550ee</ReferenceToGuid>
+        </StartPointPrimitive3>
+        <EndPointPrimitive3 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="309">
+          <ClientRectangle>10.8,2,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>EndPointPrimitive3</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>0f5e97c21d59d7b1817ca3a3995550ee</ReferenceToGuid>
+        </EndPointPrimitive3>
+        <StartPointPrimitive4 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="310">
+          <ClientRectangle>0.4,14.4,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>StartPointPrimitive4</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>a8325a99da6d7cc50329a3a39955859e</ReferenceToGuid>
+        </StartPointPrimitive4>
+        <EndPointPrimitive4 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="311">
+          <ClientRectangle>9.6,19,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>EndPointPrimitive4</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>a8325a99da6d7cc50329a3a39955859e</ReferenceToGuid>
+        </EndPointPrimitive4>
+        <StartPointPrimitive5 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="312">
+          <ClientRectangle>5,14.4,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>StartPointPrimitive5</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>2690c7d04395886ccd62a3a39955b748</ReferenceToGuid>
+        </StartPointPrimitive5>
+        <EndPointPrimitive5 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="313">
+          <ClientRectangle>9.6,19,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>EndPointPrimitive5</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>2690c7d04395886ccd62a3a39955b748</ReferenceToGuid>
+        </EndPointPrimitive5>
+        <StartPointPrimitive13 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="314">
+          <ClientRectangle>0.4,17.6,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>StartPointPrimitive13</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>f5c9076dcf13ccdca5fca3a399551c3c</ReferenceToGuid>
+        </StartPointPrimitive13>
+        <EndPointPrimitive13 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="315">
+          <ClientRectangle>9.6,19,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>EndPointPrimitive13</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>f5c9076dcf13ccdca5fca3a399551c3c</ReferenceToGuid>
+        </EndPointPrimitive13>
+        <RectanglePrimitive22 type="RectanglePrimitive" isKey="true" Ref="316">
+          <ClientRectangle>9.6,14.4,9,4.6</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>c51db9d27341142516a6a3c241f34fe2</Guid>
+          <Name>RectanglePrimitive22</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+        </RectanglePrimitive22>
+        <RectanglePrimitive17 type="RectanglePrimitive" isKey="true" Ref="317">
+          <ClientRectangle>14.2,14.4,4.4,4.6</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>04f7a539859791334067a3c241f3e3c6</Guid>
+          <Name>RectanglePrimitive17</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+        </RectanglePrimitive17>
+        <RectanglePrimitive20 type="RectanglePrimitive" isKey="true" Ref="318">
+          <ClientRectangle>9.6,17.6,9,1.4</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <Guid>e17ae1ed7208a20fd226a3c241f3a16a</Guid>
+          <Name>RectanglePrimitive20</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+        </RectanglePrimitive20>
+        <StartPointPrimitive17 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="319">
+          <ClientRectangle>9.6,14.4,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>StartPointPrimitive17</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>c51db9d27341142516a6a3c241f34fe2</ReferenceToGuid>
+        </StartPointPrimitive17>
+        <EndPointPrimitive17 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="320">
+          <ClientRectangle>18.6,19,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>EndPointPrimitive17</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>c51db9d27341142516a6a3c241f34fe2</ReferenceToGuid>
+        </EndPointPrimitive17>
+        <StartPointPrimitive18 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="321">
+          <ClientRectangle>14.2,14.4,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>StartPointPrimitive18</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>04f7a539859791334067a3c241f3e3c6</ReferenceToGuid>
+        </StartPointPrimitive18>
+        <EndPointPrimitive18 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="322">
+          <ClientRectangle>18.6,19,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>EndPointPrimitive18</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>04f7a539859791334067a3c241f3e3c6</ReferenceToGuid>
+        </EndPointPrimitive18>
+        <StartPointPrimitive20 type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true" Ref="323">
+          <ClientRectangle>9.6,17.6,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>StartPointPrimitive20</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>e17ae1ed7208a20fd226a3c241f3a16a</ReferenceToGuid>
+        </StartPointPrimitive20>
+        <EndPointPrimitive20 type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true" Ref="324">
+          <ClientRectangle>18.6,19,0,0</ClientRectangle>
+          <Conditions count="0" isList="true"/>
+          <Name>EndPointPrimitive20</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <ReferenceToGuid>e17ae1ed7208a20fd226a3c241f3a16a</ReferenceToGuid>
+        </EndPointPrimitive20>
+        <HorizontalLinePrimitive39 type="HorizontalLinePrimitive" isKey="true" Ref="325">
+          <ClientRectangle>1,16.6,3.4,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="326">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>2d5bcc9ec97e8bd390dba3c7534b6d7f</Guid>
+          <Name>HorizontalLinePrimitive39</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="327">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive39>
+        <HorizontalLinePrimitive40 type="HorizontalLinePrimitive" isKey="true" Ref="328">
+          <ClientRectangle>5.6,16.6,3.4,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="329">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>24964835b59366a44d1aa3c9a507f8af</Guid>
+          <Name>HorizontalLinePrimitive40</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="330">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive40>
+        <HorizontalLinePrimitive41 type="HorizontalLinePrimitive" isKey="true" Ref="331">
+          <ClientRectangle>10.2,16.6,3.4,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="332">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>101d0a313f7b0e83222ea3cadaba9913</Guid>
+          <Name>HorizontalLinePrimitive41</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="333">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive41>
+        <HorizontalLinePrimitive42 type="HorizontalLinePrimitive" isKey="true" Ref="334">
+          <ClientRectangle>14.8,16.6,3.2,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="335">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>fea196bb2397c57fcfeba3cb0ac43681</Guid>
+          <Name>HorizontalLinePrimitive42</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="336">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive42>
+        <HorizontalLinePrimitive37 type="HorizontalLinePrimitive" isKey="true" Ref="337">
+          <ClientRectangle>11,17.2,0.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="338">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>0682f519eac28e66fb58a3cc311c7009</Guid>
+          <Name>HorizontalLinePrimitive37</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="339">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive37>
+        <HorizontalLinePrimitive34 type="HorizontalLinePrimitive" isKey="true" Ref="340">
+          <ClientRectangle>12,17.2,0.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="341">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>538aa2c5c05e492721baa3cc311c0144</Guid>
+          <Name>HorizontalLinePrimitive34</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="342">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive34>
+        <HorizontalLinePrimitive35 type="HorizontalLinePrimitive" isKey="true" Ref="343">
+          <ClientRectangle>13,17.2,0.6,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="344">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>fd129497f4168638a60ba3cc311c899f</Guid>
+          <Name>HorizontalLinePrimitive35</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="345">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive35>
+        <HorizontalLinePrimitive36 type="HorizontalLinePrimitive" isKey="true" Ref="346">
+          <ClientRectangle>15.4,17.2,0.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="347">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>bf88a001dc4bfb9aa351a3ce69d0e662</Guid>
+          <Name>HorizontalLinePrimitive36</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="348">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive36>
+        <HorizontalLinePrimitive31 type="HorizontalLinePrimitive" isKey="true" Ref="349">
+          <ClientRectangle>16.4,17.2,0.8,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="350">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>088d512d0aeb8ae2c783a3ce69d03879</Guid>
+          <Name>HorizontalLinePrimitive31</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="351">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive31>
+        <HorizontalLinePrimitive32 type="HorizontalLinePrimitive" isKey="true" Ref="352">
+          <ClientRectangle>17.4,17.2,0.6,0.0254</ClientRectangle>
+          <Color>Black</Color>
+          <Conditions count="0" isList="true"/>
+          <EndCap type="Cap" isKey="true" Ref="353">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>83ada5d4f1d8b905ca81a3ce69d1ea2c</Guid>
+          <Name>HorizontalLinePrimitive32</Name>
+          <Page isRef="218"/>
+          <Parent isRef="218"/>
+          <StartCap type="Cap" isKey="true" Ref="354">
+            <Color>Black</Color>
+          </StartCap>
+        </HorizontalLinePrimitive32>
+      </Components>
+      <Conditions count="0" isList="true"/>
+      <Guid>5d9551491e1c13a8c557a3a2e428be1e</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page2</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0"/>
+      <Watermark type="Stimulsoft.Report.Components.StiWatermark" isKey="true" Ref="355">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page2>
+  </Pages>
+  <PrinterSettings type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" Ref="356"/>
+  <ReferencedAssemblies count="8" isList="true">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;&lt;StiSerializer version="1.02" type="Net" application="StiReport Clipboard"&gt;&lt;Brush&gt;Transparent&lt;/Brush&gt;&lt;ClientRectangle&gt;0,0,0,0&lt;/ClientRectangle&gt;&lt;Components isList="true" count="1"&gt;&lt;Text51 Ref="1" type="Text" isKey="true"&gt;&lt;Border&gt;All;Black;1;Solid;False;4;Black&lt;/Border&gt;&lt;Brush&gt;Transparent&lt;/Brush&gt;&lt;ClientRectangle&gt;275.59,94.49,15.75,15.75&lt;/ClientRectangle&gt;&lt;Conditions isList="true" count="0" /&gt;&lt;Font&gt;Arial,10&lt;/Font&gt;&lt;Guid&gt;be71be32fc824e9c863eb59969d78f39&lt;/Guid&gt;&lt;IsSelected&gt;True&lt;/IsSelected&gt;&lt;Margins&gt;0,0,0,0&lt;/Margins&gt;&lt;Name&gt;Text51&lt;/Name&gt;&lt;TextBrush&gt;Black&lt;/TextBrush&gt;&lt;Type&gt;Expression&lt;/Type&gt;&lt;/Text51&gt;&lt;/Components&gt;&lt;Conditions isList="true" count="0" /&gt;&lt;Name /&gt;&lt;/StiSerializer&gt;</ReportAlias>
+  <ReportChanged>09/05/2018 09:55:09 AM</ReportChanged>
+  <ReportCreated>08/09/2017 08:56:08 AM</ReportCreated>
+  <ReportFile>C:\xampp\htdocs\masterbase\stimulsoft\Flex\reports\contract_report.mrt</ReportFile>
+  <ReportGuid>3aad260792bb45510af1a7a7b24b5d19</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2016.3</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles count="0" isList="true"/>
+</StiSerializer>

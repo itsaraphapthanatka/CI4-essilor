@@ -1,0 +1,2817 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" application="StiReport" type="Flex">
+  <Dictionary type="Dictionary" isKey="true" Ref="1">
+    <BusinessObjects count="0" isList="true"/>
+    <Databases count="1" isList="true">
+      <Connection1 type="Stimulsoft.Report.Dictionary.StiMySqlDatabase" isKey="true" Ref="2">
+        <Alias>Connection1</Alias>
+        <ConnectionStringEncrypted>49T1a2II+4HLG6mE5QT2Y4sM9cLkW/rN4UehzE10pBfgVvcJYV3z6WlHhMzqXGUv0mppK1VVAYXh
+SdWYTUlid8R0</ConnectionStringEncrypted>
+        <Name>Connection1</Name>
+      </Connection1>
+    </Databases>
+    <DataSources count="19" isList="true">
+      <ABF_ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="3">
+        <Alias>ABF_</Alias>
+        <Columns count="10" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+          <value>sum_de,System.Decimal</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>ABF_</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca,
+	SUM(depreciation_item.de_periond) as sum_de
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_yearr &lt; {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </ABF_>
+      <DataSource1 type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="4">
+        <Alias>DataSource1</Alias>
+        <Columns count="2" isList="true">
+          <value>Datenow,System.DateTime</value>
+          <value>name,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>DataSource1</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>select '{get_session}' as name ,Now() AS Datenow  from lo</SqlCommand>
+      </DataSource1>
+      <hesrder_ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="5">
+        <Alias>hesrder_</Alias>
+        <Columns count="11" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_ataca,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+          <value>sum_de,System.Decimal</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>hesrder_</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca,SUM(depreciation_item.de_periond) as sum_de
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+WHERE depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </hesrder_>
+      <M_03 type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="6">
+        <Alias>M_03</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M_03</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 03
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M_03>
+      <M_04 type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="7">
+        <Alias>M_04</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M_04</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 04
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M_04>
+      <M_05_ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="8">
+        <Alias>M_05_</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M_05_</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 05
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M_05_>
+      <M_06 type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="9">
+        <Alias>M_06</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M_06</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 06
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M_06>
+      <M_08_ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="10">
+        <Alias>M_08_</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M_08_</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 08
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M_08_>
+      <M_09_ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="11">
+        <Alias>M_09_</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M_09_</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 09
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M_09_>
+      <M_10_ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="12">
+        <Alias>M_10_</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M_10_</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 10
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M_10_>
+      <M_11__ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="13">
+        <Alias>M_11__</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M_11__</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 11
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M_11__>
+      <M_12__ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="14">
+        <Alias>M_12__</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M_12__</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 12
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M_12__>
+      <M_7_ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="15">
+        <Alias>M_7_</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M_7_</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 07
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M_7_>
+      <M1 type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="16">
+        <Alias>M1</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M1</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 01
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M1>
+      <M2_ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="17">
+        <Alias>M2_</Alias>
+        <Columns count="9" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>M2_</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_month = 02
+and depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </M2_>
+      <sum_all_ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="18">
+        <Alias>sum_all_</Alias>
+        <Columns count="10" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+          <value>sum_de,System.Decimal</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>sum_all_</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca,SUM(depreciation_item.de_periond) as sum_de
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </sum_all_>
+      <Totol_year type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="19">
+        <Alias>Totol_year</Alias>
+        <Columns count="10" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_assname,System.String</value>
+          <value>de_code,System.String</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_year,System.String</value>
+          <value>de_yearr,System.String</value>
+          <value>sum_de,System.Decimal</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>Totol_year</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca,SUM(depreciation_item.de_periond) as sum_de
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+where depreciation.de_yearr = {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </Totol_year>
+      <sumallBF_ type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="20">
+        <Alias>sumallBF_</Alias>
+        <Columns count="10" isList="true">
+          <value>de_ass,System.String</value>
+          <value>de_assname,System.String</value>
+          <value>de_assamout,System.Decimal</value>
+          <value>de_datefrom,System.String</value>
+          <value>de_year,System.String</value>
+          <value>de_month,System.String</value>
+          <value>de_yearr,System.String</value>
+          <value>de_periond,System.Decimal</value>
+          <value>de_code,System.String</value>
+          <value>sum_de,System.Decimal</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>sumallBF_</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT depreciation_item.de_ass, depreciation_item.de_assname,
+	depreciation_item.de_assamout, depreciation.de_datefrom,
+	depreciation_item.de_year, depreciation.de_month, depreciation.de_yearr,
+	depreciation_item.de_periond, depreciation_item.de_code,
+	depreciation_item.de_ataca,SUM(depreciation_item.de_periond) as sum_de
+	FROM depreciation
+	INNER JOIN
+	depreciation_item ON depreciation.de_code = depreciation_item.de_code
+WHERE depreciation.de_yearr &lt; {year}
+GROUP BY depreciation_item.de_ass
+ORDER BY depreciation_item.de_ass</SqlCommand>
+      </sumallBF_>
+      <company type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true" Ref="21">
+        <Alias>company</Alias>
+        <Columns count="43" isList="true">
+          <value>company_id,System.Int32</value>
+          <value>company_code,System.String</value>
+          <value>company_taxnum,System.String</value>
+          <value>company_name,System.String</value>
+          <value>company_address,System.String</value>
+          <value>company_tel,System.String</value>
+          <value>company_fax,System.String</value>
+          <value>company_email,System.String</value>
+          <value>company_contact,System.String</value>
+          <value>comp_img,System.String</value>
+          <value>compcode,System.String</value>
+          <value>ic_type,System.String</value>
+          <value>start_accost,System.String</value>
+          <value>end_accost,System.String</value>
+          <value>startrev,System.String</value>
+          <value>endrev,System.String</value>
+          <value>glrap,System.String</value>
+          <value>startexp,System.String</value>
+          <value>endexp,System.String</value>
+          <value>acdate,System.DateTime</value>
+          <value>chkvat,System.String</value>
+          <value>glrar,System.String</value>
+          <value>dptandproj,System.String</value>
+          <value>useradd,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>useredit,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>userdel,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>updatetime,System.DateTime</value>
+          <value>company_nameth,System.String</value>
+          <value>company_add_en,System.String</value>
+          <value>company_address2,System.String</value>
+          <value>company_address3,System.String</value>
+          <value>company_add_en2,System.String</value>
+          <value>company_add_en3,System.String</value>
+          <value>company_telen,System.String</value>
+          <value>company_faxen,System.String</value>
+          <value>company_emailen,System.String</value>
+          <value>company_contacten,System.String</value>
+          <value>compcodeen,System.String</value>
+          <value>company_taxnumen,System.String</value>
+          <value>site_url,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>company</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>select * from company</SqlCommand>
+      </company>
+    </DataSources>
+    <Relations count="16" isList="true">
+      <m1 type="DataRelation" isKey="true" Ref="22">
+        <Alias>m1</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m1</Name>
+        <NameInSource>Relation</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="16"/>
+      </m1>
+      <m2 type="DataRelation" isKey="true" Ref="23">
+        <Alias>m2</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m2</Name>
+        <NameInSource>Relation2</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="17"/>
+      </m2>
+      <m3 type="DataRelation" isKey="true" Ref="24">
+        <Alias>m3</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m3</Name>
+        <NameInSource>Relation3</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="6"/>
+      </m3>
+      <m4 type="DataRelation" isKey="true" Ref="25">
+        <Alias>m4</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m4</Name>
+        <NameInSource>Relation4</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="7"/>
+      </m4>
+      <m5 type="DataRelation" isKey="true" Ref="26">
+        <Alias>m5</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m5</Name>
+        <NameInSource>Relation5</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="8"/>
+      </m5>
+      <m6 type="DataRelation" isKey="true" Ref="27">
+        <Alias>m6</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m6</Name>
+        <NameInSource>Relation6</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="9"/>
+      </m6>
+      <m7 type="DataRelation" isKey="true" Ref="28">
+        <Alias>m7</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m7</Name>
+        <NameInSource>Relation7</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="15"/>
+      </m7>
+      <m8 type="DataRelation" isKey="true" Ref="29">
+        <Alias>m8</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m8</Name>
+        <NameInSource>Relation8</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="10"/>
+      </m8>
+      <m9 type="DataRelation" isKey="true" Ref="30">
+        <Alias>m9</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m9</Name>
+        <NameInSource>Relation9</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="11"/>
+      </m9>
+      <m10 type="DataRelation" isKey="true" Ref="31">
+        <Alias>m10</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m10</Name>
+        <NameInSource>Relation10</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="12"/>
+      </m10>
+      <m11 type="DataRelation" isKey="true" Ref="32">
+        <Alias>m11</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m11</Name>
+        <NameInSource>Relation11</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="13"/>
+      </m11>
+      <m12 type="DataRelation" isKey="true" Ref="33">
+        <Alias>m12</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>m12</Name>
+        <NameInSource>Relation12</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="14"/>
+      </m12>
+      <ABF type="DataRelation" isKey="true" Ref="34">
+        <Alias>ABF</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>ABF</Name>
+        <NameInSource>Relation13</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="3"/>
+      </ABF>
+      <total_year type="DataRelation" isKey="true" Ref="35">
+        <Alias>total_year</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>total_year</Name>
+        <NameInSource>Relation14</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="19"/>
+      </total_year>
+      <sum_all type="DataRelation" isKey="true" Ref="36">
+        <Alias>sum_all</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>sum_all</Name>
+        <NameInSource>Relation15</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="18"/>
+      </sum_all>
+      <SumBF_ type="DataRelation" isKey="true" Ref="37">
+        <Alias>SumBF_</Alias>
+        <ChildColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ChildColumns>
+        <ChildSource isRef="5"/>
+        <Dictionary isRef="1"/>
+        <Name>SumBF_</Name>
+        <NameInSource>Relation16</NameInSource>
+        <ParentColumns count="1" isList="true">
+          <value>de_ass</value>
+        </ParentColumns>
+        <ParentSource isRef="20"/>
+      </SumBF_>
+    </Relations>
+    <Report isRef="0"/>
+    <Variables count="2" isList="true">
+      <value>,sum_ABF,sum_ABF,System.Decimal,_x0030_,False,False,True</value>
+      <value>,sumNBV,sumNBV,System.Decimal,,False,False,True</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings count="0" isList="true"/>
+  <MetaTags count="0" isList="true"/>
+  <Pages count="1" isList="true">
+    <Page1 type="Page" isKey="true" Ref="38">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components count="7" isList="true">
+        <PageHeaderBand1 type="PageHeaderBand" isKey="true" Ref="39">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,41,2.4</ClientRectangle>
+          <Components count="2" isList="true">
+            <Text27 type="Text" isKey="true" Ref="40">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,0,16.8,0.8</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,18</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="38"/>
+              <Parent isRef="39"/>
+              <Text>รายงานค่าเสื่อม ปี {hesrder_.de_yearr}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text27>
+            <Image1 type="Image" isKey="true" Ref="41">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2.6,2.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <DataColumn isNull="true"/>
+              <Image/>
+              <ImageURL>{company.site_url}comp/{company.comp_img}</ImageURL>
+              <Name>Image1</Name>
+              <Page isRef="38"/>
+              <Parent isRef="39"/>
+              <Stretch>True</Stretch>
+              <VertAlignment>Center</VertAlignment>
+            </Image1>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="38"/>
+          <Parent isRef="38"/>
+        </PageHeaderBand1>
+        <PageFooterBand1 type="PageFooterBand" isKey="true" Ref="42">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,26.3,41,1.4</ClientRectangle>
+          <Components count="5" isList="true">
+            <Text46 type="Text" isKey="true" Ref="43">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20,0.3,1.2,0.8</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>3d9bcf13fa4949f0a827e86201157f6d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text46</Name>
+              <Page isRef="38"/>
+              <Parent isRef="42"/>
+              <Text>- {PageNumber} -</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text46>
+            <Text71 type="Text" isKey="true" Ref="44">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0.3,2,0.8</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>119978b65be94b7ba10263a1f1556c30</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text71</Name>
+              <Page isRef="38"/>
+              <Parent isRef="42"/>
+              <Text>เอกสารวันที่ :</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text71>
+            <Text72 type="Text" isKey="true" Ref="45">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,0.3,4.8,0.8</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>fbf370f7deef4bfcb04dccf916dc6e64</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text72</Name>
+              <Page isRef="38"/>
+              <Parent isRef="42"/>
+              <Text>โดย : {DataSource1.name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="CustomFormat" isKey="true" Ref="46">
+                <StringFormat>dd/MM/yyyy HH:mm:ss</StringFormat>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text72>
+            <Text73 type="Text" isKey="true" Ref="47">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,0.3,2.4,0.8</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>5ac5a15b2a8b4ff9b158afb907d9745a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text73</Name>
+              <Page isRef="38"/>
+              <Parent isRef="42"/>
+              <Text>{DataSource1.Datenow}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="CustomFormat" isKey="true" Ref="48">
+                <StringFormat>dd/MM/yyyy HH:mm:ss</StringFormat>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text73>
+            <Text74 type="Text" isKey="true" Ref="49">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>38,0.3,2.8,0.8</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Guid>c7646af27f82431a926bc3ff84b9b285</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text74</Name>
+              <Page isRef="38"/>
+              <Parent isRef="42"/>
+              <Text>FM-AD-12,25/8/16</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text74>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Name>PageFooterBand1</Name>
+          <Page isRef="38"/>
+          <Parent isRef="38"/>
+        </PageFooterBand1>
+        <GroupHeaderBand1 type="GroupHeaderBand" isKey="true" Ref="50">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.6,41,0.6</ClientRectangle>
+          <Components count="1" isList="true">
+            <Text70 type="Text" isKey="true" Ref="51">
+              <Border>None;Black;1;Double;False;4;Black</Border>
+              <Brush>EmptyBrush</Brush>
+              <ClientRectangle>0,0,5,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text70</Name>
+              <Page isRef="38"/>
+              <Parent isRef="50"/>
+              <Text>{hesrder_.de_ataca}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text70>
+          </Components>
+          <Condition>{hesrder_.de_ataca}{hesrder_.de_code}</Condition>
+          <Conditions count="0" isList="true"/>
+          <Name>GroupHeaderBand1</Name>
+          <Page isRef="38"/>
+          <Parent isRef="38"/>
+          <SortDirection>None</SortDirection>
+        </GroupHeaderBand1>
+        <HeaderBand1 type="HeaderBand" isKey="true" Ref="52">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5,41,0.8</ClientRectangle>
+          <Components count="24" isList="true">
+            <Text1 type="Text" isKey="true" Ref="53">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.2,1.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>0108dc1ec10a4764b97c15d2cc929f4d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>NO.</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text3 type="Text" isKey="true" Ref="54">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.4,0,2.4,1.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>aa91672601c843b18dbbec626f20fc3e</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Asset Name</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text4 type="Text" isKey="true" Ref="55">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.8,0,2.2,1.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>50603b6df1b747bf9747ce4e944fd96e</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Asset Amount</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+            <Text6 type="Text" isKey="true" Ref="56">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8,0,1.8,1.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>cde582c4b11f45aa98bb568e9664fc3d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Start Date Depreciation</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text8 type="Text" isKey="true" Ref="57">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.8,0,1.4,1.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>dcb5ebb44a704b149a4d73796d04ca04</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Aging Asset</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text9 type="Text" isKey="true" Ref="58">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0,2.2,1.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>ba77c25e012c4db3b4cc69027743b7b0</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Accumulate BF Depreciation</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+            <Text10 type="Text" isKey="true" Ref="59">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.4,0,2.2,1.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>c662df411ca84c098fc0e65014f2f8a9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>BF Net Balance Value (NBV)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text11 type="Text" isKey="true" Ref="60">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.6,0,19.4,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>1ed6a2492c1443028581de95cb5cb812</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Year {hesrder_.de_yearr}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text12 type="Text" isKey="true" Ref="61">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.6,0.6,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>c80d275cd44a4923bb9e4da954d66a2a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Jan</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text13 type="Text" isKey="true" Ref="62">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.2,0.6,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>257f33bb187446de9b19068cf5e4d4f0</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Feb</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text14 type="Text" isKey="true" Ref="63">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.8,0.6,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>f9b35c4aaa2e44beb6d3395178503261</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Mar</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+            <Text15 type="Text" isKey="true" Ref="64">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0.6,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>ff9b7e1f3e014577a63811380f4daf8b</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Apr</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <Text16 type="Text" isKey="true" Ref="65">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22,0.6,1.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>5fad9608522746fcb9c26290b68efac7</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>May</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text16>
+            <Text17 type="Text" isKey="true" Ref="66">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.8,0.6,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>f77aa462ad3d4d3186d95660b46fb4d0</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Jun</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text17>
+            <Text18 type="Text" isKey="true" Ref="67">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>25.4,0.6,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>f61bf7cc8fcb48c099cd25741b4bf88e</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Jul</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <Text19 type="Text" isKey="true" Ref="68">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>27,0.6,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>e08bdcefd4694fd7b179ed25e119ab99</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Aug</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+            <Text20 type="Text" isKey="true" Ref="69">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>28.6,0.6,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>55994da55b754d25845f2d18eab3e207</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Sep</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+            <Text21 type="Text" isKey="true" Ref="70">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>30.2,0.6,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>23a43742af2642d5b66ee5125a281b73</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Oct</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text21>
+            <Text22 type="Text" isKey="true" Ref="71">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>31.8,0.6,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>eced86ae2abf41749cdb62defe7ca3c0</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Nov</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text22>
+            <Text23 type="Text" isKey="true" Ref="72">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>33.4,0.6,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>dc1118298ddd4580b72f1944f8bd1abd</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Dec</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text23>
+            <Text24 type="Text" isKey="true" Ref="73">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>35,0,2,1.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>2bcc77c6bb2a4131b4af81b7a149e9eb</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Total Depre</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text24>
+            <Text25 type="Text" isKey="true" Ref="74">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>37,0,2,1.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>7be5e3099a104f7fae5dd2f0610299d8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Total Accumulate</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text25>
+            <Text26 type="Text" isKey="true" Ref="75">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>39,0,2,1.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>cea69f0c8de745c7ac3db0ff32eee2f9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>NBV</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text26>
+            <Text2 type="Text" isKey="true" Ref="76">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0,2.2,1.2</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>e7bf818eff5348ffafc3941cfe9f3d98</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="38"/>
+              <Parent isRef="52"/>
+              <Text>Asset Code</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Name>HeaderBand1</Name>
+          <Page isRef="38"/>
+          <Parent isRef="38"/>
+        </HeaderBand1>
+        <DataBand1 type="DataBand" isKey="true" Ref="77">
+          <Border>Left, Right;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true"/>
+          <ClientRectangle>0,6.6,41,0.6</ClientRectangle>
+          <Components count="23" isList="true">
+            <Text5 type="Text" isKey="true" Ref="78">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>b5a3c3a4dad64a788607ae447fd46a51</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>SystemVariables</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text7 type="Text" isKey="true" Ref="79">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.4,0,2.4,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{hesrder_.de_assname}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <Text28 type="Text" isKey="true" Ref="80">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.8,0,2.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{hesrder_.de_assamout}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="81">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text28>
+            <Text49 type="Text" isKey="true" Ref="82">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8,0,1.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text49</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{hesrder_.de_datefrom}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text49>
+            <Text29 type="Text" isKey="true" Ref="83">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.8,0,1.4,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{hesrder_.de_year}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text29>
+            <Text30 type="Text" isKey="true" Ref="84">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.6,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text30</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m1.de_periond,hesrder_.m1.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="85">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text30>
+            <Text34 type="Text" isKey="true" Ref="86">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.2,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m2.de_periond,hesrder_.m2.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="87">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text34>
+            <Text35 type="Text" isKey="true" Ref="88">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.8,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m3.de_periond,hesrder_.m3.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="89">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text35>
+            <Text36 type="Text" isKey="true" Ref="90">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text36</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m4.de_periond,hesrder_.m4.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="91">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text36>
+            <Text37 type="Text" isKey="true" Ref="92">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22,0,1.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text37</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m5.de_periond,hesrder_.m5.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="93">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text37>
+            <Text38 type="Text" isKey="true" Ref="94">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.8,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text38</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m6.de_periond,hesrder_.m6.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="95">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text38>
+            <Text39 type="Text" isKey="true" Ref="96">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>25.4,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text39</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m7.de_periond,hesrder_.m7.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="97">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text39>
+            <Text40 type="Text" isKey="true" Ref="98">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>27,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text40</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m8.de_periond,hesrder_.m8.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="99">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text40>
+            <Text41 type="Text" isKey="true" Ref="100">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>28.6,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text41</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m9.de_periond,hesrder_.m9.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="101">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text41>
+            <Text42 type="Text" isKey="true" Ref="102">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>30.2,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text42</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m10.de_periond,hesrder_.m10.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="103">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text42>
+            <Text43 type="Text" isKey="true" Ref="104">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>31.8,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text43</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m11.de_periond,hesrder_.m11.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="105">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text43>
+            <Text44 type="Text" isKey="true" Ref="106">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>33.4,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text44</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{IIF(hesrder_.m12.de_periond,hesrder_.m12.de_periond,0)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="107">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text44>
+            <Text63 type="Text" isKey="true" Ref="108">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>35,0,2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>b429eb9ba9d741ea831201104ef2fa32</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text63</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{hesrder_.total_year.sum_de}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="109">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text63>
+            <Text67 type="Text" isKey="true" Ref="110">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>39,0,2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>3240590e8ca14ea58a78d059207311ab</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text67</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{hesrder_.de_assamout-hesrder_.ABF.sum_de-hesrder_.total_year.sum_de}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="111">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text67>
+            <Text33 type="Text" isKey="true" Ref="112">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0,2.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text33</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{hesrder_.de_ass}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text33>
+            <Text31 type="Text" isKey="true" Ref="113">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0,2.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>dc9d9c9e105a43e59a149c2a6268f4e1</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text31</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{hesrder_.ABF.sum_de}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="114">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text31>
+            <Text32 type="Text" isKey="true" Ref="115">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.4,0,2.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8</Font>
+              <Guid>f375ca97d1724ab79df922832c42a9d4</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{hesrder_.ABF.de_assamout - hesrder_.ABF.sum_de}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="116">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text32>
+            <Text65 type="Text" isKey="true" Ref="117">
+              <Border>Left, Right, Bottom;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>37,0,2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>289587d723e54c15a0f783075196c217</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text65</Name>
+              <Page isRef="38"/>
+              <Parent isRef="77"/>
+              <Text>{hesrder_.sum_all.sum_de}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="118">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text65>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <DataRelationName isNull="true"/>
+          <DataSourceName>hesrder_</DataSourceName>
+          <EvenStyle>#015</EvenStyle>
+          <Filters count="0" isList="true"/>
+          <Name>DataBand1</Name>
+          <OddStyle>#012</OddStyle>
+          <Page isRef="38"/>
+          <Parent isRef="38"/>
+          <Sort count="0" isList="true"/>
+        </DataBand1>
+        <GroupFooterBand1 type="GroupFooterBand" isKey="true" Ref="119">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,8,41,0.6</ClientRectangle>
+          <Components count="20" isList="true">
+            <Text76 type="Text" isKey="true" Ref="120">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0,5.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>637670a3de704867bd087ff31dae6932</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text76</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>Total</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text76>
+            <Text77 type="Text" isKey="true" Ref="121">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>5.8,0,2.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>0bc69765d196418e892b569c142cef71</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text77</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.de_assamout)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="122">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text77>
+            <Text78 type="Text" isKey="true" Ref="123">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>8,0,3.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>2a2a329df4fe4c989af667aa1a329bb2</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text78</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>Total</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text78>
+            <Text79 type="Text" isKey="true" Ref="124">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>15.6,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>5e81c80e04d64e0a83776b7fd4f160db</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text79</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m1.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="125">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text79>
+            <Text80 type="Text" isKey="true" Ref="126">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>17.2,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>fd94733d1d0b4a1c97aba78f9cf43138</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text80</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m2.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="127">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text80>
+            <Text81 type="Text" isKey="true" Ref="128">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>18.8,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>7eb244f855b44d5d94b4c16f1a95740c</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text81</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m3.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="129">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text81>
+            <Text82 type="Text" isKey="true" Ref="130">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>20.4,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>e5640a2c76fd4794801e9c6a442a5eb5</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text82</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m4.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="131">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text82>
+            <Text83 type="Text" isKey="true" Ref="132">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>22,0,1.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>cc2ce28f4b474076917dd0087cb91064</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text83</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m5.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="133">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text83>
+            <Text84 type="Text" isKey="true" Ref="134">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>23.8,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>9a2dc329dbc445efb6dfebac586b3410</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text84</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m6.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="135">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text84>
+            <Text85 type="Text" isKey="true" Ref="136">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>25.4,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>d50200786b0f4cb8990d37d3d22ac19b</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text85</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m7.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="137">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text85>
+            <Text86 type="Text" isKey="true" Ref="138">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>27,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>4267813ed4c644429c3fc9ca2a5b6fdf</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text86</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m8.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="139">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text86>
+            <Text87 type="Text" isKey="true" Ref="140">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>28.6,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>4adfd9fa951d40519a69cabe25ca06e5</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text87</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m9.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="141">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text87>
+            <Text88 type="Text" isKey="true" Ref="142">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>30.2,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>97aebda80fa049a5b15a0a43cecaeeb9</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text88</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m10.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="143">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text88>
+            <Text89 type="Text" isKey="true" Ref="144">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>31.8,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>8a45240952ce4d8794c69f27f40f3129</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text89</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m11.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="145">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text89>
+            <Text90 type="Text" isKey="true" Ref="146">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>33.4,0,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>e1befbaebec34550bf42c3eab60eedd6</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text90</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.m12.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="147">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text90>
+            <Text92 type="Text" isKey="true" Ref="148">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>11.2,0,2.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>2215d307d6984568995d85b267741aed</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text92</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.ABF.sum_de)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="149">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text92>
+            <Text93 type="Text" isKey="true" Ref="150">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>35,0,2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>ca688c5e11c34136960b4fa8566ca042</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text93</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.total_year.sum_de)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="151">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text93>
+            <Text94 type="Text" isKey="true" Ref="152">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>37,0,2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>2e4bbc00d6f24e8c88b6e4a5fbc9d8d1</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text94</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.sum_all.sum_de)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="153">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text94>
+            <Text95 type="Text" isKey="true" Ref="154">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>13.4,0,2.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>95186058a4814f0c950e7a77ad1fbc66</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text95</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.de_assamout-hesrder_.ABF.sum_de)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="155">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text95>
+            <Text96 type="Text" isKey="true" Ref="156">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>39,0,2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>25fb15c06ded42dcb7189da85eef6617</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text96</Name>
+              <Page isRef="38"/>
+              <Parent isRef="119"/>
+              <Text>{Sum(hesrder_.de_assamout-hesrder_.ABF.sum_de-hesrder_.total_year.sum_de)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="157">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text96>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Name>GroupFooterBand1</Name>
+          <Page isRef="38"/>
+          <Parent isRef="38"/>
+        </GroupFooterBand1>
+        <FooterBand1 type="FooterBand" isKey="true" Ref="158">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,9.4,41,1.4</ClientRectangle>
+          <Components count="21" isList="true">
+            <Text48 type="Text" isKey="true" Ref="159">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>5.8,0.8,2.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text48</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.de_assamout)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="160">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text48>
+            <Text50 type="Text" isKey="true" Ref="161">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>15.6,0.8,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text50</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m1.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="162">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text50>
+            <Text47 type="Text" isKey="true" Ref="163">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>17.2,0.8,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>7c88ed0d29f0408191ad74251b5ffa83</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text47</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m2.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="164">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text47>
+            <Text51 type="Text" isKey="true" Ref="165">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>18.8,0.8,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>8d9c45f6565f4015ac0e68dfb2cafa19</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text51</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m3.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="166">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text51>
+            <Text52 type="Text" isKey="true" Ref="167">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>20.4,0.8,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>06dd6a3c22724b22b4fc802b203e7b5d</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text52</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m4.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="168">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text52>
+            <Text53 type="Text" isKey="true" Ref="169">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>22,0.8,1.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>8df59d6dfaa040888d853194ae67fdf2</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text53</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m5.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="170">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text53>
+            <Text54 type="Text" isKey="true" Ref="171">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>23.8,0.8,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>42cd3d0aa14b41ec845ae576dc2902fa</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text54</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m6.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="172">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text54>
+            <Text55 type="Text" isKey="true" Ref="173">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>25.4,0.8,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>139f7222827d4c8cbe2eac2eda1d33e9</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text55</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m7.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="174">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text55>
+            <Text56 type="Text" isKey="true" Ref="175">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>27,0.8,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>87f8513b3ac34847afea13cd4597ca6d</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text56</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m8.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="176">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text56>
+            <Text57 type="Text" isKey="true" Ref="177">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>28.6,0.8,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>466757e73ef241919785c0c407644253</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text57</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m9.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="178">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text57>
+            <Text58 type="Text" isKey="true" Ref="179">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>30.2,0.8,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>82d324d254904ea69c5b351ecc0dc650</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text58</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m10.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="180">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text58>
+            <Text59 type="Text" isKey="true" Ref="181">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>31.8,0.8,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>f78b58d770d24fdfa00148bd57f77900</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text59</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m11.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="182">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text59>
+            <Text60 type="Text" isKey="true" Ref="183">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>33.4,0.8,1.6,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>195230bb57264e69b43c32128cb9ec2f</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text60</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.m12.de_periond)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="184">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text60>
+            <Text62 type="Text" isKey="true" Ref="185">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>11.2,0.8,2.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>66b45e92e3324434a759ca9d0831f682</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text62</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.ABF.sum_de)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="186">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text62>
+            <Text64 type="Text" isKey="true" Ref="187">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>35,0.8,2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>cf7e83dc8c604263914fb9457888f080</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text64</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.total_year.sum_de)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="188">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text64>
+            <Text66 type="Text" isKey="true" Ref="189">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>37,0.8,2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>694ec59cf83a4246a90620935a588c22</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text66</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.sum_all.sum_de)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="190">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text66>
+            <Text68 type="Text" isKey="true" Ref="191">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>13.4,0.8,2.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>c945a122075a4f1f877fa18091a80117</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text68</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.de_assamout-hesrder_.ABF.sum_de)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="192">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text68>
+            <Text69 type="Text" isKey="true" Ref="193">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>39,0.8,2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>9f6d563574d940779fc80981be759238</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text69</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>{Sum(hesrder_.de_assamout-hesrder_.ABF.sum_de-hesrder_.total_year.sum_de)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" isKey="true" Ref="194">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text69>
+            <Text97 type="Text" isKey="true" Ref="195">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0,41,0.8</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,12,Bold</Font>
+              <Guid>6101df4b26ed47ce8cd9d323e19884b5</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text97</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>ผลรวมทุกรายการ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text97>
+            <Text45 type="Text" isKey="true" Ref="196">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0.8,5.8,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>c2d514b394ec4d70ae0228ce05e8f82f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text45</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>Total</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text45>
+            <Text61 type="Text" isKey="true" Ref="197">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>8,0.8,3.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,8,Bold</Font>
+              <Guid>8e9a8b8432924acd920a94c15067ad37</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text61</Name>
+              <Page isRef="38"/>
+              <Parent isRef="158"/>
+              <Text>Total</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text61>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Name>FooterBand1</Name>
+          <Page isRef="38"/>
+          <Parent isRef="38"/>
+        </FooterBand1>
+      </Components>
+      <Conditions count="0" isList="true"/>
+      <Guid>57855d39235147d29cb4f54ad3e0bd77</Guid>
+      <Margins>0.5,0.5,1,1</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>42</PageWidth>
+      <PaperSize>A3</PaperSize>
+      <Report isRef="0"/>
+      <Watermark type="Stimulsoft.Report.Components.StiWatermark" isKey="true" Ref="198">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" Ref="199"/>
+  <ReferencedAssemblies count="8" isList="true">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>08/16/2018 03:08:51 PM</ReportChanged>
+  <ReportCreated>08/18/2017 04:32:07 PM</ReportCreated>
+  <ReportFile>C:\xampp\htdocs\masterbase\stimulsoft\Flex\reports\depreciate_report2.mrt</ReportFile>
+  <ReportGuid>4f38294275b2fdf411e441c7b54ee587</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2016.3</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles count="0" isList="true"/>
+</StiSerializer>

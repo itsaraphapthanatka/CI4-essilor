@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer application="StiReport" version="1.02" type="Flex">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <Databases count="1" isList="true">
+      <Connection1 Ref="2" type="Stimulsoft.Report.Dictionary.StiMySqlDatabase" isKey="true">
+        <Alias>Connection1</Alias>
+        <ConnectionStringEncrypted>49T1a2II+4HLG6mE5QT2Y4sM9cLkW/rN4UehzE10pBfgVvcJYV3z6WlHhMzqXGUv0mppK1VVAYXh SdWYTUlid8R0</ConnectionStringEncrypted>
+        <Name>Connection1</Name>
+      </Connection1>
+    </Databases>
+    <DataSources count="1" isList="true">
+      <DataSource1 Ref="3" type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true">
+        <Alias>DataSource1</Alias>
+        <Columns count="8" isList="true">
+          <value>pr_approve,System.String</value>
+          <value>pr_prno,System.String</value>
+          <value>type,System.String</value>
+          <value>pr_delidate,System.DateTime</value>
+          <value>pr_reqname,System.String</value>
+          <value>pr_project,System.String</value>
+          <value>project_name,System.String</value>
+          <value>pri_amount,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>DataSource1</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters count="0" isList="true"/>
+        <SqlCommand>SELECT pr_approve,pr_prno,"PR" as type,pr_delidate,pr_reqname,pr_project,project_name,pri_amount
+FROM pr 
+INNER JOIN project ON pr.pr_project = project.project_id
+INNER JOIN pr_item ON pr.pr_prno = pr_item.pri_ref
+WHERE pr_approve ='wait'
+UNION ALL
+SELECT approve,doc_id,"PC" as type,docdate,advname,project,project_name,pettycashi_unitprice 
+FROM pettycash 
+INNER JOIN project ON pettycash.project = project.project_id
+INNER JOIN pettycash_item ON pettycash.docno = pettycash_item.pettycashi_ref 
+WHERE approve ='wait'
+UNION ALL
+SELECT po_approve,po_pono,"PO" as type,po_podate,useradd,po_project,project_name,poi_amount 
+FROM po 
+INNER JOIN project ON po.po_project = project.project_id
+INNER JOIN po_item ON po.po_pono = po_item.poi_ref  
+WHERE po_approve ='wait'
+UNION ALL
+SELECT `status`,lo_lono,"WO" as type,lodate,`user`,projectcode,project_name,lo_priceunit 
+FROM lo 
+INNER JOIN project ON lo.projectcode = project.project_id
+INNER JOIN lo_detail ON lo.lo_lono = lo_detail.lo_ref 
+WHERE `status`='wait'</SqlCommand>
+      </DataSource1>
+    </DataSources>
+    <Relations count="0" isList="true"/>
+    <Report isRef="0"/>
+    <Variables count="0" isList="true"/>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings count="0" isList="true"/>
+  <MetaTags count="0" isList="true"/>
+  <Pages count="1" isList="true">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components count="3" isList="true">
+        <PageHeaderBand1 Ref="5" type="PageHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,98,0.8</ClientRectangle>
+          <Components count="1" isList="true">
+            <Text3 Ref="6" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18,0.8</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,20</Font>
+              <Guid>9aa0441277fbab70de66ac80b313fb1a</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="4"/>
+              <Parent isRef="5"/>
+              <Text>Tracking Report</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text3>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="4"/>
+          <Parent isRef="4"/>
+        </PageHeaderBand1>
+        <HeaderBand1 Ref="7" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2,98,0.6</ClientRectangle>
+          <Components count="1" isList="true">
+            <Text1 Ref="8" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.2,0.6</ClientRectangle>
+              <Conditions count="0" isList="true"/>
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="4"/>
+              <Parent isRef="7"/>
+              <Text>NO.</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions count="0" isList="true"/>
+          <Name>HeaderBand1</Name>
+          <Page isRef="4"/>
+          <Parent isRef="4"/>
+        </HeaderBand1>
+        <DataBand1 Ref="9" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.4,98,0.8</ClientRectangle>
+          <Components count="0" isList="true"/>
+          <Conditions count="0" isList="true"/>
+          <Filters count="0" isList="true"/>
+          <Name>DataBand1</Name>
+          <Page isRef="4"/>
+          <Parent isRef="4"/>
+          <Sort count="0" isList="true"/>
+        </DataBand1>
+      </Components>
+      <Conditions count="0" isList="true"/>
+      <Guid>d7a53a1c7d3446652d86ac675e544ff8</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>100</PageWidth>
+      <Report isRef="0"/>
+      <Watermark Ref="10" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="11" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true"/>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>08/04/2017 04:08:48 PM</ReportChanged>
+  <ReportCreated>08/04/2017 03:40:41 PM</ReportCreated>
+  <ReportFile>C:\xampp\htdocs\mekareport\stimulsoft\Flex\reports\pr_tracking_r.mrt</ReportFile>
+  <ReportGuid>320cba15d5c22e446e94ac80ac36ed52</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2016.3</ReportVersion>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles count="0" isList="true"/>
+</StiSerializer>

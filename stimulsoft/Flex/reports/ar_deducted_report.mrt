@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer type="Flex" application="StiReport" version="1.02">
+  <Dictionary type="Dictionary" Ref="1" isKey="true">
+    <BusinessObjects isList="true" count="0"/>
+    <Databases isList="true" count="1">
+      <Connection1 type="Stimulsoft.Report.Dictionary.StiMySqlDatabase" Ref="2" isKey="true">
+        <Alias>Connection1</Alias>
+        <ConnectionStringEncrypted>49RpCeVKUZnLGKnAavyiG4vE+elmS0P5ahWh9Op4ZC+NeLPrT1fZzWxFpYDoJSV7wmLbiWIDo81q bLQcYwRiL4Z49ShIBfPd4R39iWo9pA==</ConnectionStringEncrypted>
+        <Name>Connection1</Name>
+      </Connection1>
+    </Databases>
+    <DataSources isList="true" count="5">
+      <DataSource1 type="Stimulsoft.Report.Dictionary.StiMySqlSource" Ref="3" isKey="true">
+        <Alias>DataSource1</Alias>
+        <Columns isList="true" count="30">
+          <value>vou_id,System.Int32</value>
+          <value>vou_no,System.String</value>
+          <value>vou_ardate,System.DateTime</value>
+          <value>vou_date,System.DateTime</value>
+          <value>vou_arno,System.String</value>
+          <value>vou_vno,System.String</value>
+          <value>vou_type,System.String</value>
+          <value>vou_project,System.String</value>
+          <value>vou_owner,System.String</value>
+          <value>vou_contact,System.String</value>
+          <value>vou_amt,System.Decimal</value>
+          <value>vou_period,System.Int32</value>
+          <value>vou_credit,System.String</value>
+          <value>vou_vat,System.Decimal</value>
+          <value>vou_amtadv,System.Decimal</value>
+          <value>vou_amtret,System.Decimal</value>
+          <value>vou_wt,System.Decimal</value>
+          <value>vou_net,System.Decimal</value>
+          <value>vou_branchcode,System.String</value>
+          <value>vou_bankcode,System.String</value>
+          <value>vou_exchange,System.String</value>
+          <value>vou_remark,System.String</value>
+          <value>vou_status,System.String</value>
+          <value>useradd,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>useredit,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>userdel,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>compcode,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>DataSource1</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters isList="true" count="0"/>
+        <SqlCommand>select * from ar_receiving_header</SqlCommand>
+      </DataSource1>
+      <DataSource2 type="Stimulsoft.Report.Dictionary.StiMySqlSource" Ref="4" isKey="true">
+        <Alias>DataSource2</Alias>
+        <Columns isList="true" count="50">
+          <value>project_id,System.Int32</value>
+          <value>project_code,System.String</value>
+          <value>project_pono,System.String</value>
+          <value>project_name,System.String</value>
+          <value>project_worktype,System.String</value>
+          <value>project_type,System.String</value>
+          <value>project_address,System.String</value>
+          <value>project_cname,System.String</value>
+          <value>project_tel,System.String</value>
+          <value>project_fax,System.String</value>
+          <value>project_email,System.String</value>
+          <value>project_biztype,System.String</value>
+          <value>project_mcode,System.String</value>
+          <value>project_mnameth,System.String</value>
+          <value>project_mnameen,System.String</value>
+          <value>project_maddress,System.String</value>
+          <value>project_onertel,System.String</value>
+          <value>project_owneremail,System.String</value>
+          <value>project_mfax,System.String</value>
+          <value>project_bnameth,System.String</value>
+          <value>project_bnameen,System.String</value>
+          <value>project_wt,System.Int32</value>
+          <value>project_vat,System.Int32</value>
+          <value>project_budget,System.Int32</value>
+          <value>project_boq,System.String</value>
+          <value>project_advance_1,System.Int32</value>
+          <value>project_advance_2,System.Int32</value>
+          <value>project_lessadvance,System.Int32</value>
+          <value>project_lessadvance_2,System.Int32</value>
+          <value>project_lessretention,System.Int32</value>
+          <value>project_lessretention_2,System.Int32</value>
+          <value>project_lessretentionmethod,System.String</value>
+          <value>project_baddress,System.String</value>
+          <value>project_btel,System.String</value>
+          <value>project_bfax,System.String</value>
+          <value>project_detail,System.String</value>
+          <value>project_value,System.Decimal</value>
+          <value>project_contract,System.String</value>
+          <value>project_start,System.DateTime</value>
+          <value>project_stop,System.DateTime</value>
+          <value>project_engineer,System.String</value>
+          <value>project_create,System.DateTime</value>
+          <value>project_update,System.DateTime</value>
+          <value>project_status,System.String</value>
+          <value>project_user,System.String</value>
+          <value>compcode,System.String</value>
+          <value>project_mtel,System.String</value>
+          <value>project_img,System.String</value>
+          <value>edituser,System.String</value>
+          <value>editdate,System.DateTime</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>DataSource2</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters isList="true" count="0"/>
+        <SqlCommand>select * from project</SqlCommand>
+      </DataSource2>
+      <DataSource3 type="Stimulsoft.Report.Dictionary.StiMySqlSource" Ref="5" isKey="true">
+        <Alias>DataSource3</Alias>
+        <Columns isList="true" count="20">
+          <value>debtor_id,System.Int32</value>
+          <value>debtor_code,System.String</value>
+          <value>debtor_name,System.String</value>
+          <value>debtor_address,System.String</value>
+          <value>debtor_tel,System.String</value>
+          <value>debtor_fax,System.String</value>
+          <value>debtor_tax,System.String</value>
+          <value>debtor_taxtype,System.String</value>
+          <value>debtor_credit,System.String</value>
+          <value>debtor_sale,System.String</value>
+          <value>debtor_worktype,System.String</value>
+          <value>debtor_status,System.String</value>
+          <value>useradd,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>useredit,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>userdel,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>debtor_size,System.String</value>
+          <value>compcode,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>DataSource3</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters isList="true" count="0"/>
+        <SqlCommand>select * from debtor</SqlCommand>
+      </DataSource3>
+      <company type="Stimulsoft.Report.Dictionary.StiMySqlSource" Ref="6" isKey="true">
+        <Alias>company</Alias>
+        <Columns isList="true" count="43">
+          <value>company_id,System.Int32</value>
+          <value>company_code,System.String</value>
+          <value>company_taxnum,System.String</value>
+          <value>company_name,System.String</value>
+          <value>company_address,System.String</value>
+          <value>company_tel,System.String</value>
+          <value>company_fax,System.String</value>
+          <value>company_email,System.String</value>
+          <value>company_contact,System.String</value>
+          <value>comp_img,System.String</value>
+          <value>compcode,System.String</value>
+          <value>ic_type,System.String</value>
+          <value>start_accost,System.String</value>
+          <value>end_accost,System.String</value>
+          <value>startrev,System.String</value>
+          <value>endrev,System.String</value>
+          <value>glrap,System.String</value>
+          <value>startexp,System.String</value>
+          <value>endexp,System.String</value>
+          <value>acdate,System.DateTime</value>
+          <value>chkvat,System.String</value>
+          <value>glrar,System.String</value>
+          <value>dptandproj,System.String</value>
+          <value>useradd,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>useredit,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>userdel,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>updatetime,System.DateTime</value>
+          <value>company_nameth,System.String</value>
+          <value>company_add_en,System.String</value>
+          <value>company_address2,System.String</value>
+          <value>company_address3,System.String</value>
+          <value>company_add_en2,System.String</value>
+          <value>company_add_en3,System.String</value>
+          <value>company_telen,System.String</value>
+          <value>company_faxen,System.String</value>
+          <value>company_emailen,System.String</value>
+          <value>company_contacten,System.String</value>
+          <value>compcodeen,System.String</value>
+          <value>company_taxnumen,System.String</value>
+          <value>site_url,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>company</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters isList="true" count="0"/>
+        <SqlCommand>select * from company where compcode ='{compcode}'</SqlCommand>
+      </company>
+      <DataSource5 type="Stimulsoft.Report.Dictionary.StiMySqlSource" Ref="7" isKey="true">
+        <Alias>DataSource5</Alias>
+        <Columns isList="true" count="37">
+          <value>acc_id,System.Int32</value>
+          <value>acc_no,System.String</value>
+          <value>acc_billdate,System.DateTime</value>
+          <value>acc_invno,System.String</value>
+          <value>acc_due,System.DateTime</value>
+          <value>acc_invdate,System.DateTime</value>
+          <value>acc_ardate,System.DateTime</value>
+          <value>acc_invtype,System.String</value>
+          <value>acc_project,System.String</value>
+          <value>acc_todr,System.Decimal</value>
+          <value>acc_tocr,System.Decimal</value>
+          <value>acc_owner,System.String</value>
+          <value>acc_vat,System.Int32</value>
+          <value>acc_wt,System.Int32</value>
+          <value>acc_ret,System.Int32</value>
+          <value>acc_adv,System.Int32</value>
+          <value>acc_invperiod,System.Int32</value>
+          <value>acc_period,System.Int32</value>
+          <value>acc_credit,System.String</value>
+          <value>clear_status,System.String</value>
+          <value>acc_year,System.String</value>
+          <value>acc_remark,System.String</value>
+          <value>acc_invamt,System.Decimal</value>
+          <value>acc_invwt,System.Decimal</value>
+          <value>acc_invvat,System.Decimal</value>
+          <value>acc_advamt,System.Decimal</value>
+          <value>acc_retamt,System.Decimal</value>
+          <value>acc_cusamt,System.Decimal</value>
+          <value>acc_current,System.Int32</value>
+          <value>acc_status,System.String</value>
+          <value>useradd,System.String</value>
+          <value>createdate,System.DateTime</value>
+          <value>useredit,System.String</value>
+          <value>editdate,System.DateTime</value>
+          <value>userdel,System.String</value>
+          <value>deldate,System.DateTime</value>
+          <value>compcode,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1"/>
+        <Name>DataSource5</Name>
+        <NameInSource>Connection1</NameInSource>
+        <Parameters isList="true" count="0"/>
+        <SqlCommand>select * from ar_account_header</SqlCommand>
+      </DataSource5>
+    </DataSources>
+    <Relations isList="true" count="4">
+      <Relation1 type="DataRelation" Ref="8" isKey="true">
+        <Alias>Relation1</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>compcode</value>
+        </ChildColumns>
+        <ChildSource isRef="3"/>
+        <Dictionary isRef="1"/>
+        <Name>Relation1</Name>
+        <NameInSource>Relation1</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>compcode</value>
+        </ParentColumns>
+        <ParentSource isRef="6"/>
+      </Relation1>
+      <Relation2 type="DataRelation" Ref="9" isKey="true">
+        <Alias>Relation2</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>vou_owner</value>
+        </ChildColumns>
+        <ChildSource isRef="3"/>
+        <Dictionary isRef="1"/>
+        <Name>Relation2</Name>
+        <NameInSource>Relation2</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>debtor_code</value>
+        </ParentColumns>
+        <ParentSource isRef="5"/>
+      </Relation2>
+      <Relation3 type="DataRelation" Ref="10" isKey="true">
+        <Alias>Relation3</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>vou_vno</value>
+        </ChildColumns>
+        <ChildSource isRef="3"/>
+        <Dictionary isRef="1"/>
+        <Name>Relation3</Name>
+        <NameInSource>Relation3</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>acc_no</value>
+        </ParentColumns>
+        <ParentSource isRef="7"/>
+      </Relation3>
+      <Relation4 type="DataRelation" Ref="11" isKey="true">
+        <Alias>Relation4</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>vou_project</value>
+        </ChildColumns>
+        <ChildSource isRef="3"/>
+        <Dictionary isRef="1"/>
+        <Name>Relation4</Name>
+        <NameInSource>Relation4</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>project_code</value>
+        </ParentColumns>
+        <ParentSource isRef="4"/>
+      </Relation4>
+    </Relations>
+    <Report isRef="0"/>
+    <Variables isList="true" count="2">
+      <value>,month,select_x0020_Month,,System.String,,False,False,True,False,_x003C__x003F_xml_x0020_version_x003D__x0022_1_x002E_0_x0022__x0020_encoding_x003D__x0022_utf_x002D_8_x0022__x0020_standalone_x003D__x0022_yes_x0022__x003F__x003E__x003C_StiSerializer_x0020_type_x003D__x0022_Flex_x0022__x0020_application_x003D__x0022_State_x0022__x0020_version_x003D__x0022_1_x002E_02_x0022__x003E__x003C_ItemsInitializationType_x003E_Columns_x003C__x002F_ItemsInitializationType_x003E__x003C_Keys_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x002F__x003E__x003C_KeysColumn_x003E_DataSource1_x002E_Relation3_x002E_acc_period_x003C__x002F_KeysColumn_x003E__x003C_Values_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x002F__x003E__x003C__x002F_StiSerializer_x003E_</value>
+      <value>,year,Select_x0020_Year,,System.String,,False,False,True,False,_x003C__x003F_xml_x0020_version_x003D__x0022_1_x002E_0_x0022__x0020_encoding_x003D__x0022_utf_x002D_8_x0022__x0020_standalone_x003D__x0022_yes_x0022__x003F__x003E__x003C_StiSerializer_x0020_type_x003D__x0022_Flex_x0022__x0020_application_x003D__x0022_State_x0022__x0020_version_x003D__x0022_1_x002E_02_x0022__x003E__x003C_ItemsInitializationType_x003E_Columns_x003C__x002F_ItemsInitializationType_x003E__x003C_Keys_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x002F__x003E__x003C_KeysColumn_x003E_DataSource1_x002E_Relation3_x002E_acc_year_x003C__x002F_KeysColumn_x003E__x003C_Values_x0020_isList_x003D__x0022_true_x0022__x0020_count_x003D__x0022_0_x0022__x002F__x003E__x003C__x002F_StiSerializer_x003E_</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0"/>
+  <MetaTags isList="true" count="0"/>
+  <Pages isList="true" count="1">
+    <Page1 type="Page" Ref="12" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="6">
+        <PageHeaderBand1 type="PageHeaderBand" Ref="13" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,27.7,2</ClientRectangle>
+          <Components isList="true" count="9">
+            <Text1 type="Text" Ref="14" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.2,0,25.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,12,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="12"/>
+              <Parent isRef="13"/>
+              <Text>{DataSource1.Relation1.company_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text3 type="Text" Ref="15" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.2,1.2,25.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,12,Bold</Font>
+              <Guid>69cce77872a6c7f4995cfa1dbc1c07dd</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="12"/>
+              <Parent isRef="13"/>
+              <Text>เดือน {month==1 ? "มกราคม" : ""}{month==2 ? "กุมภาพันธ์" : ""}{month==3 ? "มีนาคม" : ""}{month==4 ? "เมษายน" : ""}{month==5 ? "พฤษภาคม" : ""}{month==6 ? "มิถุนายน" : ""}{month==7 ? "กรกฎาคม" : ""}{month==8 ? "สิงหาคม" : ""}{month==9 ? "กันยายน" : ""}{month==10 ? "ตุลาคม" : ""}{month==11 ? "พฤศจิกายน" : ""}{month==12 ? "ธันวาคม" : ""}{month=="" ? "ทั้งหมด" : ""} ภาษี ปี  {year != "" ? year : "ทั้งหมด"}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text6 type="Text" Ref="16" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3,0,2.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>f2f8f9a4a1e64184a175faaa2bf7688f</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="12"/>
+              <Parent isRef="13"/>
+              <Text>{Today}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="DateFormat" Ref="17" isKey="true">
+                <StringFormat>dd/MM/yyyy</StringFormat>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text2 type="Text" Ref="18" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3,0.6,2.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>9d7079b9ec014f5b02b0faaa2bf7624f</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="12"/>
+              <Parent isRef="13"/>
+              <Text>{Time}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="TimeFormat" Ref="19" isKey="true">
+                <StringFormat>HH:mm:ss</StringFormat>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text5 type="Text" Ref="20" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.2,0,0.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>227a27755162f8907dc5faaa2bf7b4d8</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="12"/>
+              <Parent isRef="13"/>
+              <Text>Date</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text4 type="Text" Ref="21" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.2,0.6,0.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>119857dd35230e61f560faaa2bf78b26</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="12"/>
+              <Parent isRef="13"/>
+              <Text>Time</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+            <Text8 type="Text" Ref="22" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.2,0.6,25.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,12,Bold</Font>
+              <Guid>75734c62212dcb193691faaa55ec9bce</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="12"/>
+              <Parent isRef="13"/>
+              <Text>WITHHOLDING TAX DEDUCTED AT SOURCE REPORT</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text9 type="Text" Ref="23" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.8,0,2.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>d9b324bdb00eb10a731ffaabb26606fb</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="12"/>
+              <Parent isRef="13"/>
+              <Text>{PageNofMThrough}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>SystemVariables</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+            <Image1 type="Image" Ref="24" isKey="true">
+              <Border>None;Black;1;Dot;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.83,1.52</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <DataColumn isNull="true"/>
+              <Image/>
+              <ImageURL>{company.site_url}comp/{company.comp_img}</ImageURL>
+              <Name>Image1</Name>
+              <Page isRef="12"/>
+              <Parent isRef="13"/>
+              <Stretch>True</Stretch>
+              <VertAlignment>Center</VertAlignment>
+            </Image1>
+          </Components>
+          <Conditions isList="true" count="0"/>
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="12"/>
+          <Parent isRef="12"/>
+        </PageHeaderBand1>
+        <PageHeaderBand2 type="PageHeaderBand" Ref="25" isKey="true">
+          <Border>None;Black;2;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.2,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="6">
+            <Text17 type="Text" Ref="26" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,3.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="12"/>
+              <Parent isRef="25"/>
+              <Text>Voucher No</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text17>
+            <Text10 type="Text" Ref="27" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.6,0,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10,Bold</Font>
+              <Guid>037d9d5e5000924d114dfaacf2f4b168</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="12"/>
+              <Parent isRef="25"/>
+              <Text>Date</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text11 type="Text" Ref="28" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.8,0,11.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10,Bold</Font>
+              <Guid>d14a80d76aaab65834e0faad153f1768</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="12"/>
+              <Parent isRef="25"/>
+              <Text>Customer</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text12 type="Text" Ref="29" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.6,0,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10,Bold</Font>
+              <Guid>a47b0f3022f78eec6f4ffaad38c874b7</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="12"/>
+              <Parent isRef="25"/>
+              <Text>Amount</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text13 type="Text" Ref="30" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22,0,2.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10,Bold</Font>
+              <Guid>4e78ccb20167eb3d01e0faad5c238b90</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="12"/>
+              <Parent isRef="25"/>
+              <Text>W/T %</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text14 type="Text" Ref="31" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.2,0,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10,Bold</Font>
+              <Guid>5bfd46fd6b209dd0c517faad6231bc3a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="12"/>
+              <Parent isRef="25"/>
+              <Text>W/T</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+          </Components>
+          <Conditions isList="true" count="0"/>
+          <Name>PageHeaderBand2</Name>
+          <Page isRef="12"/>
+          <Parent isRef="12"/>
+          <UseParentStyles>True</UseParentStyles>
+        </PageHeaderBand2>
+        <GroupHeaderBand1 type="GroupHeaderBand" Ref="32" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4.6,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text7 type="Text" Ref="33" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="12"/>
+              <Parent isRef="32"/>
+              <Text>{DataSource1.vou_project}  {DataSource1.Relation4.project_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+          </Components>
+          <Condition>{DataSource1.vou_project}</Condition>
+          <Conditions isList="true" count="0"/>
+          <Name>GroupHeaderBand1</Name>
+          <Page isRef="12"/>
+          <Parent isRef="12"/>
+        </GroupHeaderBand1>
+        <DataBand1 type="DataBand" Ref="34" isKey="true">
+          <Border>None;Black;2;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true"/>
+          <ClientRectangle>0,6,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="6">
+            <Text15 type="Text" Ref="35" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,0,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="12"/>
+              <Parent isRef="34"/>
+              <Text>{DataSource1.vou_no}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <Text18 type="Text" Ref="36" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.6,0,3.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>c0e48015ffc0e1582567fab12adcbd30</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="12"/>
+              <Parent isRef="34"/>
+              <Text>{DataSource1.vou_ardate}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="DateFormat" Ref="37" isKey="true">
+                <StringFormat>dd/MM/yyyy</StringFormat>
+              </TextFormat>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <Text19 type="Text" Ref="38" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.8,0,11.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>b96358d20bc5a3fb6160fab1acfeddcd</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="12"/>
+              <Parent isRef="34"/>
+              <Text>{DataSource1.Relation2.debtor_code}  {DataSource1.Relation2.debtor_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+            <Text20 type="Text" Ref="39" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.6,0,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>32be5c76bb59685d8237fab26bb4f1f6</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="12"/>
+              <Parent isRef="34"/>
+              <Text>{DataSource1.vou_amt}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" Ref="40" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+            <Text21 type="Text" Ref="41" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.2,0,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>29876347406fac62448efab3c6e6f7ae</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="12"/>
+              <Parent isRef="34"/>
+              <Text>{DataSource1.vou_wt}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" Ref="42" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text21>
+            <Text22 type="Text" Ref="43" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22,0,2.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>bcbfdfde085af466f78bfab41572bb71</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="12"/>
+              <Parent isRef="34"/>
+              <Text>{DataSource1.Relation3.acc_wt}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" Ref="44" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text22>
+          </Components>
+          <Conditions isList="true" count="0"/>
+          <DataSourceName>DataSource1</DataSourceName>
+          <Filters isList="true" count="2">
+            <value>_x007B_month_x0020__x003D__x003D__x0020_DataSource1_x002E_Relation3_x002E_acc_period_x0020__x007C__x007C__x0020_month_x0020__x003D__x003D_0_x007D_</value>
+            <value>_x007B_year_x0020__x003D__x003D__x0020_DataSource1_x002E_Relation3_x002E_acc_year_x0020__x007C__x007C__x0020_year_x0020__x003D__x003D_0_x007D_</value>
+          </Filters>
+          <Name>DataBand1</Name>
+          <Page isRef="12"/>
+          <Parent isRef="12"/>
+          <Sort isList="true" count="0"/>
+          <UseParentStyles>True</UseParentStyles>
+        </DataBand1>
+        <GroupFooterBand1 type="GroupFooterBand" Ref="45" isKey="true">
+          <Border>Top, Bottom;Black;1;Dash;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,7.4,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text25 type="Text" Ref="46" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.6,0,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>1ab26622cada5873c387fe102cec7c63</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="12"/>
+              <Parent isRef="45"/>
+              <Text>{Sum(DataSource1.vou_amt)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" Ref="47" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text25>
+            <Text16 type="Text" Ref="48" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.2,0,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10</Font>
+              <Guid>080adccc49284dc1545afe102cec8da4</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="12"/>
+              <Parent isRef="45"/>
+              <Text>{Sum(DataSource1.vou_wt)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" Ref="49" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text16>
+            <Text27 type="Text" Ref="50" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0,17.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10,Bold</Font>
+              <Guid>9e4b1376748dc725403efe11b46f84d0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="12"/>
+              <Parent isRef="45"/>
+              <Text>Total {DataSource1.vou_project}  {DataSource1.Relation4.project_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text27>
+          </Components>
+          <Conditions isList="true" count="0"/>
+          <Name>GroupFooterBand1</Name>
+          <Page isRef="12"/>
+          <Parent isRef="12"/>
+        </GroupFooterBand1>
+        <FooterBand1 type="FooterBand" Ref="51" isKey="true">
+          <Border>Bottom;Black;1;Double;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,8.8,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text28 type="Text" Ref="52" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,18.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="12"/>
+              <Parent isRef="51"/>
+              <Text>รวมสุทธิ</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text28>
+            <Text26 type="Text" Ref="53" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.6,0,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10,Bold</Font>
+              <Guid>03d5acd68b45d5c0c248fe10d1165537</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="12"/>
+              <Parent isRef="51"/>
+              <Text>{Sum(DataSource1.vou_amt)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" Ref="54" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text26>
+            <Text23 type="Text" Ref="55" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.2,0,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0"/>
+              <Font>Arial,10,Bold</Font>
+              <Guid>3ceca69c5a310d54dcaafe10d1176388</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="12"/>
+              <Parent isRef="51"/>
+              <Text>{Sum(DataSource1.vou_wt)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat type="NumberFormat" Ref="56" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text23>
+          </Components>
+          <Conditions isList="true" count="0"/>
+          <Name>FooterBand1</Name>
+          <Page isRef="12"/>
+          <Parent isRef="12"/>
+        </FooterBand1>
+      </Components>
+      <Conditions isList="true" count="0"/>
+      <Guid>a417fef09f9d6be8f084fa006828bcdd</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <Report isRef="0"/>
+      <Watermark type="Stimulsoft.Report.Components.StiWatermark" Ref="57" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings type="Stimulsoft.Report.Print.StiPrinterSettings" Ref="58" isKey="true"/>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>08/08/2020 06:04:54 PM</ReportChanged>
+  <ReportCreated>03/23/2017 02:10:15 PM</ReportCreated>
+  <ReportFile>C:\xampp\htdocs\masterbase\stimulsoft\Flex\reports\ar_deducted_report.mrt</ReportFile>
+  <ReportGuid>fe33f7ddce2933161155cdbae09b428e</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2016.3</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0"/>
+</StiSerializer>

@@ -1,0 +1,3482 @@
+{
+  "ReportVersion": "2018.1.1.0",
+  "ReportGuid": "9f30bf12af7245fe99e00ab6e48526d1",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportCreated": "/Date(25200000+0700)/",
+  "ReportChanged": "/Date(1520506838327+0700)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiMySqlSource",
+        "Name": "Connection1",
+        "Alias": "Connection1",
+        "Columns": {
+          "0": {
+            "Name": "pr_prid",
+            "Index": -1,
+            "NameInSource": "pr_prid",
+            "Alias": "pr_prid",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "pr_item",
+            "Index": -1,
+            "NameInSource": "pr_item",
+            "Alias": "pr_item",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "pr_prno",
+            "Index": -1,
+            "NameInSource": "pr_prno",
+            "Alias": "pr_prno",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "pr_prdate",
+            "Index": -1,
+            "NameInSource": "pr_prdate",
+            "Alias": "pr_prdate",
+            "Type": "System.DateTime"
+          },
+          "4": {
+            "Name": "pr_memid",
+            "Index": -1,
+            "NameInSource": "pr_memid",
+            "Alias": "pr_memid",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "pr_reqname",
+            "Index": -1,
+            "NameInSource": "pr_reqname",
+            "Alias": "pr_reqname",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "pr_project",
+            "Index": -1,
+            "NameInSource": "pr_project",
+            "Alias": "pr_project",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "pr_system",
+            "Index": -1,
+            "NameInSource": "pr_system",
+            "Alias": "pr_system",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "pr_costtype",
+            "Index": -1,
+            "NameInSource": "pr_costtype",
+            "Alias": "pr_costtype",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "pr_department",
+            "Index": -1,
+            "NameInSource": "pr_department",
+            "Alias": "pr_department",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "pr_vender",
+            "Index": -1,
+            "NameInSource": "pr_vender",
+            "Alias": "pr_vender",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "pr_deliplace",
+            "Index": -1,
+            "NameInSource": "pr_deliplace",
+            "Alias": "pr_deliplace",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "pr_delidate",
+            "Index": -1,
+            "NameInSource": "pr_delidate",
+            "Alias": "pr_delidate",
+            "Type": "System.DateTime"
+          },
+          "13": {
+            "Name": "pr_status",
+            "Index": -1,
+            "NameInSource": "pr_status",
+            "Alias": "pr_status",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "pr_remark",
+            "Index": -1,
+            "NameInSource": "pr_remark",
+            "Alias": "pr_remark",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "pr_approve",
+            "Index": -1,
+            "NameInSource": "pr_approve",
+            "Alias": "pr_approve",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "pe_approve",
+            "Index": -1,
+            "NameInSource": "pe_approve",
+            "Alias": "pe_approve",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "pm_approve",
+            "Index": -1,
+            "NameInSource": "pm_approve",
+            "Alias": "pm_approve",
+            "Type": "System.String"
+          },
+          "18": {
+            "Name": "director_approve",
+            "Index": -1,
+            "NameInSource": "director_approve",
+            "Alias": "director_approve",
+            "Type": "System.String"
+          },
+          "19": {
+            "Name": "approve_date",
+            "Index": -1,
+            "NameInSource": "approve_date",
+            "Alias": "approve_date",
+            "Type": "System.DateTime"
+          },
+          "20": {
+            "Name": "pr_disremark",
+            "Index": -1,
+            "NameInSource": "pr_disremark",
+            "Alias": "pr_disremark",
+            "Type": "System.String"
+          },
+          "21": {
+            "Name": "po_open",
+            "Index": -1,
+            "NameInSource": "po_open",
+            "Alias": "po_open",
+            "Type": "System.String"
+          },
+          "22": {
+            "Name": "po_count",
+            "Index": -1,
+            "NameInSource": "po_count",
+            "Alias": "po_count",
+            "Type": "System.String"
+          },
+          "23": {
+            "Name": "useradd",
+            "Index": -1,
+            "NameInSource": "useradd",
+            "Alias": "useradd",
+            "Type": "System.String"
+          },
+          "24": {
+            "Name": "usercreate",
+            "Index": -1,
+            "NameInSource": "usercreate",
+            "Alias": "usercreate",
+            "Type": "System.DateTime"
+          },
+          "25": {
+            "Name": "compcode",
+            "Index": -1,
+            "NameInSource": "compcode",
+            "Alias": "compcode",
+            "Type": "System.String"
+          },
+          "26": {
+            "Name": "purchase_type",
+            "Index": -1,
+            "NameInSource": "purchase_type",
+            "Alias": "purchase_type",
+            "Type": "System.String"
+          },
+          "27": {
+            "Name": "edituser",
+            "Index": -1,
+            "NameInSource": "edituser",
+            "Alias": "edituser",
+            "Type": "System.String"
+          },
+          "28": {
+            "Name": "editdate",
+            "Index": -1,
+            "NameInSource": "editdate",
+            "Alias": "editdate",
+            "Type": "System.DateTime"
+          },
+          "29": {
+            "Name": "deluser",
+            "Index": -1,
+            "NameInSource": "deluser",
+            "Alias": "deluser",
+            "Type": "System.String"
+          },
+          "30": {
+            "Name": "deldate",
+            "Index": -1,
+            "NameInSource": "deldate",
+            "Alias": "deldate",
+            "Type": "System.DateTime"
+          },
+          "31": {
+            "Name": "pri_id",
+            "Index": -1,
+            "NameInSource": "pri_id",
+            "Alias": "pri_id",
+            "Type": "System.Int32"
+          },
+          "32": {
+            "Name": "pri_matname",
+            "Index": -1,
+            "NameInSource": "pri_matname",
+            "Alias": "pri_matname",
+            "Type": "System.String"
+          },
+          "33": {
+            "Name": "pri_matcode",
+            "Index": -1,
+            "NameInSource": "pri_matcode",
+            "Alias": "pri_matcode",
+            "Type": "System.String"
+          },
+          "34": {
+            "Name": "pri_ref",
+            "Index": -1,
+            "NameInSource": "pri_ref",
+            "Alias": "pri_ref",
+            "Type": "System.String"
+          },
+          "35": {
+            "Name": "pri_costcode",
+            "Index": -1,
+            "NameInSource": "pri_costcode",
+            "Alias": "pri_costcode",
+            "Type": "System.String"
+          },
+          "36": {
+            "Name": "pri_costname",
+            "Index": -1,
+            "NameInSource": "pri_costname",
+            "Alias": "pri_costname",
+            "Type": "System.String"
+          },
+          "37": {
+            "Name": "pri_qty",
+            "Index": -1,
+            "NameInSource": "pri_qty",
+            "Alias": "pri_qty",
+            "Type": "System.Int32"
+          },
+          "38": {
+            "Name": "pri_unit",
+            "Index": -1,
+            "NameInSource": "pri_unit",
+            "Alias": "pri_unit",
+            "Type": "System.String"
+          },
+          "39": {
+            "Name": "pri_priceunit",
+            "Index": -1,
+            "NameInSource": "pri_priceunit",
+            "Alias": "pri_priceunit",
+            "Type": "System.Int32"
+          },
+          "40": {
+            "Name": "pri_amount",
+            "Index": -1,
+            "NameInSource": "pri_amount",
+            "Alias": "pri_amount",
+            "Type": "System.Int32"
+          },
+          "41": {
+            "Name": "pri_discountper1",
+            "Index": -1,
+            "NameInSource": "pri_discountper1",
+            "Alias": "pri_discountper1",
+            "Type": "System.Int32"
+          },
+          "42": {
+            "Name": "pri_discountper2",
+            "Index": -1,
+            "NameInSource": "pri_discountper2",
+            "Alias": "pri_discountper2",
+            "Type": "System.Int32"
+          },
+          "43": {
+            "Name": "pri_disamt",
+            "Index": -1,
+            "NameInSource": "pri_disamt",
+            "Alias": "pri_disamt",
+            "Type": "System.Int32"
+          },
+          "44": {
+            "Name": "pri_vat",
+            "Index": -1,
+            "NameInSource": "pri_vat",
+            "Alias": "pri_vat",
+            "Type": "System.Int32"
+          },
+          "45": {
+            "Name": "pri_remark",
+            "Index": -1,
+            "NameInSource": "pri_remark",
+            "Alias": "pri_remark",
+            "Type": "System.String"
+          },
+          "46": {
+            "Name": "pri_netamt",
+            "Index": -1,
+            "NameInSource": "pri_netamt",
+            "Alias": "pri_netamt",
+            "Type": "System.Int32"
+          },
+          "47": {
+            "Name": "pri_status",
+            "Index": -1,
+            "NameInSource": "pri_status",
+            "Alias": "pri_status",
+            "Type": "System.String"
+          },
+          "48": {
+            "Name": "pri_pono",
+            "Index": -1,
+            "NameInSource": "pri_pono",
+            "Alias": "pri_pono",
+            "Type": "System.String"
+          },
+          "49": {
+            "Name": "pri_count",
+            "Index": -1,
+            "NameInSource": "pri_count",
+            "Alias": "pri_count",
+            "Type": "System.String"
+          },
+          "50": {
+            "Name": "pono",
+            "Index": -1,
+            "NameInSource": "pono",
+            "Alias": "pono",
+            "Type": "System.String"
+          },
+          "51": {
+            "Name": "wo_open",
+            "Index": -1,
+            "NameInSource": "wo_open",
+            "Alias": "wo_open",
+            "Type": "System.String"
+          },
+          "52": {
+            "Name": "express",
+            "Index": -1,
+            "NameInSource": "express",
+            "Alias": "express",
+            "Type": "System.String"
+          },
+          "53": {
+            "Name": "reject_remark",
+            "Index": -1,
+            "NameInSource": "reject_remark",
+            "Alias": "reject_remark",
+            "Type": "System.String"
+          },
+          "54": {
+            "Name": "reject_user",
+            "Index": -1,
+            "NameInSource": "reject_user",
+            "Alias": "reject_user",
+            "Type": "System.String"
+          },
+          "55": {
+            "Name": "datesend",
+            "Index": -1,
+            "NameInSource": "datesend",
+            "Alias": "datesend",
+            "Type": "System.String"
+          },
+          "56": {
+            "Name": "pri_discountper3",
+            "Index": -1,
+            "NameInSource": "pri_discountper3",
+            "Alias": "pri_discountper3",
+            "Type": "System.Decimal"
+          },
+          "57": {
+            "Name": "pri_discountper4",
+            "Index": -1,
+            "NameInSource": "pri_discountper4",
+            "Alias": "pri_discountper4",
+            "Type": "System.Decimal"
+          },
+          "58": {
+            "Name": "pr_asset",
+            "Index": -1,
+            "NameInSource": "pr_asset",
+            "Alias": "pr_asset",
+            "Type": "System.String"
+          },
+          "59": {
+            "Name": "pr_assetid",
+            "Index": -1,
+            "NameInSource": "pr_assetid",
+            "Alias": "pr_assetid",
+            "Type": "System.String"
+          },
+          "60": {
+            "Name": "pr_assetname",
+            "Index": -1,
+            "NameInSource": "pr_assetname",
+            "Alias": "pr_assetname",
+            "Type": "System.String"
+          },
+          "61": {
+            "Name": "poi_qty",
+            "Index": -1,
+            "NameInSource": "poi_qty",
+            "Alias": "poi_qty",
+            "Type": "System.Decimal"
+          },
+          "62": {
+            "Name": "pri_cpqtyic",
+            "Index": -1,
+            "NameInSource": "pri_cpqtyic",
+            "Alias": "pri_cpqtyic",
+            "Type": "System.String"
+          },
+          "63": {
+            "Name": "pri_pqtyic",
+            "Index": -1,
+            "NameInSource": "pri_pqtyic",
+            "Alias": "pri_pqtyic",
+            "Type": "System.String"
+          },
+          "64": {
+            "Name": "pri_punitic",
+            "Index": -1,
+            "NameInSource": "pri_punitic",
+            "Alias": "pri_punitic",
+            "Type": "System.String"
+          },
+          "65": {
+            "Name": "pri_pdiscex",
+            "Index": -1,
+            "NameInSource": "pri_pdiscex",
+            "Alias": "pri_pdiscex",
+            "Type": "System.Int32"
+          },
+          "66": {
+            "Name": "pri_tovat",
+            "Index": -1,
+            "NameInSource": "pri_tovat",
+            "Alias": "pri_tovat",
+            "Type": "System.String"
+          },
+          "67": {
+            "Name": "pri_boqid",
+            "Index": -1,
+            "NameInSource": "pri_boqid",
+            "Alias": "pri_boqid",
+            "Type": "System.String"
+          },
+          "68": {
+            "Name": "pri_boqrow",
+            "Index": -1,
+            "NameInSource": "pri_boqrow",
+            "Alias": "pri_boqrow",
+            "Type": "System.Int32"
+          },
+          "69": {
+            "Name": "pri_sumqty",
+            "Index": -1,
+            "NameInSource": "pri_sumqty",
+            "Alias": "pri_sumqty",
+            "Type": "System.String"
+          },
+          "70": {
+            "Name": "cost_type",
+            "Index": -1,
+            "NameInSource": "cost_type",
+            "Alias": "cost_type",
+            "Type": "System.String"
+          },
+          "71": {
+            "Name": "remark_mat",
+            "Index": -1,
+            "NameInSource": "remark_mat",
+            "Alias": "remark_mat",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "Connection1",
+        "SqlCommand": "select * from pr join pr_item on pr_item.pri_ref=pr.pr_prno where pr_prid={pr}"
+      },
+      "1": {
+        "Ident": "StiMySqlSource",
+        "Name": "DataSource1",
+        "Alias": "DataSource1",
+        "Columns": {
+          "0": {
+            "Name": "project_id",
+            "Index": -1,
+            "NameInSource": "project_id",
+            "Alias": "project_id",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "project_code",
+            "Index": -1,
+            "NameInSource": "project_code",
+            "Alias": "project_code",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "project_pono",
+            "Index": -1,
+            "NameInSource": "project_pono",
+            "Alias": "project_pono",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "project_name",
+            "Index": -1,
+            "NameInSource": "project_name",
+            "Alias": "project_name",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "project_worktype",
+            "Index": -1,
+            "NameInSource": "project_worktype",
+            "Alias": "project_worktype",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "project_type",
+            "Index": -1,
+            "NameInSource": "project_type",
+            "Alias": "project_type",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "project_address",
+            "Index": -1,
+            "NameInSource": "project_address",
+            "Alias": "project_address",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "project_cname",
+            "Index": -1,
+            "NameInSource": "project_cname",
+            "Alias": "project_cname",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "project_tel",
+            "Index": -1,
+            "NameInSource": "project_tel",
+            "Alias": "project_tel",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "project_fax",
+            "Index": -1,
+            "NameInSource": "project_fax",
+            "Alias": "project_fax",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "project_email",
+            "Index": -1,
+            "NameInSource": "project_email",
+            "Alias": "project_email",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "project_biztype",
+            "Index": -1,
+            "NameInSource": "project_biztype",
+            "Alias": "project_biztype",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "project_mcode",
+            "Index": -1,
+            "NameInSource": "project_mcode",
+            "Alias": "project_mcode",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "project_mnameth",
+            "Index": -1,
+            "NameInSource": "project_mnameth",
+            "Alias": "project_mnameth",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "project_mnameen",
+            "Index": -1,
+            "NameInSource": "project_mnameen",
+            "Alias": "project_mnameen",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "project_maddress",
+            "Index": -1,
+            "NameInSource": "project_maddress",
+            "Alias": "project_maddress",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "project_onertel",
+            "Index": -1,
+            "NameInSource": "project_onertel",
+            "Alias": "project_onertel",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "project_owneremail",
+            "Index": -1,
+            "NameInSource": "project_owneremail",
+            "Alias": "project_owneremail",
+            "Type": "System.String"
+          },
+          "18": {
+            "Name": "project_mfax",
+            "Index": -1,
+            "NameInSource": "project_mfax",
+            "Alias": "project_mfax",
+            "Type": "System.String"
+          },
+          "19": {
+            "Name": "project_bnameth",
+            "Index": -1,
+            "NameInSource": "project_bnameth",
+            "Alias": "project_bnameth",
+            "Type": "System.String"
+          },
+          "20": {
+            "Name": "project_bnameen",
+            "Index": -1,
+            "NameInSource": "project_bnameen",
+            "Alias": "project_bnameen",
+            "Type": "System.String"
+          },
+          "21": {
+            "Name": "project_wt",
+            "Index": -1,
+            "NameInSource": "project_wt",
+            "Alias": "project_wt",
+            "Type": "System.Int32"
+          },
+          "22": {
+            "Name": "project_vat",
+            "Index": -1,
+            "NameInSource": "project_vat",
+            "Alias": "project_vat",
+            "Type": "System.Int32"
+          },
+          "23": {
+            "Name": "project_budget",
+            "Index": -1,
+            "NameInSource": "project_budget",
+            "Alias": "project_budget",
+            "Type": "System.Int32"
+          },
+          "24": {
+            "Name": "project_boq",
+            "Index": -1,
+            "NameInSource": "project_boq",
+            "Alias": "project_boq",
+            "Type": "System.String"
+          },
+          "25": {
+            "Name": "project_advance_1",
+            "Index": -1,
+            "NameInSource": "project_advance_1",
+            "Alias": "project_advance_1",
+            "Type": "System.Int32"
+          },
+          "26": {
+            "Name": "project_advance_2",
+            "Index": -1,
+            "NameInSource": "project_advance_2",
+            "Alias": "project_advance_2",
+            "Type": "System.Int32"
+          },
+          "27": {
+            "Name": "project_lessadvance",
+            "Index": -1,
+            "NameInSource": "project_lessadvance",
+            "Alias": "project_lessadvance",
+            "Type": "System.Int32"
+          },
+          "28": {
+            "Name": "project_lessadvance_2",
+            "Index": -1,
+            "NameInSource": "project_lessadvance_2",
+            "Alias": "project_lessadvance_2",
+            "Type": "System.Int32"
+          },
+          "29": {
+            "Name": "project_lessretention",
+            "Index": -1,
+            "NameInSource": "project_lessretention",
+            "Alias": "project_lessretention",
+            "Type": "System.Int32"
+          },
+          "30": {
+            "Name": "project_lessretention_2",
+            "Index": -1,
+            "NameInSource": "project_lessretention_2",
+            "Alias": "project_lessretention_2",
+            "Type": "System.Int32"
+          },
+          "31": {
+            "Name": "project_lessretentionmethod",
+            "Index": -1,
+            "NameInSource": "project_lessretentionmethod",
+            "Alias": "project_lessretentionmethod",
+            "Type": "System.String"
+          },
+          "32": {
+            "Name": "project_baddress",
+            "Index": -1,
+            "NameInSource": "project_baddress",
+            "Alias": "project_baddress",
+            "Type": "System.String"
+          },
+          "33": {
+            "Name": "project_btel",
+            "Index": -1,
+            "NameInSource": "project_btel",
+            "Alias": "project_btel",
+            "Type": "System.String"
+          },
+          "34": {
+            "Name": "project_bfax",
+            "Index": -1,
+            "NameInSource": "project_bfax",
+            "Alias": "project_bfax",
+            "Type": "System.String"
+          },
+          "35": {
+            "Name": "project_detail",
+            "Index": -1,
+            "NameInSource": "project_detail",
+            "Alias": "project_detail",
+            "Type": "System.String"
+          },
+          "36": {
+            "Name": "project_value",
+            "Index": -1,
+            "NameInSource": "project_value",
+            "Alias": "project_value",
+            "Type": "System.Decimal"
+          },
+          "37": {
+            "Name": "project_contract",
+            "Index": -1,
+            "NameInSource": "project_contract",
+            "Alias": "project_contract",
+            "Type": "System.String"
+          },
+          "38": {
+            "Name": "project_start",
+            "Index": -1,
+            "NameInSource": "project_start",
+            "Alias": "project_start",
+            "Type": "System.DateTime"
+          },
+          "39": {
+            "Name": "project_stop",
+            "Index": -1,
+            "NameInSource": "project_stop",
+            "Alias": "project_stop",
+            "Type": "System.DateTime"
+          },
+          "40": {
+            "Name": "project_engineer",
+            "Index": -1,
+            "NameInSource": "project_engineer",
+            "Alias": "project_engineer",
+            "Type": "System.String"
+          },
+          "41": {
+            "Name": "project_create",
+            "Index": -1,
+            "NameInSource": "project_create",
+            "Alias": "project_create",
+            "Type": "System.DateTime"
+          },
+          "42": {
+            "Name": "project_update",
+            "Index": -1,
+            "NameInSource": "project_update",
+            "Alias": "project_update",
+            "Type": "System.DateTime"
+          },
+          "43": {
+            "Name": "project_status",
+            "Index": -1,
+            "NameInSource": "project_status",
+            "Alias": "project_status",
+            "Type": "System.String"
+          },
+          "44": {
+            "Name": "project_user",
+            "Index": -1,
+            "NameInSource": "project_user",
+            "Alias": "project_user",
+            "Type": "System.String"
+          },
+          "45": {
+            "Name": "compcode",
+            "Index": -1,
+            "NameInSource": "compcode",
+            "Alias": "compcode",
+            "Type": "System.String"
+          },
+          "46": {
+            "Name": "project_mtel",
+            "Index": -1,
+            "NameInSource": "project_mtel",
+            "Alias": "project_mtel",
+            "Type": "System.String"
+          },
+          "47": {
+            "Name": "project_img",
+            "Index": -1,
+            "NameInSource": "project_img",
+            "Alias": "project_img",
+            "Type": "System.String"
+          },
+          "48": {
+            "Name": "edituser",
+            "Index": -1,
+            "NameInSource": "edituser",
+            "Alias": "edituser",
+            "Type": "System.String"
+          },
+          "49": {
+            "Name": "editdate",
+            "Index": -1,
+            "NameInSource": "editdate",
+            "Alias": "editdate",
+            "Type": "System.DateTime"
+          }
+        },
+        "NameInSource": "Connection1",
+        "SqlCommand": "select * from project"
+      },
+      "2": {
+        "Ident": "StiMySqlSource",
+        "Name": "DataSource2",
+        "Alias": "DataSource2",
+        "Columns": {
+          "0": {
+            "Name": "systemid",
+            "Index": -1,
+            "NameInSource": "systemid",
+            "Alias": "systemid",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "systemcode",
+            "Index": -1,
+            "NameInSource": "systemcode",
+            "Alias": "systemcode",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "systemname",
+            "Index": -1,
+            "NameInSource": "systemname",
+            "Alias": "systemname",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "compcode",
+            "Index": -1,
+            "NameInSource": "compcode",
+            "Alias": "compcode",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "Connection1",
+        "SqlCommand": "select * from system"
+      },
+      "3": {
+        "Ident": "StiMySqlSource",
+        "Name": "DataSource3",
+        "Alias": "DataSource3",
+        "Columns": {
+          "0": {
+            "Name": "m_id",
+            "Index": -1,
+            "NameInSource": "m_id",
+            "Alias": "m_id",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "m_code",
+            "Index": -1,
+            "NameInSource": "m_code",
+            "Alias": "m_code",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "m_name",
+            "Index": -1,
+            "NameInSource": "m_name",
+            "Alias": "m_name",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "m_user",
+            "Index": -1,
+            "NameInSource": "m_user",
+            "Alias": "m_user",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "m_pass",
+            "Index": -1,
+            "NameInSource": "m_pass",
+            "Alias": "m_pass",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "m_status",
+            "Index": -1,
+            "NameInSource": "m_status",
+            "Alias": "m_status",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "m_position",
+            "Index": -1,
+            "NameInSource": "m_position",
+            "Alias": "m_position",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "m_type",
+            "Index": -1,
+            "NameInSource": "m_type",
+            "Alias": "m_type",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "m_login",
+            "Index": -1,
+            "NameInSource": "m_login",
+            "Alias": "m_login",
+            "Type": "System.DateTime"
+          },
+          "9": {
+            "Name": "m_email",
+            "Index": -1,
+            "NameInSource": "m_email",
+            "Alias": "m_email",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "m_project",
+            "Index": -1,
+            "NameInSource": "m_project",
+            "Alias": "m_project",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "m_department",
+            "Index": -1,
+            "NameInSource": "m_department",
+            "Alias": "m_department",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "m_tel",
+            "Index": -1,
+            "NameInSource": "m_tel",
+            "Alias": "m_tel",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "uimg",
+            "Index": -1,
+            "NameInSource": "uimg",
+            "Alias": "uimg",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "compcode",
+            "Index": -1,
+            "NameInSource": "compcode",
+            "Alias": "compcode",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "sign",
+            "Index": -1,
+            "NameInSource": "sign",
+            "Alias": "sign",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "session",
+            "Index": -1,
+            "NameInSource": "session",
+            "Alias": "session",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "Connection1",
+        "SqlCommand": "select * from member"
+      },
+      "4": {
+        "Ident": "StiMySqlSource",
+        "Name": "sign_1",
+        "Alias": "sign_1",
+        "Columns": {
+          "0": {
+            "Name": "app_id",
+            "Index": -1,
+            "NameInSource": "app_id",
+            "Alias": "app_id",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "app_pr",
+            "Index": -1,
+            "NameInSource": "app_pr",
+            "Alias": "app_pr",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "app_project",
+            "Index": -1,
+            "NameInSource": "app_project",
+            "Alias": "app_project",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "app_midid",
+            "Index": -1,
+            "NameInSource": "app_midid",
+            "Alias": "app_midid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "app_midname",
+            "Index": -1,
+            "NameInSource": "app_midname",
+            "Alias": "app_midname",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "lock",
+            "Index": -1,
+            "NameInSource": "lock",
+            "Alias": "lock",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "status",
+            "Index": -1,
+            "NameInSource": "status",
+            "Alias": "status",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "type",
+            "Index": -1,
+            "NameInSource": "type",
+            "Alias": "type",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "cost",
+            "Index": -1,
+            "NameInSource": "cost",
+            "Alias": "cost",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "app_sequence",
+            "Index": -1,
+            "NameInSource": "app_sequence",
+            "Alias": "app_sequence",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "creatuser",
+            "Index": -1,
+            "NameInSource": "creatuser",
+            "Alias": "creatuser",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "creatudate",
+            "Index": -1,
+            "NameInSource": "creatudate",
+            "Alias": "creatudate",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "compcode",
+            "Index": -1,
+            "NameInSource": "compcode",
+            "Alias": "compcode",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "app_date",
+            "Index": -1,
+            "NameInSource": "app_date",
+            "Alias": "app_date",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "app_time",
+            "Index": -1,
+            "NameInSource": "app_time",
+            "Alias": "app_time",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "m_id",
+            "Index": -1,
+            "NameInSource": "m_id",
+            "Alias": "m_id",
+            "Type": "System.UInt32"
+          },
+          "16": {
+            "Name": "m_code",
+            "Index": -1,
+            "NameInSource": "m_code",
+            "Alias": "m_code",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "m_name",
+            "Index": -1,
+            "NameInSource": "m_name",
+            "Alias": "m_name",
+            "Type": "System.String"
+          },
+          "18": {
+            "Name": "m_user",
+            "Index": -1,
+            "NameInSource": "m_user",
+            "Alias": "m_user",
+            "Type": "System.String"
+          },
+          "19": {
+            "Name": "m_pass",
+            "Index": -1,
+            "NameInSource": "m_pass",
+            "Alias": "m_pass",
+            "Type": "System.String"
+          },
+          "20": {
+            "Name": "m_status",
+            "Index": -1,
+            "NameInSource": "m_status",
+            "Alias": "m_status",
+            "Type": "System.String"
+          },
+          "21": {
+            "Name": "m_position",
+            "Index": -1,
+            "NameInSource": "m_position",
+            "Alias": "m_position",
+            "Type": "System.String"
+          },
+          "22": {
+            "Name": "m_type",
+            "Index": -1,
+            "NameInSource": "m_type",
+            "Alias": "m_type",
+            "Type": "System.String"
+          },
+          "23": {
+            "Name": "m_login",
+            "Index": -1,
+            "NameInSource": "m_login",
+            "Alias": "m_login",
+            "Type": "System.DateTime"
+          },
+          "24": {
+            "Name": "m_email",
+            "Index": -1,
+            "NameInSource": "m_email",
+            "Alias": "m_email",
+            "Type": "System.String"
+          },
+          "25": {
+            "Name": "m_project",
+            "Index": -1,
+            "NameInSource": "m_project",
+            "Alias": "m_project",
+            "Type": "System.String"
+          },
+          "26": {
+            "Name": "m_department",
+            "Index": -1,
+            "NameInSource": "m_department",
+            "Alias": "m_department",
+            "Type": "System.String"
+          },
+          "27": {
+            "Name": "m_tel",
+            "Index": -1,
+            "NameInSource": "m_tel",
+            "Alias": "m_tel",
+            "Type": "System.String"
+          },
+          "28": {
+            "Name": "uimg",
+            "Index": -1,
+            "NameInSource": "uimg",
+            "Alias": "uimg",
+            "Type": "System.String"
+          },
+          "29": {
+            "Name": "compcode",
+            "Index": -1,
+            "NameInSource": "compcode",
+            "Alias": "compcode",
+            "Type": "System.String"
+          },
+          "30": {
+            "Name": "sign",
+            "Index": -1,
+            "NameInSource": "sign",
+            "Alias": "sign",
+            "Type": "System.String"
+          },
+          "31": {
+            "Name": "m_vender",
+            "Index": -1,
+            "NameInSource": "m_vender",
+            "Alias": "m_vender",
+            "Type": "System.String"
+          },
+          "32": {
+            "Name": "LoginStatus",
+            "Index": -1,
+            "NameInSource": "LoginStatus",
+            "Alias": "LoginStatus",
+            "Type": "System.Int32"
+          },
+          "33": {
+            "Name": "LastUpdate",
+            "Index": -1,
+            "NameInSource": "LastUpdate",
+            "Alias": "LastUpdate",
+            "Type": "System.DateTime"
+          },
+          "34": {
+            "Name": "user_type",
+            "Index": -1,
+            "NameInSource": "user_type",
+            "Alias": "user_type",
+            "Type": "System.String"
+          },
+          "35": {
+            "Name": "date_pass",
+            "Index": -1,
+            "NameInSource": "date_pass",
+            "Alias": "date_pass",
+            "Type": "System.DateTime"
+          }
+        },
+        "NameInSource": "Connection1",
+        "SqlCommand": "SELECT * FROM approve_pr \r\n\\tINNER JOIN member  \r\non(approve_pr.app_midid = member.m_id) \r\nWHERE approve_pr.app_pr ='{pri}' \r\nAND approve_pr.`status` <> \"no\"\r\nand app_sequence = 1"
+      },
+      "5": {
+        "Ident": "StiMySqlSource",
+        "Name": "Sign_2",
+        "Alias": "Sign_2",
+        "Columns": {
+          "0": {
+            "Name": "app_id",
+            "Index": -1,
+            "NameInSource": "app_id",
+            "Alias": "app_id",
+            "Type": "System.Int32"
+          },
+          "1": {
+            "Name": "app_pr",
+            "Index": -1,
+            "NameInSource": "app_pr",
+            "Alias": "app_pr",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "app_project",
+            "Index": -1,
+            "NameInSource": "app_project",
+            "Alias": "app_project",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "app_midid",
+            "Index": -1,
+            "NameInSource": "app_midid",
+            "Alias": "app_midid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "app_midname",
+            "Index": -1,
+            "NameInSource": "app_midname",
+            "Alias": "app_midname",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "lock",
+            "Index": -1,
+            "NameInSource": "lock",
+            "Alias": "lock",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "status",
+            "Index": -1,
+            "NameInSource": "status",
+            "Alias": "status",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "type",
+            "Index": -1,
+            "NameInSource": "type",
+            "Alias": "type",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "cost",
+            "Index": -1,
+            "NameInSource": "cost",
+            "Alias": "cost",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "app_sequence",
+            "Index": -1,
+            "NameInSource": "app_sequence",
+            "Alias": "app_sequence",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "creatuser",
+            "Index": -1,
+            "NameInSource": "creatuser",
+            "Alias": "creatuser",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "creatudate",
+            "Index": -1,
+            "NameInSource": "creatudate",
+            "Alias": "creatudate",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "compcode",
+            "Index": -1,
+            "NameInSource": "compcode",
+            "Alias": "compcode",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "app_date",
+            "Index": -1,
+            "NameInSource": "app_date",
+            "Alias": "app_date",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "app_time",
+            "Index": -1,
+            "NameInSource": "app_time",
+            "Alias": "app_time",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "m_id",
+            "Index": -1,
+            "NameInSource": "m_id",
+            "Alias": "m_id",
+            "Type": "System.UInt32"
+          },
+          "16": {
+            "Name": "m_code",
+            "Index": -1,
+            "NameInSource": "m_code",
+            "Alias": "m_code",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "m_name",
+            "Index": -1,
+            "NameInSource": "m_name",
+            "Alias": "m_name",
+            "Type": "System.String"
+          },
+          "18": {
+            "Name": "m_user",
+            "Index": -1,
+            "NameInSource": "m_user",
+            "Alias": "m_user",
+            "Type": "System.String"
+          },
+          "19": {
+            "Name": "m_pass",
+            "Index": -1,
+            "NameInSource": "m_pass",
+            "Alias": "m_pass",
+            "Type": "System.String"
+          },
+          "20": {
+            "Name": "m_status",
+            "Index": -1,
+            "NameInSource": "m_status",
+            "Alias": "m_status",
+            "Type": "System.String"
+          },
+          "21": {
+            "Name": "m_position",
+            "Index": -1,
+            "NameInSource": "m_position",
+            "Alias": "m_position",
+            "Type": "System.String"
+          },
+          "22": {
+            "Name": "m_type",
+            "Index": -1,
+            "NameInSource": "m_type",
+            "Alias": "m_type",
+            "Type": "System.String"
+          },
+          "23": {
+            "Name": "m_login",
+            "Index": -1,
+            "NameInSource": "m_login",
+            "Alias": "m_login",
+            "Type": "System.DateTime"
+          },
+          "24": {
+            "Name": "m_email",
+            "Index": -1,
+            "NameInSource": "m_email",
+            "Alias": "m_email",
+            "Type": "System.String"
+          },
+          "25": {
+            "Name": "m_project",
+            "Index": -1,
+            "NameInSource": "m_project",
+            "Alias": "m_project",
+            "Type": "System.String"
+          },
+          "26": {
+            "Name": "m_department",
+            "Index": -1,
+            "NameInSource": "m_department",
+            "Alias": "m_department",
+            "Type": "System.String"
+          },
+          "27": {
+            "Name": "m_tel",
+            "Index": -1,
+            "NameInSource": "m_tel",
+            "Alias": "m_tel",
+            "Type": "System.String"
+          },
+          "28": {
+            "Name": "uimg",
+            "Index": -1,
+            "NameInSource": "uimg",
+            "Alias": "uimg",
+            "Type": "System.String"
+          },
+          "29": {
+            "Name": "compcode",
+            "Index": -1,
+            "NameInSource": "compcode",
+            "Alias": "compcode",
+            "Type": "System.String"
+          },
+          "30": {
+            "Name": "sign",
+            "Index": -1,
+            "NameInSource": "sign",
+            "Alias": "sign",
+            "Type": "System.String"
+          },
+          "31": {
+            "Name": "m_vender",
+            "Index": -1,
+            "NameInSource": "m_vender",
+            "Alias": "m_vender",
+            "Type": "System.String"
+          },
+          "32": {
+            "Name": "LoginStatus",
+            "Index": -1,
+            "NameInSource": "LoginStatus",
+            "Alias": "LoginStatus",
+            "Type": "System.Int32"
+          },
+          "33": {
+            "Name": "LastUpdate",
+            "Index": -1,
+            "NameInSource": "LastUpdate",
+            "Alias": "LastUpdate",
+            "Type": "System.DateTime"
+          },
+          "34": {
+            "Name": "user_type",
+            "Index": -1,
+            "NameInSource": "user_type",
+            "Alias": "user_type",
+            "Type": "System.String"
+          },
+          "35": {
+            "Name": "date_pass",
+            "Index": -1,
+            "NameInSource": "date_pass",
+            "Alias": "date_pass",
+            "Type": "System.DateTime"
+          }
+        },
+        "NameInSource": "Connection1",
+        "SqlCommand": "SELECT * FROM approve_pr \r\n\\tINNER JOIN member  \r\non(approve_pr.app_midid = member.m_id) \r\nWHERE approve_pr.app_pr ='{pri}'\r\nAND\r\napprove_pr.`status` <> \"no\"\r\nand app_sequence = 2"
+      },
+      "6": {
+        "Ident": "StiMySqlSource",
+        "Name": "company",
+        "Alias": "company",
+        "Columns": {
+          "0": {
+            "Name": "company_id",
+            "Index": -1,
+            "NameInSource": "company_id",
+            "Alias": "company_id",
+            "Type": "System.UInt32"
+          },
+          "1": {
+            "Name": "company_code",
+            "Index": -1,
+            "NameInSource": "company_code",
+            "Alias": "company_code",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "company_taxnum",
+            "Index": -1,
+            "NameInSource": "company_taxnum",
+            "Alias": "company_taxnum",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "company_name",
+            "Index": -1,
+            "NameInSource": "company_name",
+            "Alias": "company_name",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "company_address",
+            "Index": -1,
+            "NameInSource": "company_address",
+            "Alias": "company_address",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "company_tel",
+            "Index": -1,
+            "NameInSource": "company_tel",
+            "Alias": "company_tel",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "company_fax",
+            "Index": -1,
+            "NameInSource": "company_fax",
+            "Alias": "company_fax",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "company_email",
+            "Index": -1,
+            "NameInSource": "company_email",
+            "Alias": "company_email",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "company_contact",
+            "Index": -1,
+            "NameInSource": "company_contact",
+            "Alias": "company_contact",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "comp_img",
+            "Index": -1,
+            "NameInSource": "comp_img",
+            "Alias": "comp_img",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "compcode",
+            "Index": -1,
+            "NameInSource": "compcode",
+            "Alias": "compcode",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "ic_type",
+            "Index": -1,
+            "NameInSource": "ic_type",
+            "Alias": "ic_type",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "start_accost",
+            "Index": -1,
+            "NameInSource": "start_accost",
+            "Alias": "start_accost",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "end_accost",
+            "Index": -1,
+            "NameInSource": "end_accost",
+            "Alias": "end_accost",
+            "Type": "System.String"
+          },
+          "14": {
+            "Name": "startrev",
+            "Index": -1,
+            "NameInSource": "startrev",
+            "Alias": "startrev",
+            "Type": "System.String"
+          },
+          "15": {
+            "Name": "endrev",
+            "Index": -1,
+            "NameInSource": "endrev",
+            "Alias": "endrev",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "glrap",
+            "Index": -1,
+            "NameInSource": "glrap",
+            "Alias": "glrap",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "startexp",
+            "Index": -1,
+            "NameInSource": "startexp",
+            "Alias": "startexp",
+            "Type": "System.String"
+          },
+          "18": {
+            "Name": "endexp",
+            "Index": -1,
+            "NameInSource": "endexp",
+            "Alias": "endexp",
+            "Type": "System.String"
+          },
+          "19": {
+            "Name": "acdate",
+            "Index": -1,
+            "NameInSource": "acdate",
+            "Alias": "acdate",
+            "Type": "System.DateTime"
+          },
+          "20": {
+            "Name": "chkvat",
+            "Index": -1,
+            "NameInSource": "chkvat",
+            "Alias": "chkvat",
+            "Type": "System.String"
+          },
+          "21": {
+            "Name": "glrar",
+            "Index": -1,
+            "NameInSource": "glrar",
+            "Alias": "glrar",
+            "Type": "System.String"
+          },
+          "22": {
+            "Name": "dptandproj",
+            "Index": -1,
+            "NameInSource": "dptandproj",
+            "Alias": "dptandproj",
+            "Type": "System.String"
+          },
+          "23": {
+            "Name": "useradd",
+            "Index": -1,
+            "NameInSource": "useradd",
+            "Alias": "useradd",
+            "Type": "System.String"
+          },
+          "24": {
+            "Name": "createdate",
+            "Index": -1,
+            "NameInSource": "createdate",
+            "Alias": "createdate",
+            "Type": "System.DateTime"
+          },
+          "25": {
+            "Name": "useredit",
+            "Index": -1,
+            "NameInSource": "useredit",
+            "Alias": "useredit",
+            "Type": "System.String"
+          },
+          "26": {
+            "Name": "editdate",
+            "Index": -1,
+            "NameInSource": "editdate",
+            "Alias": "editdate",
+            "Type": "System.DateTime"
+          },
+          "27": {
+            "Name": "userdel",
+            "Index": -1,
+            "NameInSource": "userdel",
+            "Alias": "userdel",
+            "Type": "System.String"
+          },
+          "28": {
+            "Name": "deldate",
+            "Index": -1,
+            "NameInSource": "deldate",
+            "Alias": "deldate",
+            "Type": "System.DateTime"
+          },
+          "29": {
+            "Name": "updatetime",
+            "Index": -1,
+            "NameInSource": "updatetime",
+            "Alias": "updatetime",
+            "Type": "System.DateTime"
+          },
+          "30": {
+            "Name": "company_nameth",
+            "Index": -1,
+            "NameInSource": "company_nameth",
+            "Alias": "company_nameth",
+            "Type": "System.String"
+          },
+          "31": {
+            "Name": "company_add_en",
+            "Index": -1,
+            "NameInSource": "company_add_en",
+            "Alias": "company_add_en",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "Connection1",
+        "SqlCommand": "select * from company"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiMySqlDatabase",
+        "Name": "Connection1",
+        "Alias": "Connection1",
+        "ConnectionStringEncrypted": "49TJCedcUZVGd6n0yvygbtV4yYnGWdOc4lyxmeotbj+DGGUCRksRpMxa/fxjBCFngMhpyVANGQlDbKX0agHjJ8TcaaFEA6nNwBygyeo9MkbUbs1j"
+      }
+    },
+    "Relations": {
+      "0": {
+        "Name": "Relation1",
+        "ChildColumns": {
+          "0": "pr_project"
+        },
+        "ParentColumns": {
+          "0": "project_id"
+        },
+        "NameInSource": "Relation1",
+        "Alias": "Relation1",
+        "ParentSource": "DataSource1",
+        "ChildSource": "Connection1"
+      },
+      "1": {
+        "Name": "Relation2",
+        "ChildColumns": {
+          "0": "pr_system"
+        },
+        "ParentColumns": {
+          "0": "systemid"
+        },
+        "NameInSource": "Relation2",
+        "Alias": "Relation2",
+        "ParentSource": "DataSource2",
+        "ChildSource": "Connection1"
+      },
+      "2": {
+        "Name": "Relation3",
+        "ChildColumns": {
+          "0": "pe_approve"
+        },
+        "ParentColumns": {
+          "0": "m_user"
+        },
+        "NameInSource": "Relation3",
+        "Alias": "Relation3",
+        "ParentSource": "DataSource3",
+        "ChildSource": "Connection1"
+      },
+      "3": {
+        "Name": "Relation4",
+        "ChildColumns": {
+          "0": "director_approve"
+        },
+        "ParentColumns": {
+          "0": "m_user"
+        },
+        "NameInSource": "director_sign",
+        "Alias": "Relation4",
+        "ParentSource": "DataSource3",
+        "ChildSource": "Connection1"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "d4d168640f898f8e8850af77fc17ee94",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiPageHeaderBand",
+          "Name": "PageHeaderBand3",
+          "Guid": "ca8968e9bbfcebf97d330d83e742406d",
+          "ClientRectangle": "0,0.4,19,5.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text62",
+              "Guid": "ae3dd50abce5446f801b0d83e7425861",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "7.6,0,3,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ใบขอซื้อ"
+              },
+              "HorAlignment": "Center",
+              "Font": "AngsanaUPC;22;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "2c906b2787dc57657e940d83e74254ac",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "6,0.8,6.4,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Purchase Requisition Form"
+              },
+              "HorAlignment": "Center",
+              "Font": "AngsanaUPC;22;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "c4dd825e3bdb710d27e40d83e742501d",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "16,1.6,2.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pr_prno}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "f858d6532749a58232bc0d83e7424463",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "14.8,1.6,1.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "เลขที่ :"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "1696adf1d9d66fc94ba20d83e74235d5",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,2.4,1,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "วันที่ :"
+              },
+              "Font": ";10;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "cb8a9aa0d2dace57e8690d83e742bd5d",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "1,2.4,3.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pr_prdate}"
+              },
+              "Font": ";10;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiDateFormatService",
+                "StringFormat": "dd/MM/yyyy"
+              }
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "37ccdb5d2f8023a952f10d83e742f086",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "2.2,3,4.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.Relation1.project_name}"
+              },
+              "Font": ";10;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "c54b6f61511a9e1498fe0d83e7429aa0",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,3,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "โครงการ / ฝ่าย"
+              },
+              "Font": ";10;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "f0c702d4ff51898caabf0d83e742d74d",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "14.8,2.6,1.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ระบบ :"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text31",
+              "Guid": "2ea18a94f722c31aa1410d83e74296d6",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "16.4,2.6,2.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.Relation2.systemname}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text40",
+              "Guid": "7876248c62481c235a8a0d83e742de1c",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "1.8,3.6,10.2,1.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pr_remark}"
+              },
+              "Font": ";10;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "11": {
+              "Ident": "StiText",
+              "Name": "Text58",
+              "Guid": "d8482c984e189710daaa0d83e7425dce",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,3.6,1.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "หมายเหตุ :"
+              },
+              "Font": ";10;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "12": {
+              "Ident": "StiText",
+              "Name": "Text59",
+              "Guid": "5e2b57744ab18fd2be670d83e7429c83",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "7.6,3,4.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.Relation5.department_title}"
+              },
+              "Font": ";10;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "13": {
+              "Ident": "StiText",
+              "Name": "Text47",
+              "Guid": "a94b90f7b1cd5342bd260d83e742eadb",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "6.4,3,1.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "แผนก :"
+              },
+              "HorAlignment": "Right",
+              "Font": ";10;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "14": {
+              "Ident": "StiText",
+              "Name": "Text48",
+              "Guid": "61d94d60da0077bdfdcc0d83e74201e1",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "14.2,3.6,2.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "วันที่ส่งของ :"
+              },
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;14;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "15": {
+              "Ident": "StiText",
+              "Name": "Text57",
+              "Guid": "1e9600d439e699d2ed9f0d83e742dd14",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "16.2,3.6,2.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pr_delidate}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;14;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextFormat": {
+                "Ident": "StiDateFormatService",
+                "StringFormat": "dd/MM/yyyy"
+              }
+            },
+            "16": {
+              "Ident": "StiText",
+              "Name": "Text56",
+              "Guid": "1cdda7b2ad963ef525130d83e7423ed4",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "13.8,4.4,2.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ประเภทสั่งซื้อ :"
+              },
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;14;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "17": {
+              "Ident": "StiText",
+              "Name": "Text61",
+              "Guid": "1fc3792668f5b2fa6aa30d83e7424e8d",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "16.4,4.4,2.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pr_costtype== 15 ? \"Cost\" :\"\"}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;14;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "18": {
+              "Ident": "StiText",
+              "Name": "Text60",
+              "Guid": "0d57fa6dc4825becfe480d83e7428900",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "16.2,4.4,2.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pr_costtype== 18 ? \"Stock\" :\"\"}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;14;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "19": {
+              "Ident": "StiText",
+              "Name": "Text63",
+              "Guid": "0d1028ba72e27b7833370d83e7423bcc",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "16.2,4.4,2.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pr_costtype== 19 ? \"Asset tool\" :\"\"}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;14;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "20": {
+              "Ident": "StiText",
+              "Name": "Text64",
+              "Guid": "4d1af7ea5cb35355c99c0d83e742a4ad",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "15.8,4.4,3,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pr_costtype== 20 ? \"Asset Office Equipment\" :\"\"}"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;14;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiPageHeaderBand",
+          "Name": "PageHeaderBand1",
+          "Guid": "10c88c162a0047eb969eae85e37628aa",
+          "ClientRectangle": "0,6.8,19,2.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": "All;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text65",
+              "Guid": "46b951cc6a574751ae2aa7dd8359c6b1",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0.6,0,18.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{company.company_name}"
+              },
+              "Font": ";14;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text66",
+              "Guid": "d83b85f91ec54033b6937dd375a51f9d",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0.6,1.2,18.2,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{company.company_add_en}"
+              },
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text68",
+              "Guid": "8b9148b4af1d4f6db5a5474c9314255d",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0.6,0.6,18.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{company.company_address}"
+              },
+              "Font": ";9;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text69",
+              "Guid": "dd8ce6ec06da40d7b6fea06f987f67d7",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "5.6,2.2,0.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Tel :"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text70",
+              "Guid": "27ca49b3087542efbfbee0b6937c70fd",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "6.2,2.2,2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{company.company_tel}"
+              },
+              "VertAlignment": "Center",
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text71",
+              "Guid": "8e160fcf0cdb41aebab82b89e0a6385e",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "2.8,2.2,2.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{company.company_taxnum}"
+              },
+              "VertAlignment": "Center",
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text72",
+              "Guid": "77748eeab1c74e079bdef5da7a7d3551",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0.6,2.2,2.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Tax ID Number :"
+              },
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text73",
+              "Guid": "d341470d1fca46baa83facf306737250",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "9,2.2,1.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{company.company_fax}"
+              },
+              "VertAlignment": "Center",
+              "Font": ";7;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text78",
+              "Guid": "e1737d24ecaf4d2f848c7ca317a3da5c",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "8.2,2.2,0.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Fax :"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          }
+        },
+        "2": {
+          "Ident": "StiPageHeaderBand",
+          "Name": "PageHeaderBand2",
+          "ClientRectangle": "0,10.4,19,1.2",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,0,1.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ลำดับ"
+              },
+              "HorAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Top, Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "fdbfcd8f318932d119ebafd82967a0d5",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "1.6,0,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "รหัสต้นทุน"
+              },
+              "HorAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Top, Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "67726d3aa2427b348166afd862fe99fc",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "5,0,7,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "รายการ"
+              },
+              "HorAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Top, Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "7aa8691124b77f1fb458afd89fd819e4",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "12,0,1.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "จำนวน"
+              },
+              "HorAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Top, Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "0349544c7889918de68bafd8e3f6764b",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "13.8,0,1.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "หน่วย"
+              },
+              "HorAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Top, Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "Guid": "3853a4b79ac8a114a176afd91c06927e",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "15.6,0,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "หมายเหตุ"
+              },
+              "HorAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Top, Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "4127bded01522c649012afd9c8ef2db8",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,0.6,1.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Item"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Bottom",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text18",
+              "Guid": "a2d10d3328b43f9924eaafd9f58dd296",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "1.6,0.6,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Costcode"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Bottom",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text19",
+              "Guid": "ed6e7370a056264470c4afda2f66694a",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "5,0.6,7,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Description"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Bottom",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text20",
+              "Guid": "87d65a875d9cc1900888afda681f7137",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "12,0.6,1.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Quantity"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Bottom",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text21",
+              "Guid": "0445ad4ce3f485c479f9afda9a96e7ad",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "13.8,0.6,1.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Unite"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Bottom",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "11": {
+              "Ident": "StiText",
+              "Name": "Text22",
+              "Guid": "1e0c7659df1f17545ceaafdac5f7f575",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "15.6,0.6,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Remark"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Bottom",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          }
+        },
+        "3": {
+          "Ident": "StiPageFooterBand",
+          "Name": "PageFooterBand1",
+          "ClientRectangle": "0,23.9,19,3.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text46",
+              "Guid": "3b2f014c28e60aa58bdcb036ced05d18",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "5.6,3.1,6.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text32",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,1.7,5.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ผู้ขอซื้อ"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Top, Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text35",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "5.6,1.7,6.4,1.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "แผนกจัดการโครงการ / ฝ่าย / แผนก"
+              },
+              "HorAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Top, Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text36",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "12,1.7,7,1.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "รองกรรมการผู้จัดการ\r\nAuthorized Signature"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";10;;",
+              "Border": "Top, Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text39",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "5.6,0.1,6.4,1.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Font": ";10;;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text41",
+              "Guid": "8cbac76e59d97675d513b001f288d859",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "12,0.1,7,1.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Font": ";10;;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text34",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,2.7,1.8,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Date:"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Left, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text33",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "1.8,2.7,3.8,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pr_prdate}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn",
+              "TextFormat": {
+                "Ident": "StiDateFormatService",
+                "StringFormat": "dd/MM/yyyy"
+              }
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text37",
+              "Guid": "dd84690b9cdf3aba37a4aff637cf1de6",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "5.6,2.5,6.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Purchasing Department"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Bottom",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text38",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "12,2.9,7,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text43",
+              "Guid": "ce19d80d3a68e6a7a03eb034ff619484",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "12.4,2.9,1.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Date:"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "11": {
+              "Ident": "StiText",
+              "Name": "Text42",
+              "Guid": "5d09dadce3cf18b017b2b03886b10e20",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "6.4,2.9,1.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Date:"
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "12": {
+              "Ident": "StiText",
+              "Name": "Text50",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,0.1,5.6,1.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pr_reqname}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "13": {
+              "Ident": "StiImage",
+              "Name": "Image4",
+              "Guid": "a66856dc11af8b7c60e2a7290d80810b",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "12,0.1,7,1.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "Stretch": true,
+              "ImageURL": {
+                "Value": "https://cloudmeka.com/sign/{Sign_2.sign}"
+              }
+            },
+            "14": {
+              "Ident": "StiImage",
+              "Name": "Image2",
+              "Guid": "0169a31ec8cf4d5b85b00f114a210c42",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "5.6,0.1,6.4,1.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "Stretch": true,
+              "ImageURL": {
+                "Value": "https://cloudmeka.com/sign/{sign_1.sign}"
+              }
+            },
+            "15": {
+              "Ident": "StiText",
+              "Name": "Text45",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "8.2,3.1,3,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{sign_1.app_date}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";10;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            },
+            "16": {
+              "Ident": "StiText",
+              "Name": "Text44",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "14.4,3.1,3.2,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Sign_2.app_date}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": ";10;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black"
+            }
+          }
+        },
+        "4": {
+          "Ident": "StiText",
+          "Name": "Text23",
+          "Guid": "8d5c0e1d8992b3b308f0afdb7cd95686",
+          "MinSize": "0,0",
+          "MaxSize": "0,0",
+          "ClientRectangle": "21.4,6.4,7.2,0.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Text": {
+            "Value": "Description"
+          },
+          "HorAlignment": "Center",
+          "VertAlignment": "Bottom",
+          "Font": "AngsanaUPC;16;;",
+          "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "TextBrush": "solid:Black",
+          "Type": "Expression"
+        },
+        "5": {
+          "Ident": "StiText",
+          "Name": "Text24",
+          "Guid": "a2b4d7adc64d1200e7beafdb7cd9a039",
+          "MinSize": "0,0",
+          "MaxSize": "0,0",
+          "ClientRectangle": "28.6,6.4,1.8,0.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Text": {
+            "Value": "Quantity"
+          },
+          "HorAlignment": "Center",
+          "VertAlignment": "Bottom",
+          "Font": "AngsanaUPC;16;;",
+          "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "TextBrush": "solid:Black",
+          "Type": "Expression"
+        },
+        "6": {
+          "Ident": "StiText",
+          "Name": "Text25",
+          "Guid": "27cfe110b228d2aebe77afdb7cd90aed",
+          "MinSize": "0,0",
+          "MaxSize": "0,0",
+          "ClientRectangle": "30.4,6.4,1.8,0.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Text": {
+            "Value": "Unite"
+          },
+          "HorAlignment": "Center",
+          "VertAlignment": "Bottom",
+          "Font": "AngsanaUPC;16;;",
+          "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "TextBrush": "solid:Black",
+          "Type": "Expression"
+        },
+        "7": {
+          "Ident": "StiText",
+          "Name": "Text26",
+          "Guid": "c0d594d4d0b2b5f5da65afdb7cd95231",
+          "MinSize": "0,0",
+          "MaxSize": "0,0",
+          "ClientRectangle": "32.2,6.4,3.4,0.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Text": {
+            "Value": "Remark"
+          },
+          "HorAlignment": "Center",
+          "VertAlignment": "Bottom",
+          "Font": "AngsanaUPC;16;;",
+          "Border": "Left, Right, Bottom;;;;;;;solid:Black",
+          "Brush": "solid:",
+          "TextBrush": "solid:Black",
+          "Type": "Expression"
+        },
+        "8": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,12.4,19,1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "5,0,7,1.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pri_matname}\r\n{Connection1.remark_mat}"
+              },
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;14;;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text27",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "1.6,0,3.4,1.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pri_costcode}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;14;;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text28",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "13.8,0,1.8,1.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pri_unit}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text29",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "12,0,1.8,1.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pri_qty}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text30",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "15.6,0,3.4,1.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Connection1.pri_remark}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              }
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "CanGrow": true,
+              "GrowToHeight": true,
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,0,1.6,1.2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Line}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "AngsanaUPC;16;;",
+              "Border": "All;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "SystemVariables"
+            }
+          },
+          "DataSourceName": "Connection1"
+        },
+        "9": {
+          "Ident": "StiEmptyBand",
+          "Name": "EmptyBand1",
+          "ClientRectangle": "0,14.2,19,0.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text49",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,0,1.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Font": ";10;;",
+              "Border": "Left;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text51",
+              "Guid": "b1e651b10af993d51a57b0cf19816f59",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "1.6,0,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Font": ";10;;",
+              "Border": "Left;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text52",
+              "Guid": "7c66eeefea395386d98bb0cf2dc90e4e",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "5,0,7,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Font": ";10;;",
+              "Border": "Left;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text53",
+              "Guid": "e649d89c1ffae2f456b8b0cfb8219cf5",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "12,0,1.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Font": ";10;;",
+              "Border": "Left;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text54",
+              "Guid": "370da06d055bd5943ae3b0cfdc2188cb",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "13.8,0,1.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Font": ";10;;",
+              "Border": "Left;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text55",
+              "Guid": "88dadc2b7a90d5a2d391b0cfea892984",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "15.6,0,3.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Font": ";10;;",
+              "Border": "Left, Right;;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          }
+        }
+      },
+      "PageWidth": 21.0,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1.0,
+        "Right": 1.0,
+        "Top": 1.0,
+        "Bottom": 1.0
+      }
+    }
+  }
+}
