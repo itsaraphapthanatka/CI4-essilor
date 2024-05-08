@@ -1,0 +1,9 @@
+CRITICAL - 2023-03-17 03:23:07 --> CodeIgniter\Database\BaseBuilder::orderBy(): Argument #1 ($orderBy) must be of type string, array given, called in /Users/macbook/Desktop/ci4-project/vendor/codeigniter4/framework/system/Model.php on line 840
+in SYSTEMPATH/Database/BaseBuilder.php on line 1438.
+ 1 SYSTEMPATH/Model.php(840): CodeIgniter\Database\BaseBuilder->orderBy([...])
+ 2 APPPATH/Controllers/Appointment.php(9): CodeIgniter\Model->__call('orderBy', [...])
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Appointment->index()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Appointment))
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
