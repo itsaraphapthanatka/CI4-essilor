@@ -15,10 +15,10 @@ class Auth extends BaseController{
         helper(['form']);
         if (session()->get('logged_in')) {
             
-            if(session()->get('user_role') == 'o'){
-                return redirect()->to('/home/'.session()->get('compcode'));
+            if(session()->get('mtype') == 'member'){
+                return redirect()->to('/home/'.session()->get('mtype'));
             }else{
-                return redirect()->to('/userworks');
+                return redirect()->to('/home/'.session()->get('mtype'));
             }
             // return redirect()->to('/home');
         }
@@ -33,6 +33,12 @@ class Auth extends BaseController{
         $password = $this->request->getVar('password');
         // $data = $model->chkLogin($username);
         if ($username == "manager" && $password=="1234") {
+            $sess_data = [
+                'mtype' => 'member',
+                'm_name' => $username,
+                'logged_in' => TRUE
+            ];
+            $session->set($sess_data);
             $arr = [
                 
                 "data" => "success",
@@ -49,6 +55,9 @@ class Auth extends BaseController{
             ];
         }
         return $this->response->setJSON($arr);
+        
+
+
         // if ($data) {
         //     $pass = $data['m_pass'];
         //     $verify_password = password_verify($password,$pass);
@@ -90,6 +99,12 @@ class Auth extends BaseController{
         $model = new UsersModel();
         $level = $this->request->getPost();
         // $data = $model->chkLogin($username);
+        $sess_data = [
+            'mtype' => 'member',
+            'm_name' => 'guest',
+            'logged_in' => TRUE
+        ];
+        $session->set($sess_data);
             $arr = [
                 
                 "data" => "success",
@@ -140,7 +155,7 @@ class Auth extends BaseController{
     public function logout(){
         $session = session();
         $session->destroy();
-        $this->useronline('offline');
+        // $this->useronline('offline');
         return redirect()->to('/');
     }
     

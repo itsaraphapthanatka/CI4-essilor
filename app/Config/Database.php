@@ -29,7 +29,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => 'root',
-        'database' => 'lumpsum_new_db',
+        'database' => 'essilor',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

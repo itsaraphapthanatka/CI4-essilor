@@ -36,9 +36,13 @@ $routes->get('logout', 'Auth::logout');
 $routes->get('keep-alive','Auth::keep_alive');
 $routes->get('forgeSignOut/(:num)','Auth::forgeSignOut/$1');
 $routes->get('home/(:any)', 'Pages::view/$1');
+$routes->get('load_list_ecp_view', 'Pages::load_list_ecp_view');
+$routes->get('getECP','Data::getECP');
+$routes->get('checkusersonline','Auth::checkusersonline');
 $routes->group('',['filter' => 'auth'], static function ($routes) {
     $routes->group('jsondata',static function ($routes)
     {
+        $routes->get('getECP','Data::getECP');
         $routes->get('checkonline','Data::checkonline'); // checking online
         $routes->get('getUserOnline', 'Data::getUserOnline');
         $routes->get('getProjectAll','Data::getProjectAll');
@@ -166,7 +170,7 @@ $routes->group('',['filter' => 'auth'], static function ($routes) {
     $routes->get('purchase_requisition/(:num)/(:num)', 'Purchase_Requisition::purchase_requisition/$1/$2/$3');
 
 
-    $routes->get('checkusersonline','Auth::checkusersonline');
+   
     
 });
 /*
