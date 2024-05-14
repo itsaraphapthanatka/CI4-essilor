@@ -10,7 +10,6 @@ class ComposerAutoloaderInit99fab9d66a4fd4771aaacc2c6add9f7d
     {
         if ('Composer\Autoload\ClassLoader' === $class) {
             require __DIR__ . '/ClassLoader.php';
-            
         }
     }
 

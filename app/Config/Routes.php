@@ -40,6 +40,10 @@ $routes->get('load_list_ecp_view', 'Pages::load_list_ecp_view');
 $routes->get('getECP','Data::getECP');
 $routes->get('checkusersonline','Auth::checkusersonline');
 $routes->group('',['filter' => 'auth'], static function ($routes) {
+    $routes->group('import',static function ($routes)
+    {
+        $routes->post('ecpdata','Data::ImportECP');
+    });
     $routes->group('jsondata',static function ($routes)
     {
         $routes->get('getECP','Data::getECP');
